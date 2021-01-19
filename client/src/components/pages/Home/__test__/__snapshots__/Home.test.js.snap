@@ -1,0 +1,17 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Home component test with Enzyme renders correct snapshot 1`] = `
+<styled.div>
+  <styled.div>
+    <styled.div>
+      <styled.div>
+        <FilterAndSearch />
+      </styled.div>
+      <styled.div>
+        <FavItemStat />
+      </styled.div>
+    </styled.div>
+    <FavItemsList />
+  </styled.div>
+</styled.div>
+`;

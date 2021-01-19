@@ -1,0 +1,54 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`FilterAndSearch component test with Enzyme renders correct snapshot 1`] = `
+<Fragment>
+  <styled.div>
+    <styled.input
+      onChange={[Function]}
+      placeholder="Search Card By Name ..."
+      type="text"
+    />
+  </styled.div>
+  <styled.div>
+    <StateManager
+      defaultInputValue=""
+      defaultMenuIsOpen={false}
+      defaultValue={null}
+      onChange={[Function]}
+      options={
+        Array [
+          Object {
+            "label": "Film",
+            "value": "Film",
+          },
+          Object {
+            "label": "Music",
+            "value": "Music",
+          },
+          Object {
+            "label": "Books",
+            "value": "Books",
+          },
+          Object {
+            "label": "Other",
+            "value": "Other",
+          },
+          Object {
+            "label": "All cards",
+            "value": "All",
+          },
+        ]
+      }
+      placeholder="Filter Your Cards"
+      styles={
+        Object {
+          "control": [Function],
+          "option": [Function],
+          "singleValue": [Function],
+        }
+      }
+      value={null}
+    />
+  </styled.div>
+</Fragment>
+`;

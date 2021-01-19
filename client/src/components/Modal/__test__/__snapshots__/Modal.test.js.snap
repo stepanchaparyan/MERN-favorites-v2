@@ -1,0 +1,69 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Modal component test with Enzyme renders correct snapshot 1`] = `
+<Modal
+  ariaHideApp={true}
+  bodyOpenClassName="ReactModal__Body--open"
+  closeTimeoutMS={0}
+  contentLabel="Modal"
+  isOpen={true}
+  onRequestClose={[MockFunction]}
+  parentSelector={[Function]}
+  portalClassName="ReactModalPortal"
+  role="dialog"
+  shouldCloseOnEsc={true}
+  shouldCloseOnOverlayClick={true}
+  shouldFocusAfterRender={true}
+  shouldReturnFocusAfterClose={true}
+  style={
+    Object {
+      "content": Object {
+        "backgroundColor": "#f8f8f8",
+        "bottom": "auto",
+        "display": "flex",
+        "flexDirection": "column",
+        "height": "200px",
+        "left": "50%",
+        "marginRight": "-50%",
+        "padding": "0",
+        "right": "auto",
+        "top": "50%",
+        "transform": "translate(-50%, -50%)",
+        "width": "350px",
+      },
+    }
+  }
+>
+  <styled.div>
+    <styled.div
+      bgColor="blue"
+    >
+      <styled.div>
+        title
+      </styled.div>
+      <styled.button
+        bgColor="blue"
+        onClick={[MockFunction]}
+      >
+        x
+      </styled.button>
+    </styled.div>
+    <styled.div>
+      text
+    </styled.div>
+    <styled.div>
+      <styled.button
+        onClick={[MockFunction]}
+      >
+        text
+      </styled.button>
+      <styled.button
+        color="red"
+        onClick={[MockFunction]}
+      >
+        text
+      </styled.button>
+    </styled.div>
+  </styled.div>
+</Modal>
+`;

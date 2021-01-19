@@ -1,0 +1,230 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Login component test with Enzyme renders snapshot 1`] = `
+<styled.div>
+  <styled.div>
+    LogIn
+  </styled.div>
+  <Formik
+    initialValues={
+      Object {
+        "email": "",
+        "password": "",
+      }
+    }
+    onSubmit={[Function]}
+    validationSchema={
+      ObjectSchema {
+        "_blacklist": ReferenceSet {
+          "list": Set {},
+          "refs": Map {},
+        },
+        "_excludedEdges": Array [],
+        "_mutate": undefined,
+        "_nodes": Array [
+          "password",
+          "email",
+        ],
+        "_sortErrors": [Function],
+        "_typeError": [Function],
+        "_whitelist": ReferenceSet {
+          "list": Set {},
+          "refs": Map {},
+        },
+        "conditions": Array [],
+        "deps": Array [],
+        "exclusiveTests": Object {},
+        "fields": Object {
+          "email": StringSchema {
+            "_blacklist": ReferenceSet {
+              "list": Set {},
+              "refs": Map {},
+            },
+            "_blacklistError": undefined,
+            "_mutate": undefined,
+            "_typeError": [Function],
+            "_whitelist": ReferenceSet {
+              "list": Set {},
+              "refs": Map {},
+            },
+            "_whitelistError": undefined,
+            "conditions": Array [],
+            "deps": Array [],
+            "exclusiveTests": Object {
+              "email": false,
+              "required": true,
+            },
+            "spec": Object {
+              "abortEarly": true,
+              "label": undefined,
+              "meta": undefined,
+              "nullable": false,
+              "presence": "required",
+              "recursive": true,
+              "strict": false,
+              "strip": false,
+            },
+            "tests": Array [
+              [Function],
+              [Function],
+            ],
+            "transforms": Array [
+              [Function],
+            ],
+            "type": "string",
+          },
+          "password": StringSchema {
+            "_blacklist": ReferenceSet {
+              "list": Set {},
+              "refs": Map {},
+            },
+            "_blacklistError": undefined,
+            "_mutate": undefined,
+            "_typeError": [Function],
+            "_whitelist": ReferenceSet {
+              "list": Set {},
+              "refs": Map {},
+            },
+            "_whitelistError": undefined,
+            "conditions": Array [],
+            "deps": Array [],
+            "exclusiveTests": Object {
+              "required": true,
+            },
+            "spec": Object {
+              "abortEarly": true,
+              "label": undefined,
+              "meta": undefined,
+              "nullable": false,
+              "presence": "required",
+              "recursive": true,
+              "strict": false,
+              "strip": false,
+            },
+            "tests": Array [
+              [Function],
+            ],
+            "transforms": Array [
+              [Function],
+            ],
+            "type": "string",
+          },
+        },
+        "spec": Object {
+          "abortEarly": true,
+          "label": undefined,
+          "meta": undefined,
+          "nullable": false,
+          "presence": "optional",
+          "recursive": true,
+          "strict": false,
+          "strip": false,
+        },
+        "tests": Array [],
+        "transforms": Array [
+          [Function],
+        ],
+        "type": "object",
+      }
+    }
+  >
+    <Styled(Form)>
+      <Styled(Field)
+        id="email"
+        name="email"
+        placeholder="Email"
+        type="email"
+      />
+      <FormikConnect(ErrorMessageImpl)
+        component={
+          Object {
+            "$$typeof": Symbol(react.forward_ref),
+            "attrs": Array [],
+            "componentStyle": ComponentStyle {
+              "baseHash": 1105857511,
+              "componentId": "sc-AxgMl",
+              "isStatic": false,
+              "rules": Array [
+                "color:red;width:30%;font-size:12px;",
+              ],
+              "staticRulesId": "",
+            },
+            "displayName": "styled.div",
+            "foldedComponentIds": Array [],
+            "render": [Function],
+            "shouldForwardProp": undefined,
+            "styledComponentId": "sc-AxgMl",
+            "target": "div",
+            "toString": [Function],
+            "warnTooManyClasses": [Function],
+            "withComponent": [Function],
+          }
+        }
+        name="email"
+      />
+      <Styled(Field)
+        id="password"
+        name="password"
+        placeholder="Password"
+        type="password"
+      />
+      <FormikConnect(ErrorMessageImpl)
+        component={
+          Object {
+            "$$typeof": Symbol(react.forward_ref),
+            "attrs": Array [],
+            "componentStyle": ComponentStyle {
+              "baseHash": 1105857511,
+              "componentId": "sc-AxgMl",
+              "isStatic": false,
+              "rules": Array [
+                "color:red;width:30%;font-size:12px;",
+              ],
+              "staticRulesId": "",
+            },
+            "displayName": "styled.div",
+            "foldedComponentIds": Array [],
+            "render": [Function],
+            "shouldForwardProp": undefined,
+            "styledComponentId": "sc-AxgMl",
+            "target": "div",
+            "toString": [Function],
+            "warnTooManyClasses": [Function],
+            "withComponent": [Function],
+          }
+        }
+        name="password"
+      />
+      <styled.button
+        disabled={
+          Array [
+            "a",
+            "b",
+          ]
+        }
+        type="submit"
+      >
+        LogIn
+      </styled.button>
+      <styled.div>
+        <styled.button
+          onClick={[Function]}
+          type="button"
+        >
+          a
+          b
+        </styled.button>
+      </styled.div>
+    </Styled(Form)>
+  </Formik>
+  <styled.div>
+    Dont have an accout?
+      
+    <Link
+      to="/register"
+    >
+      Sign Up
+    </Link>
+  </styled.div>
+</styled.div>
+`;

@@ -1,0 +1,36 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Welcome component test with Enzyme renders snapshot 1`] = `
+<styled.div>
+  <styled.div>
+    <styled.div>
+      Welcome to our page
+    </styled.div>
+    <styled.div>
+      Here you can add and save cards about your favorite
+    </styled.div>
+    <styled.div>
+      <styled.span>
+        Music
+      </styled.span>
+      <styled.span>
+        Films
+      </styled.span>
+      <styled.span>
+        Books
+      </styled.span>
+      <styled.span>
+        Other
+      </styled.span>
+    </styled.div>
+    <Styled(Link)
+      to="/home"
+    >
+      Create Your Card
+    </Styled(Link)>
+    <styled.img
+      src="test-file-stub"
+    />
+  </styled.div>
+</styled.div>
+`;

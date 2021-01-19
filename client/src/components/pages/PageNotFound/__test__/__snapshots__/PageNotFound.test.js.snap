@@ -1,0 +1,19 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`NotFound component test with Enzyme renders snapshot 1`] = `
+<styled.div>
+  <styled.div>
+    <styled.div>
+      Page not found
+    </styled.div>
+    <Styled(Link)
+      to="/"
+    >
+      Go Home page
+    </Styled(Link)>
+    <styled.img
+      src="test-file-stub"
+    />
+  </styled.div>
+</styled.div>
+`;

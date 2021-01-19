@@ -1,0 +1,22 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`FavItemsList component test with Enzyme renders correct snapshot 1`] = `
+<styled.div>
+  <styled.button
+    onClick={[Function]}
+  >
+    Add New Item
+  </styled.button>
+  <styled.div>
+    <FavItemCard
+      favItem={
+        Object {
+          "_id": "123",
+          "name": "test",
+        }
+      }
+      key="123"
+    />
+  </styled.div>
+</styled.div>
+`;

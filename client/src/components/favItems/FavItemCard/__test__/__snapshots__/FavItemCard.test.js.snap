@@ -1,0 +1,217 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`FavItemCard component test with Enzyme render handleEdit component 1`] = `
+<styled.div>
+  <styled.div>
+    <styled.div>
+      Author
+      :
+    </styled.div>
+    <styled.div
+      data-arrow-color="cadetblue"
+      data-background-color="cadetblue"
+      data-tip="testAuthor"
+    >
+      testAuthor
+    </styled.div>
+    <styled.div
+      color="black"
+    >
+      t
+    </styled.div>
+  </styled.div>
+  <styled.div>
+    <styled.div>
+      Title
+      :
+    </styled.div>
+    <styled.div
+      data-arrow-color="cadetblue"
+      data-background-color="cadetblue"
+      data-tip="testTitle"
+    >
+      testTitle
+    </styled.div>
+  </styled.div>
+  <styled.div>
+    <styled.div>
+      Category
+      :
+    </styled.div>
+    <styled.div>
+      testCategory
+    </styled.div>
+  </styled.div>
+  <styled.div>
+    <styled.div>
+      Description
+      :
+    </styled.div>
+    <styled.div
+      data-arrow-color="cadetblue"
+      data-background-color="cadetblue"
+      data-tip="testDescription"
+    >
+      testDescription
+    </styled.div>
+  </styled.div>
+  <Styled(ReactTooltip)
+    effect="solid"
+    place="left"
+  />
+  <styled.button
+    onClick={[Function]}
+  >
+    Edit Card
+  </styled.button>
+  <styled.button
+    onClick={[Function]}
+  >
+    Remove Card
+  </styled.button>
+</styled.div>
+`;
+
+exports[`FavItemCard component test with Enzyme render handleRemove click 1`] = `
+<styled.div>
+  <styled.div>
+    <styled.div>
+      Author
+      :
+    </styled.div>
+    <styled.div
+      data-arrow-color="cadetblue"
+      data-background-color="cadetblue"
+      data-tip="testAuthor"
+    >
+      testAuthor
+    </styled.div>
+    <styled.div
+      color="black"
+    >
+      t
+    </styled.div>
+  </styled.div>
+  <styled.div>
+    <styled.div>
+      Title
+      :
+    </styled.div>
+    <styled.div
+      data-arrow-color="cadetblue"
+      data-background-color="cadetblue"
+      data-tip="testTitle"
+    >
+      testTitle
+    </styled.div>
+  </styled.div>
+  <styled.div>
+    <styled.div>
+      Category
+      :
+    </styled.div>
+    <styled.div>
+      testCategory
+    </styled.div>
+  </styled.div>
+  <styled.div>
+    <styled.div>
+      Description
+      :
+    </styled.div>
+    <styled.div
+      data-arrow-color="cadetblue"
+      data-background-color="cadetblue"
+      data-tip="testDescription"
+    >
+      testDescription
+    </styled.div>
+  </styled.div>
+  <Styled(ReactTooltip)
+    effect="solid"
+    place="left"
+  />
+  <styled.button
+    onClick={[Function]}
+  >
+    Edit Card
+  </styled.button>
+  <styled.button
+    onClick={[Function]}
+  >
+    Remove Card
+  </styled.button>
+</styled.div>
+`;
+
+exports[`FavItemCard component test with Enzyme renders correct snapshot 1`] = `
+<styled.div>
+  <styled.div>
+    <styled.div>
+      Author
+      :
+    </styled.div>
+    <styled.div
+      data-arrow-color="cadetblue"
+      data-background-color="cadetblue"
+      data-tip="testAuthor"
+    >
+      testAuthor
+    </styled.div>
+    <styled.div
+      color="black"
+    >
+      t
+    </styled.div>
+  </styled.div>
+  <styled.div>
+    <styled.div>
+      Title
+      :
+    </styled.div>
+    <styled.div
+      data-arrow-color="cadetblue"
+      data-background-color="cadetblue"
+      data-tip="testTitle"
+    >
+      testTitle
+    </styled.div>
+  </styled.div>
+  <styled.div>
+    <styled.div>
+      Category
+      :
+    </styled.div>
+    <styled.div>
+      testCategory
+    </styled.div>
+  </styled.div>
+  <styled.div>
+    <styled.div>
+      Description
+      :
+    </styled.div>
+    <styled.div
+      data-arrow-color="cadetblue"
+      data-background-color="cadetblue"
+      data-tip="testDescription"
+    >
+      testDescription
+    </styled.div>
+  </styled.div>
+  <Styled(ReactTooltip)
+    effect="solid"
+    place="left"
+  />
+  <styled.button
+    onClick={[Function]}
+  >
+    Edit Card
+  </styled.button>
+  <styled.button
+    onClick={[Function]}
+  >
+    Remove Card
+  </styled.button>
+</styled.div>
+`;

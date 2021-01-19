@@ -1,0 +1,250 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ProfileForm component test with Enzyme renders snapshot 1`] = `
+<styled.div>
+  <styled.div>
+    <Formik
+      initialValues={
+        Object {
+          "birthDay": "testBirtday",
+          "email": "test@email.com",
+          "gender": "testGender",
+          "name": "testName",
+          "phoneNumber": "123456789",
+          "surname": "testSurname",
+        }
+      }
+      onSubmit={[Function]}
+      validateOnChange={true}
+      validationSchema={
+        ObjectSchema {
+          "_blacklist": ReferenceSet {
+            "list": Set {},
+            "refs": Map {},
+          },
+          "_excludedEdges": Array [],
+          "_mutate": undefined,
+          "_nodes": Array [
+            "birthDay",
+            "phoneNumber",
+            "email",
+            "surname",
+            "name",
+          ],
+          "_sortErrors": [Function],
+          "_typeError": [Function],
+          "_whitelist": ReferenceSet {
+            "list": Set {},
+            "refs": Map {},
+          },
+          "conditions": Array [],
+          "deps": Array [],
+          "exclusiveTests": Object {},
+          "fields": Object {
+            "birthDay": DateSchema {
+              "_blacklist": ReferenceSet {
+                "list": Set {},
+                "refs": Map {},
+              },
+              "_blacklistError": undefined,
+              "_typeError": [Function],
+              "_whitelist": ReferenceSet {
+                "list": Set {},
+                "refs": Map {},
+              },
+              "_whitelistError": undefined,
+              "conditions": Array [],
+              "deps": Array [],
+              "exclusiveTests": Object {
+                "required": true,
+              },
+              "spec": Object {
+                "abortEarly": true,
+                "label": undefined,
+                "meta": undefined,
+                "nullable": true,
+                "presence": "required",
+                "recursive": true,
+                "strict": false,
+                "strip": false,
+              },
+              "tests": Array [
+                [Function],
+              ],
+              "transforms": Array [
+                [Function],
+              ],
+              "type": "date",
+            },
+            "email": StringSchema {
+              "_blacklist": ReferenceSet {
+                "list": Set {},
+                "refs": Map {},
+              },
+              "_blacklistError": undefined,
+              "_mutate": undefined,
+              "_typeError": [Function],
+              "_whitelist": ReferenceSet {
+                "list": Set {},
+                "refs": Map {},
+              },
+              "_whitelistError": undefined,
+              "conditions": Array [],
+              "deps": Array [],
+              "exclusiveTests": Object {
+                "email": false,
+                "required": true,
+              },
+              "spec": Object {
+                "abortEarly": true,
+                "label": undefined,
+                "meta": undefined,
+                "nullable": false,
+                "presence": "required",
+                "recursive": true,
+                "strict": false,
+                "strip": false,
+              },
+              "tests": Array [
+                [Function],
+                [Function],
+              ],
+              "transforms": Array [
+                [Function],
+              ],
+              "type": "string",
+            },
+            "name": StringSchema {
+              "_blacklist": ReferenceSet {
+                "list": Set {},
+                "refs": Map {},
+              },
+              "_blacklistError": undefined,
+              "_mutate": undefined,
+              "_typeError": [Function],
+              "_whitelist": ReferenceSet {
+                "list": Set {},
+                "refs": Map {},
+              },
+              "_whitelistError": undefined,
+              "conditions": Array [],
+              "deps": Array [],
+              "exclusiveTests": Object {
+                "required": true,
+              },
+              "spec": Object {
+                "abortEarly": true,
+                "label": undefined,
+                "meta": undefined,
+                "nullable": false,
+                "presence": "required",
+                "recursive": true,
+                "strict": false,
+                "strip": false,
+              },
+              "tests": Array [
+                [Function],
+              ],
+              "transforms": Array [
+                [Function],
+              ],
+              "type": "string",
+            },
+            "phoneNumber": StringSchema {
+              "_blacklist": ReferenceSet {
+                "list": Set {},
+                "refs": Map {},
+              },
+              "_blacklistError": undefined,
+              "_mutate": undefined,
+              "_typeError": [Function],
+              "_whitelist": ReferenceSet {
+                "list": Set {},
+                "refs": Map {},
+              },
+              "_whitelistError": undefined,
+              "conditions": Array [],
+              "deps": Array [],
+              "exclusiveTests": Object {
+                "matches": false,
+                "required": true,
+              },
+              "spec": Object {
+                "abortEarly": true,
+                "label": undefined,
+                "meta": undefined,
+                "nullable": false,
+                "presence": "required",
+                "recursive": true,
+                "strict": false,
+                "strip": false,
+              },
+              "tests": Array [
+                [Function],
+                [Function],
+              ],
+              "transforms": Array [
+                [Function],
+              ],
+              "type": "string",
+            },
+            "surname": StringSchema {
+              "_blacklist": ReferenceSet {
+                "list": Set {},
+                "refs": Map {},
+              },
+              "_blacklistError": undefined,
+              "_mutate": undefined,
+              "_typeError": [Function],
+              "_whitelist": ReferenceSet {
+                "list": Set {},
+                "refs": Map {},
+              },
+              "_whitelistError": undefined,
+              "conditions": Array [],
+              "deps": Array [],
+              "exclusiveTests": Object {
+                "required": true,
+              },
+              "spec": Object {
+                "abortEarly": true,
+                "label": undefined,
+                "meta": undefined,
+                "nullable": false,
+                "presence": "required",
+                "recursive": true,
+                "strict": false,
+                "strip": false,
+              },
+              "tests": Array [
+                [Function],
+              ],
+              "transforms": Array [
+                [Function],
+              ],
+              "type": "string",
+            },
+          },
+          "spec": Object {
+            "abortEarly": true,
+            "label": undefined,
+            "meta": undefined,
+            "nullable": false,
+            "presence": "optional",
+            "recursive": true,
+            "strict": false,
+            "strip": false,
+          },
+          "tests": Array [],
+          "transforms": Array [
+            [Function],
+          ],
+          "type": "object",
+        }
+      }
+    >
+      <Component />
+    </Formik>
+  </styled.div>
+</styled.div>
+`;

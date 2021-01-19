@@ -1,0 +1,87 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Profile component test with Enzyme renders snapshot 1`] = `
+<styled.div>
+  <styled.div>
+    <styled.div>
+      Profile page
+    </styled.div>
+    <styled.div>
+      <styled.div>
+        <styled.img
+          src="test-file-stub"
+        />
+      </styled.div>
+      <styled.div>
+        <styled.div>
+          <styled.div>
+            Name
+            :
+          </styled.div>
+          <styled.div>
+            testName
+          </styled.div>
+        </styled.div>
+        <styled.div>
+          <styled.div>
+            Surname
+            :
+          </styled.div>
+          <styled.div />
+        </styled.div>
+        <styled.div>
+          <styled.div>
+            Email
+            :
+          </styled.div>
+          <styled.div
+            data-arrow-color="cadetblue"
+            data-background-color="cadetblue"
+          />
+        </styled.div>
+        <styled.div>
+          <styled.div>
+            Gender
+            :
+          </styled.div>
+          <styled.div />
+        </styled.div>
+        <styled.div>
+          <styled.div>
+            BirthDay
+            :
+          </styled.div>
+          <styled.div>
+            Jan 9, 2021
+          </styled.div>
+        </styled.div>
+        <styled.div>
+          <styled.div>
+            Phone
+            :
+          </styled.div>
+          <styled.div />
+        </styled.div>
+      </styled.div>
+    </styled.div>
+    <Styled(ReactTooltip)
+      effect="solid"
+      place="right"
+    />
+    <styled.button
+      onClick={[Function]}
+    >
+      Edit Card
+    </styled.button>
+    <styled.div />
+    <Styled(Link)
+      to="/"
+    >
+      Go home page
+    </Styled(Link)>
+    <styled.img
+      src="test-file-stub"
+    />
+  </styled.div>
+</styled.div>
+`;

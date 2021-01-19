@@ -1,0 +1,26 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`FileUpload component test with Enzyme renders snapshot 1`] = `
+<styled.div>
+  <form
+    onSubmit={[Function]}
+  >
+    <styled.img
+      src="test-file-stub"
+    />
+    <styled.label
+      htmlFor="file-edit"
+    >
+      <styled.img
+        src="test-file-stub"
+      />
+    </styled.label>
+    <styled.input
+      id="file-edit"
+      onChange={[Function]}
+      type="file"
+    />
+    <styled.div />
+  </form>
+</styled.div>
+`;

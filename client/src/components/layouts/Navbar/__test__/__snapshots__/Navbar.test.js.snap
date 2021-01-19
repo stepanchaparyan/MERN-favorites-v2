@@ -1,0 +1,44 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Navbar component test with Enzyme renders snapshot 1`] = `
+<styled.div>
+  <Link
+    to="/"
+  >
+    <styled.img
+      alt="logo"
+      src="test-file-stub"
+    />
+  </Link>
+  <styled.div
+    open={false}
+  >
+    <Styled(Link)
+      to="/profilePage"
+    >
+      <styled.div>
+        testName
+      </styled.div>
+    </Styled(Link)>
+    <styled.div>
+      <styled.img
+        onClick={[Function]}
+        src="test-file-stub"
+      />
+      <styled.img
+        onClick={[Function]}
+        src="test-file-stub"
+      />
+    </styled.div>
+    <styled.div
+      onClick={[Function]}
+    >
+      Logout
+    </styled.div>
+  </styled.div>
+  <styled.img
+    onClick={[Function]}
+    src="test-file-stub"
+  />
+</styled.div>
+`;

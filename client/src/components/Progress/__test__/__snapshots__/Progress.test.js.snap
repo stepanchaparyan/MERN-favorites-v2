@@ -1,0 +1,12 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Progress component test with Enzyme renders snapshot 1`] = `
+<styled.div>
+  <styled.div
+    width={50}
+  >
+    50
+    %
+  </styled.div>
+</styled.div>
+`;

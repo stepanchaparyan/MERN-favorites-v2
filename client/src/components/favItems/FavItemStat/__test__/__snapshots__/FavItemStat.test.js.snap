@@ -1,0 +1,23 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`FavItemStat component test with Enzyme renders correct snapshot 1`] = `
+<styled.div>
+  <styled.div
+    onClick={[Function]}
+  >
+    Count by Category
+  </styled.div>
+  <styled.div>
+    <styled.div
+      key="0"
+    >
+      <styled.div>
+        Other
+      </styled.div>
+      <styled.div>
+        1
+      </styled.div>
+    </styled.div>
+  </styled.div>
+</styled.div>
+`;
