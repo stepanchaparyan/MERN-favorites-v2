@@ -4,6 +4,7 @@ export const LINK = {
     REGISTER: '/register',
     LOGIN: '/login',
     HOME: '/home',
-    WELCOME: '/'
+    WELCOME: '/',
+    PRODUCTS: '/products'
   }
 };

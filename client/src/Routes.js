@@ -8,6 +8,11 @@ import Welcome from './components/pages/Welcome/Welcome';
 import Profile from './components/pages/Profile/Profile';
 import PrivateRoute from './components/routing/PrivateRoute';
 import AuthContext from './context/authContext/authContext';
+import Books from './components/Books/Books';
+import BookDetail from './components/Books/BookDetail';
+import HomeScreen from './screens/HomeScreen';
+import ProductScreen from './screens/ProductScreen';
+import CartScreen from './screens/CartScreen';
 
 const App = () => {
   const { loadUser } = useContext(AuthContext);
@@ -23,6 +28,10 @@ const App = () => {
       <Route exact path="/register" component={Register} />
       <Route exact path="/login" component={Login} />
       <PrivateRoute exact path="/profilePage" component={Profile} />
+      <PrivateRoute exact path="/books" component={Books} />
+      <PrivateRoute exact path="/products" component={HomeScreen} />
+      <PrivateRoute exact path="/product/:id" component={ProductScreen} />
+      <PrivateRoute exact path="/cart" component={CartScreen} />
       <Route exact path="*" component={PageNotFound} />
     </Switch>
   );

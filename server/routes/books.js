@@ -32,7 +32,7 @@ bookRouter.get(
     try {
       const books = await Book.find().sort('createdAt');;
       res.status(201);
-      res.send(books);
+      res.json(books);
     } catch (error) {
       res.status(401);
       throw new Error('Server Error');

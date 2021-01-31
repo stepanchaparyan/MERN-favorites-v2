@@ -105,3 +105,41 @@ export const Other = styled.span`
     border-color: orange;
   }
 `;
+
+export const PieContainer = styled.div`
+  display: flex;
+`;
+
+export const Pie = styled.div`
+  position: relative;
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  background: lightGray;
+  background-image: ${props =>
+    `linear-gradient(to right, transparent 50%, ${props.theme.cadetblue} 0)`};
+  &:before {
+    content: '';
+    display: block;
+    margin-left: 50%;
+    height: 100%;
+    border-radius: 0 100% 100% 0 / 50%;
+    background: ${props => props.theme.cadetblue};
+    transform-origin: left;
+    background-color: ${props => props.inherit};
+    transform: ${props =>
+      props.inherit === 'inherit'
+        ? `rotate(${props.per * 3.6}deg)`
+        : `rotate(${(props.per - 50) * 3.6}deg)`};
+  }
+`;
+
+export const Pie2 = styled.div`
+  width: 60px;
+  height: 60px;
+  position: absolute;
+  right: 20px;
+  bottom: 20px;
+  border-radius: 50%;
+  background: white;
+`;

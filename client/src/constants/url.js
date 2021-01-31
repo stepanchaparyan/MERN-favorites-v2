@@ -9,5 +9,6 @@ export const URL = {
   PROFILE: `${serverUrl}/profile`,
   PROFILE_ADD: `${serverUrl}/profile/add`,
   PROFILE_UPDATE: `${serverUrl}/profile/update`,
-  UPLOAD: `${serverUrl}/upload`
+  UPLOAD: `${serverUrl}/upload`,
+  PRODUCTS: `${serverUrl}/api/products`
 };

@@ -25,6 +25,7 @@ app.use('/favItem', auth, require('./routes/favItem'));
 app.use('/profile', auth, require('./routes/profile'));
 app.use('/upload', require('./routes/upload'));
 app.use('/api/books', auth, require('./routes/books'));
+app.use("/api/products", require("./routes/products"));
 
 // use static files
 app.use('/', express.static(path.join('..', 'client', 'build')));
