@@ -30,7 +30,7 @@ bookRouter.get(
   '/',
   asynchHandler(async (req, res) => {
     try {
-      const books = await Book.find().sort('createdAt');;
+      const books = await Book.find().sort('createdAt');
       res.status(201);
       res.json(books);
     } catch (error) {

@@ -31,7 +31,7 @@ router.post(
         author,
         title,
         category,
-        description
+        description,
       });
       const favItem = await newFavItem.save();
       res.json(favItem);

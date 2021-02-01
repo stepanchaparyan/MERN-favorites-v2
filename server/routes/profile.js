@@ -21,7 +21,7 @@ router.post('/add', async (req, res) => {
       image,
       gender,
       birthDay,
-      phoneNumber
+      phoneNumber,
     });
 
     const profile = await newProfile.save();

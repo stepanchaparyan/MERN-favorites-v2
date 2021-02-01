@@ -4,7 +4,10 @@
   "main": "index.js",
   "scripts": {
     "dev": "NODE_ENV=development nodemon app.js",
-    "prod": "NODE_ENV=production nodemon app.js"
+    "prod": "NODE_ENV=production nodemon app.js",
+    "eslint": "eslint .",
+    "eslint-fix": "eslint --fix \"*\"",
+    "format": "prettier --write \"**/*.+(js|jsx|json|yml|yaml|css|md|vue)\""
   },
   "author": "Stepan Chaparyan",
   "dependencies": {
@@ -19,6 +22,12 @@
     "mongoose": "^5.9.4"
   },
   "devDependencies": {
-    "nodemon": "^2.0.2"
+    "eslint": "^7.19.0",
+    "eslint-plugin-json": "^2.1.2",
+    "eslint-plugin-prettier": "^3.3.1",
+    "eslint-plugin-react": "^7.22.0",
+    "nodemon": "^2.0.2",
+    "prettier": "^2.2.1",
+    "eslint-config-prettier": "^7.2.0"
   }
 }

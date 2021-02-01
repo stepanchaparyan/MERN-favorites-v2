@@ -13,10 +13,6 @@ import theme from '../src/styles/theme';
 import messages_hy from './translations/hy.json';
 import messages_en from './translations/en.json';
 
-import Navbar2 from './components/Navbar2';
-import SideDrawer from './components/SideDrawer';
-import Backdrop from './components/Backdrop';
-
 if (localStorage.token) {
   setAuthToken(localStorage.token);
 }
@@ -38,8 +34,6 @@ const App = () => {
     setLocale(lang);
   };
 
-  const [sideToggle, setSideToggle] = useState(false);
-
   return (
     <IntlProvider locale={myLocale} messages={messages[myLocale]}>
       <ThemeProvider theme={theme}>
@@ -49,9 +43,6 @@ const App = () => {
               <Router>
                 <div>
                   <Navbar changeLocale={changeLocale} />
-                  <Navbar2 click={() => setSideToggle(true)} />
-                  <SideDrawer show={sideToggle} click={() => setSideToggle(false)} />
-                  <Backdrop show={sideToggle} click={() => setSideToggle(false)} />
                   <Routes />
                   <Footer />
                 </div>

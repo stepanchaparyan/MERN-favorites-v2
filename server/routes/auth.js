@@ -13,10 +13,8 @@ const User = require('../models/User');
 router.post(
   '/',
   [
-    check('email', 'Please provide a valid email')
-      .normalizeEmail()
-      .isEmail(),
-    check('password', 'Please provide the password').exists()
+    check('email', 'Please provide a valid email').normalizeEmail().isEmail(),
+    check('password', 'Please provide the password').exists(),
   ],
   async (req, res) => {
     const errors = validationResult(req);
@@ -40,7 +38,7 @@ router.post(
         { user: { id: user.id } },
         process.env.JWT_SECRET,
         {
-          expiresIn: 36000
+          expiresIn: 36000,
         },
         (err, token) => {
           if (err) throw err;
