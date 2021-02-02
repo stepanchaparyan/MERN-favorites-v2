@@ -1,14 +1,16 @@
 import { serverUrl } from '../../environment';
 
+const API = 'api';
+
 export const URL = {
-  AUTH: `${serverUrl}/auth`,
-  REGISTER: `${serverUrl}/register`,
-  FAVITEM: `${serverUrl}/favItem`,
-  FAVITEM_ADD: `${serverUrl}/favItem/add`,
-  FAVITEM_UPDATE: `${serverUrl}/favItem/update`,
-  PROFILE: `${serverUrl}/profile`,
-  PROFILE_ADD: `${serverUrl}/profile/add`,
-  PROFILE_UPDATE: `${serverUrl}/profile/update`,
-  UPLOAD: `${serverUrl}/upload`,
-  PRODUCTS: `${serverUrl}/api/products`
+  AUTH: `${serverUrl}/${API}/auth`,
+  REGISTER: `${serverUrl}/${API}/register`,
+  FAVITEM: `${serverUrl}/${API}/favItem`,
+  FAVITEM_ADD: `${serverUrl}/${API}/favItem/add`,
+  FAVITEM_UPDATE: `${serverUrl}/${API}/favItem/update`,
+  PROFILE: `${serverUrl}/${API}/profile`,
+  PROFILE_ADD: `${serverUrl}/${API}/profile/add`,
+  PROFILE_UPDATE: `${serverUrl}/${API}/profile/update`,
+  UPLOAD: `${serverUrl}/${API}/upload`,
+  PRODUCTS: `${serverUrl}/${API}/products`
 };
