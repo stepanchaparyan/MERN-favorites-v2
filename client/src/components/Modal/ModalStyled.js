@@ -11,8 +11,8 @@ export const customStyles = {
     display: 'flex',
     flexDirection: 'column',
     padding: '0',
-    width: '350px',
-    height: '200px',
+    minWidth: '350px',
+    minHeight: '200px',
     backgroundColor: '#f8f8f8'
   }
 };
@@ -24,8 +24,9 @@ export const ButtonConfirm = styled.button`
   font-weight: 600;
   font-size: 16px;
   cursor: pointer;
-  margin: 12px;
+  margin: 12px 0;
   padding: 8px;
+  min-width: 120px;
 `;
 
 export const ButtonClose = styled.button`
@@ -47,13 +48,14 @@ export const ButtonCancel = styled.button`
   font-size: 16px;
   border-radius: 4px;
   cursor: pointer;
-  margin: 12px;
+  margin: 12px 0;
   padding: 8px;
 `;
 
 export const ModalContainer = styled.div`
   display: flex;
   flex-direction: column;
+  width: ${props => (props.isBigSize ? '450px' : 'auto')};
 `;
 
 export const ModalTitleContainer = styled.div`
@@ -82,8 +84,15 @@ export const ModalTextContainer = styled.div`
 
 export const ModalButtonsContainer = styled.div`
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   border-top: 1px solid lightGray;
-  width: 94%;
-  margin: 0 3%;
+`;
+
+export const FooterButtons = styled.div`
+  display: flex;
+  justify-content: 'space-between';
+`;
+
+export const FooterContainer = styled.div`
+  width: 100%;
 `;

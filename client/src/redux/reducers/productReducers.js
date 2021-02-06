@@ -18,14 +18,14 @@ export const productsReducer = (state = { products: [] }, { type, payload }) => 
         error: payload
       };
 
-    case actionTypes.Add_PRODUCT_REQUEST:
+    case actionTypes.ADD_PRODUCT_REQUEST:
       return {
         loading: true,
-        products: []
+        ...state
       };
     case actionTypes.ADD_PRODUCT_SUCCESS:
       return {
-        ...state,
+        state,
         products: [...state.products, payload],
         loading: false
       };

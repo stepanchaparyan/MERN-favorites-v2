@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import { useSelector, useDispatch } from 'react-redux';
-import { getProductDetails } from '../redux/actions/productActions';
+import { getProductDetails, deleteProduct } from '../redux/actions/productActions';
 import { addToCart } from '../redux/actions/cartActions';
 import {
   Container,
@@ -38,6 +38,11 @@ const ProductScreen = ({ match, history }) => {
     history.push('/cart');
   };
 
+  const deleteHandler = () => {
+    dispatch(deleteProduct(product._id));
+    history.push('/products');
+  };
+
   return (
     <Container>
       {loading ? (
@@ -50,10 +55,11 @@ const ProductScreen = ({ match, history }) => {
             <Image src={product.imageUrl} alt={product.name} />
           </ImageContainer>
           <InfoContainer>
-            <Name>PlayStation 5</Name>
+            <Name>{product.name}</Name>
             <Price>Price: ${product.price}</Price>
             <Description>Description: {product.description}</Description>
           </InfoContainer>
+          <button onClick={deleteHandler}>Delete product</button>
           <CartContainer>
             <CartPrice>
               Price:<span>${product.price}</span>

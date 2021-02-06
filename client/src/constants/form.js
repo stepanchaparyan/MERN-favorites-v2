@@ -20,7 +20,10 @@ export const FORM = {
       PASSWORD_2: 'password2',
       NAME: 'name',
       SURNAME: 'surname',
-      PHONE_NUMBER: 'phoneNumber'
+      PHONE_NUMBER: 'phoneNumber',
+      PRICE: 'price',
+      COUNT_IN_STOCK: 'countInStock',
+      IMAGE_URL: 'imageUrl'
     }
   },
   SELECT: {

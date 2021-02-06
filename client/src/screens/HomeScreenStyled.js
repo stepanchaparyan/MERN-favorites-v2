@@ -1,14 +1,25 @@
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
+import { Form, Field } from 'formik';
+import { tabletUp } from '../styles/mediaQueries/mixins';
 
 export const Container = styled.div`
   max-width: 1300px;
-  margin: 1rem auto;
+  margin: auto;
+  padding-bottom: 60px;
 `;
 
-export const Title = styled.div`
-  font-size: 1.5rem;
-  margin-left: 8px;
+export const FormContainer = styled.div`
+  margin: 24px 24px 0 24px;
+`;
+
+export const AddProduct = styled.div`
+  font-size: 36px;
+  font-weight: bold;
+  margin: 24px auto;
+  text-align: center;
+  color: ${props => props.theme.cadetblue};
+  cursor: pointer;
 `;
 
 export const Context = styled.div`
@@ -53,4 +64,28 @@ export const LinkContainer = styled.div`
   font-size: 1.2rem;
   padding-right: 24px;
   justify-content: flex-end;
+`;
+
+export const FormStyled = styled(Form)`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 24px;
+`;
+
+export const FieldStyled = styled(Field)`
+  border: 0px;
+  border-bottom: 1px solid ${props => props.theme.cadetblue};
+  width: 50%;
+  padding: 7px 10px;
+  margin: 2px;
+  outline: none;
+  ${tabletUp`
+    width: 45%;
+  `};
+`;
+
+export const ErrorMessages = styled.div`
+  color: red;
+  font-size: 12px;
 `;

@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import './CartItem.css';
 import { Link } from 'react-router-dom';
 
@@ -28,6 +29,18 @@ const CartItem = ({ item, qtyChangeHandler, removeHandler }) => {
       </button>
     </div>
   );
+};
+
+CartItem.propTypes = {
+  item: PropTypes.object,
+  qtyChangeHandler: PropTypes.func,
+  removeHandler: PropTypes.func
+};
+
+CartItem.defaultProps = {
+  item: {},
+  qtyChangeHandler: () => {},
+  removeHandler: () => {}
 };
 
 export default CartItem;

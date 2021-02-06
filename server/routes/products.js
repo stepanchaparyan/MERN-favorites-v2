@@ -48,7 +48,6 @@ router.post(
     }
 
     const { name, description, price, countInStock, imageUrl } = req.body;
-
     try {
       const newProduct = new Product({
         createdBy: req.user.id,

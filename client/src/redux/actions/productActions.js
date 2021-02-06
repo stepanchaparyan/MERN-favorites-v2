@@ -44,6 +44,7 @@ export const removeProductDetails = () => dispatch => {
   dispatch({ type: actionTypes.GET_PRODUCT_DETAILS_RESET });
 };
 
+// add product
 export const addProduct = productData => {
   return async dispatch => {
     try {
@@ -61,6 +62,30 @@ export const addProduct = productData => {
     } catch (error) {
       dispatch({
         type: actionTypes.ADD_PRODUCT_FAIL,
+        error: error.response && error.response.data.message
+      });
+    }
+  };
+};
+
+//  delete product
+export const deleteProduct = id => {
+  return async dispatch => {
+    try {
+      dispatch({
+        type: actionTypes.DELETE_PRODUCT_REQUEST,
+        loading: true
+      });
+
+      const { data } = await axios.delete(`${PRODUCTS}/delete/${id}`, HEADER_CONFIG);
+      dispatch({
+        type: actionTypes.DELETE_PRODUCT_SUCCESS,
+        payload: data
+      });
+    } catch (error) {
+      dispatch({
+        type: actionTypes.DELETE_PRODUCT_FAIL,
+        loading: false,
         error: error.response && error.response.data.message
       });
     }
