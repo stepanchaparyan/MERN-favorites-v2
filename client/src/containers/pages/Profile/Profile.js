@@ -4,7 +4,7 @@ import AuthContext from '../../../context/authContext/authContext';
 import ProfileContext from '../../../context/profileContext/profileContext';
 import ProfileForm from '../ProfileForm/ProfileForm';
 import FileUpload from '../ProfileForm/FileUpload';
-import Message from '../../Message/Message';
+import Message from '../../../components/Message/Message';
 import moment from 'moment';
 import {
   Container,

@@ -7,7 +7,7 @@ const auth = require('./middleware/auth');
 
 if (process.env.NODE_ENV !== 'production') {
   require('dotenv').config();
-};
+}
 
 app.use(cors());
 
@@ -19,12 +19,13 @@ app.use(fileUpload());
 app.use(express.json({ extended: true }));
 
 // API routes
-app.use('/register', require('./routes/register'));
-app.use('/auth', require('./routes/auth'));
-app.use('/favItem', auth, require('./routes/favItem'));
-app.use('/profile', auth, require('./routes/profile'));
-app.use('/upload', require('./routes/upload'));
+app.use('/api/register', require('./routes/register'));
+app.use('/api/auth', require('./routes/auth'));
+app.use('/api/favItem', auth, require('./routes/favItem'));
+app.use('/api/profile', auth, require('./routes/profile'));
+app.use('/api/upload', require('./routes/upload'));
 app.use('/api/books', auth, require('./routes/books'));
+app.use('/api/products', auth, require('./routes/products'));
 
 // use static files
 app.use('/', express.static(path.join('..', 'client', 'build')));

@@ -11,7 +11,10 @@ import {
   Music,
   Films,
   Books,
-  Other
+  Other,
+  PieContainer,
+  Pie,
+  Pie2
 } from './WelcomeStyled';
 import Img from '../../../assets/elephant.png';
 import localization from './localization';
@@ -36,6 +39,23 @@ const Welcome = () => {
           <LinkStyled to={LINK.TO.HOME}>{formatMessage(localization.createYourCard)}</LinkStyled>
         )}
         <Logo src={Img}></Logo>
+        <PieContainer>
+          <Pie per={10} inherit="inherit">
+            <Pie2></Pie2>
+          </Pie>
+          <Pie per={25} inherit="inherit">
+            <Pie2></Pie2>
+          </Pie>
+          <Pie per={50} inherit="inherit">
+            <Pie2></Pie2>
+          </Pie>
+          <Pie per={75} inherit="none">
+            <Pie2></Pie2>
+          </Pie>
+          <Pie per={95} inherit="none">
+            <Pie2></Pie2>
+          </Pie>
+        </PieContainer>
       </Module>
     </Container>
   );

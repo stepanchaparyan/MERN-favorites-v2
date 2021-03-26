@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
-import { BrowserRouter as Router } from 'react-router-dom';
+import { HashRouter as Router } from 'react-router-dom';
 import { IntlProvider } from 'react-intl';
 import { ThemeProvider } from 'styled-components';
-import Navbar from './components/layouts/Navbar/Navbar';
-import Footer from './components/layouts/Footer/Footer';
+import Navbar from './containers/layouts/Navbar/Navbar';
+import Footer from './containers/layouts/Footer/Footer';
 import Routes from './Routes';
 import AuthState from './context/authContext/AuthState';
 import FavItemState from './context/favItemContext/favItemState';

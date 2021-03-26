@@ -25,7 +25,10 @@ const CustomModal = ({
   buttonConfirmText,
   buttonCancelText,
   titleBgColor,
-  cancelButtonColor
+  cancelButtonColor,
+  children,
+  isBigSize,
+  shouldShowFooter
 }) => {
   return (
     <Modal
@@ -33,23 +36,27 @@ const CustomModal = ({
       onRequestClose={closeModal}
       style={customStyles}
       contentLabel={CONTENT_LABEL}
+      ariaHideApp={false}
     >
-      <ModalContainer>
+      <ModalContainer isBigSize={isBigSize}>
         <ModalTitleContainer bgColor={titleBgColor}>
           <ModalTitle>{title}</ModalTitle>
           <ButtonClose onClick={closeModal} bgColor={titleBgColor}>
             {X}
           </ButtonClose>
         </ModalTitleContainer>
-        <ModalTextContainer>{text}</ModalTextContainer>
-        <ModalButtonsContainer>
-          {buttonConfirmText && (
-            <ButtonConfirm onClick={onConfirm}>{buttonConfirmText}</ButtonConfirm>
-          )}
-          <ButtonCancel onClick={closeModal} color={cancelButtonColor}>
-            {buttonCancelText}
-          </ButtonCancel>
-        </ModalButtonsContainer>
+        {text && <ModalTextContainer>{text}</ModalTextContainer>}
+        {children}
+        {shouldShowFooter && (
+          <ModalButtonsContainer>
+            <ButtonCancel onClick={closeModal} color={cancelButtonColor}>
+              {buttonCancelText}
+            </ButtonCancel>
+            {buttonConfirmText && (
+              <ButtonConfirm onClick={onConfirm}>{buttonConfirmText}</ButtonConfirm>
+            )}
+          </ModalButtonsContainer>
+        )}
       </ModalContainer>
     </Modal>
   );
@@ -64,7 +71,10 @@ CustomModal.propTypes = {
   buttonConfirmText: PropTypes.string,
   buttonCancelText: PropTypes.string,
   titleBgColor: PropTypes.string,
-  cancelButtonColor: PropTypes.string
+  cancelButtonColor: PropTypes.string,
+  children: PropTypes.node,
+  isBigSize: PropTypes.bool,
+  shouldShowFooter: PropTypes.bool
 };
 
 CustomModal.defaultProps = {
@@ -72,7 +82,9 @@ CustomModal.defaultProps = {
   title: DEFAULT_PROPS.TITLE,
   text: DEFAULT_PROPS.PLEASE_CONFIRM,
   buttonConfirmText: DEFAULT_PROPS.CONFIRM,
-  buttonCancelText: DEFAULT_PROPS.CANCEL
+  buttonCancelText: DEFAULT_PROPS.CANCEL,
+  isBigSize: false,
+  shouldShowFooter: true
 };
 
 export default CustomModal;

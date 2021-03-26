@@ -44,9 +44,14 @@ const Navbar = ({ changeLocale }) => {
   const authLinks = (
     <NavLinks open={open}>
       {isAuthencated && (
-        <LinkStyled to={LINK.TO.PROFILE_PAGE}>
-          <UserName>{user && user.name}</UserName>
-        </LinkStyled>
+        <>
+          <LinkStyled to={`${LINK.TO.PRODUCTS}`}>
+            <UserName>{formatMessage(localization.products)}</UserName>
+          </LinkStyled>
+          <LinkStyled to={LINK.TO.PROFILE_PAGE}>
+            <UserName>{user && user.name}</UserName>
+          </LinkStyled>
+        </>
       )}
       <FlagContainer>
         <Flag src={armFlag} onClick={() => changeLocale(ARMENIAN)}></Flag>

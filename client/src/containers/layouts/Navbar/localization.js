@@ -12,5 +12,13 @@ export default defineMessages({
   signUp: {
     id: 'navbar.signUp',
     defaultMessage: 'SignUp'
+  },
+  books: {
+    id: 'navbar.books',
+    defaultMessage: 'BOOKS'
+  },
+  products: {
+    id: 'navbar.products',
+    defaultMessage: 'PRODUCTS'
   }
 });

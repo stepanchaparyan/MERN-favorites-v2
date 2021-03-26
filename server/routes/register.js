@@ -12,11 +12,9 @@ const User = require('../models/User');
 router.post(
   '/',
   [
-    check('name', 'Please provide a name')
-      .not()
-      .isEmpty(),
+    check('name', 'Please provide a name').not().isEmpty(),
     check('email', 'Please provide an email').isEmail(),
-    check('password', 'Password at least 6 character long').isLength({ min: 6 })
+    check('password', 'Password at least 6 character long').isLength({ min: 6 }),
   ],
   async (req, res) => {
     const errors = validationResult(req);
@@ -35,7 +33,7 @@ router.post(
       user = new User({
         name,
         email,
-        password
+        password,
       });
 
       // password encryption
@@ -50,7 +48,7 @@ router.post(
         { user: { id: user.id } },
         process.env.JWT_SECRET,
         {
-          expiresIn: 36000
+          expiresIn: 36000,
         },
         (err, token) => {
           if (err) throw err;
