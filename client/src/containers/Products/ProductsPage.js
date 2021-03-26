@@ -2,8 +2,8 @@ import React, { useEffect, useMemo, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { Formik, ErrorMessage } from 'formik';
 import { useIntl } from 'react-intl';
-import Product from '../components/Product';
-import { getProducts, addProduct } from '../redux/actions/productActions';
+import Product from './Product';
+import { getProducts, addProduct } from '../../redux/actions/productActions';
 import {
   Container,
   Context,
@@ -16,12 +16,12 @@ import {
   FieldStyled,
   ErrorMessages,
   AddProduct
-} from './HomeScreenStyled';
-import CustomModal from '../components/Modal/Modal';
-import ModalFooter from '../components/Modal/ModalFooter';
-import theme from '../styles/theme';
+} from './ProductsPageStyled';
+import CustomModal from '../../components/Modal/Modal';
+import ModalFooter from '../../components/Modal/ModalFooter';
+import theme from '../../styles/theme';
 import productsFormikProps from './ProductsFormikProps';
-import { FORM } from '../constants';
+import { FORM } from '../../constants';
 import localization from './localization';
 
 const { INPUT } = FORM;

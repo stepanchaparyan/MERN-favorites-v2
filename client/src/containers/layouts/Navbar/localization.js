@@ -16,5 +16,9 @@ export default defineMessages({
   books: {
     id: 'navbar.books',
     defaultMessage: 'BOOKS'
+  },
+  products: {
+    id: 'navbar.products',
+    defaultMessage: 'PRODUCTS'
   }
 });

@@ -1,6 +1,6 @@
 import React, { useState, useContext, useEffect } from 'react';
 import { useIntl } from 'react-intl';
-import Progress from '../../Progress/Progress';
+import Progress from '../../../components/Progress/Progress';
 import ProfileContext from '../../../context/profileContext/profileContext';
 import {
   Container,
@@ -15,7 +15,7 @@ import {
 import EditIcon from '../../../assets/icon-edit.png';
 import UploadIcon from '../../../assets/icon-upload.png';
 import Modal from 'react-modal';
-import CustomModal from '../../Modal/Modal';
+import CustomModal from '../../../components/Modal/Modal';
 import localization from './localization';
 import theme from '../../../styles/theme';
 import { FORM, FILE_UPLOAD, MODAL } from '../../../constants';

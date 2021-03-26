@@ -1,15 +1,20 @@
-import './CartScreen.css';
 import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { Link } from 'react-router-dom';
+import CartItem from './CardItem';
+import { addToCart, removeFromCart } from '../../../redux/actions/cartActions';
+import {
+  Container,
+  LeftPart,
+  CardTitle,
+  EmptyCard,
+  RightPart,
+  Info,
+  ButtonContainer,
+  ButtonStyled
+} from './CardPageStyled';
 
-// Components
-import CartItem from '../components/CartItem';
-
-// Actions
-import { addToCart, removeFromCart } from '../redux/actions/cartActions';
-
-const CartScreen = () => {
+const CardPage = () => {
   const dispatch = useDispatch();
 
   const cart = useSelector(state => state.cart);
@@ -35,14 +40,14 @@ const CartScreen = () => {
 
   return (
     <>
-      <div className="cartscreen">
-        <div className="cartscreen__left">
-          <h2>Shopping Cart</h2>
+      <Container>
+        <LeftPart>
+          <CardTitle>Shopping Cart</CardTitle>
 
           {cartItems.length === 0 ? (
-            <div>
+            <EmptyCard>
               Your Cart Is Empty <Link to="/">Go Back</Link>
-            </div>
+            </EmptyCard>
           ) : (
             cartItems.map(item => (
               <CartItem
@@ -53,20 +58,20 @@ const CartScreen = () => {
               />
             ))
           )}
-        </div>
+        </LeftPart>
 
-        <div className="cartscreen__right">
-          <div className="cartscreen__info">
+        <RightPart>
+          <Info>
             <p>Subtotal ({getCartCount()}) items</p>
             <p>${getCartSubTotal()}</p>
-          </div>
-          <div>
-            <button>Proceed To Checkout</button>
-          </div>
-        </div>
-      </div>
+          </Info>
+          <ButtonContainer>
+            <ButtonStyled>Proceed To Checkout</ButtonStyled>
+          </ButtonContainer>
+        </RightPart>
+      </Container>
     </>
   );
 };
 
-export default CartScreen;
+export default CardPage;

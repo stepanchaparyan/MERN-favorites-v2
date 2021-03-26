@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
 import { Form, Field } from 'formik';
-import { tabletUp } from '../styles/mediaQueries/mixins';
+import { tabletUp } from '../../styles/mediaQueries/mixins';
 
 export const Container = styled.div`
   max-width: 1300px;

@@ -46,7 +46,7 @@ const Navbar = ({ changeLocale }) => {
       {isAuthencated && (
         <>
           <LinkStyled to={`${LINK.TO.PRODUCTS}`}>
-            <UserName>{formatMessage(localization.books)}</UserName>
+            <UserName>{formatMessage(localization.products)}</UserName>
           </LinkStyled>
           <LinkStyled to={LINK.TO.PROFILE_PAGE}>
             <UserName>{user && user.name}</UserName>

@@ -1,18 +1,18 @@
 import React, { useContext, useEffect } from 'react';
 import { Route, Switch } from 'react-router-dom';
-import Home from './components/pages/Home/Home';
-import Register from './components/pages/Register/Register';
-import Login from './components/pages/Login/Login';
-import PageNotFound from './components/pages/PageNotFound/PageNotFound';
-import Welcome from './components/pages/Welcome/Welcome';
-import Profile from './components/pages/Profile/Profile';
-import PrivateRoute from './components/routing/PrivateRoute';
+import Home from './containers/pages/Home/Home';
+import Register from './containers/pages/Register/Register';
+import Login from './containers/pages/Login/Login';
+import PageNotFound from './containers/pages/PageNotFound/PageNotFound';
+import Welcome from './containers/pages/Welcome/Welcome';
+import Profile from './containers/pages/Profile/Profile';
+import PrivateRoute from './routing/PrivateRoute';
 import AuthContext from './context/authContext/authContext';
-import Books from './components/Books/Books';
-import BookDetail from './components/Books/BookDetail';
-import HomeScreen from './screens/HomeScreen';
-import ProductScreen from './screens/ProductScreen';
-import CartScreen from './screens/CartScreen';
+import Books from './containers/Books/Books';
+import BookDetail from './containers/Books/BookDetail';
+import ProductsPage from './containers/Products/ProductsPage';
+import ProductDetails from './containers/Products/ProductDetails';
+import CardPage from './containers/Products/Card/CardPage';
 
 const App = () => {
   const { loadUser } = useContext(AuthContext);
@@ -29,9 +29,9 @@ const App = () => {
       <Route exact path="/login" component={Login} />
       <PrivateRoute exact path="/profilePage" component={Profile} />
       <PrivateRoute exact path="/books" component={Books} />
-      <PrivateRoute exact path="/products" component={HomeScreen} />
-      <PrivateRoute exact path="/product/:id" component={ProductScreen} />
-      <PrivateRoute exact path="/cart" component={CartScreen} />
+      <PrivateRoute exact path="/products" component={ProductsPage} />
+      <PrivateRoute exact path="/product/:id" component={ProductDetails} />
+      <PrivateRoute exact path="/cart" component={CardPage} />
       <Route exact path="*" component={PageNotFound} />
     </Switch>
   );

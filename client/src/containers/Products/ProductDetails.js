@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import { useSelector, useDispatch } from 'react-redux';
-import { getProductDetails, deleteProduct } from '../redux/actions/productActions';
-import { addToCart } from '../redux/actions/cartActions';
+import { getProductDetails, deleteProduct } from '../../redux/actions/productActions';
+import { addToCart } from '../../redux/actions/cartActions';
 import {
   Container,
   ImageContainer,
@@ -18,7 +18,7 @@ import {
   StyledButton,
   SelectContainer,
   ButtonContainer
-} from './ProductScreenStyled';
+} from './ProductDetailsStyled';
 
 const ProductScreen = ({ match, history }) => {
   const [qty, setQty] = useState(1);
