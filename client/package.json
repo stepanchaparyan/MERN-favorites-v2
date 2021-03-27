@@ -4,11 +4,9 @@
   "description": "Mongo, Express, React, Node",
   "main": "index.js",
   "scripts": {
-    "server": "cd ../server && npm run dev",
-    "client": "cross-env NODE_ENV=development webpack-dev-server --mode development --open",
-    "start": "npm-run-all --parallel server client",
-    "build": "rimraf build && cross-env NODE_ENV=production webpack --mode production",
-    "dev": "rimraf build && cross-env NODE_ENV=development webpack --mode development",
+    "start": "cross-env NODE_ENV=development webpack-dev-server --mode development --open",
+    "build:prod": "rimraf build && cross-env NODE_ENV=production webpack --mode production",
+    "build:dev": "rimraf build && cross-env NODE_ENV=development webpack --mode development",
     "watch": "rimraf build && cross-env NODE_ENV=development webpack --mode development --watch",
     "stats": "webpack --json > stats.json && webpack-bundle-analyzer stats.json",
     "eslint": "eslint .",
@@ -20,7 +18,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/stepanchaparyan/MERN-favorites.git"
+    "url": "git+https://github.com/stepanchaparyan/MERN-favorites-v2.git"
   },
   "keywords": [
     "mongo",
@@ -31,9 +29,9 @@
   "author": "Stepan Chaparyan",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/stepanchaparyan/MERN-favorites/issues"
+    "url": "https://github.com/stepanchaparyan/MERN-favorites-v2/issues"
   },
-  "homepage": "https://github.com/stepanchaparyan/MERN-favorites#readme",
+  "homepage": "https://github.com/stepanchaparyan/MERN-favorites-v2#readme",
   "husky": {
     "hooks": {
       "pre-commit": "lint-staged"
