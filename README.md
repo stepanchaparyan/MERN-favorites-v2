@@ -174,27 +174,6 @@ $ npm start
 │   ├── package.json
 │   ├── package-lock.json
 │   └── webpack.config.js
-├── server
-|   ├── middleware
-|   |   └── auth.js
-|   ├── models
-|   │   ├── favItem.js
-|   │   ├── Profile.js
-|   │   └── User.js
-|   ├── mongoConfig
-|   |   └── mongoDB.js
-|   ├── node_modules
-|   |   └── ...
-|   ├── routes
-|   │   ├── auth.js
-|   │   ├── favItem.js
-|   │   ├── profile.js
-|   │   ├── register.js
-|   │   └── upload.js
-|   ├── .gitignore
-|   ├── app.js
-|   ├── package.json
-|   └── package-lock.json
 ├── UML_diagrams
 |       ├── Models.pdf
 |       ├── REST.pdf
