@@ -51,9 +51,11 @@
     "@formatjs/intl-numberformat": "^5.3.0",
     "@formatjs/intl-pluralrules": "^3.2.2",
     "axios": "^0.21.1",
+    "cssnano-webpack-plugin": "^1.0.3",
     "faker": "^4.1.0",
     "formik": "^2.2.6",
     "fs-extra": "^9.0.1",
+    "image-webpack-loader": "^7.0.1",
     "lodash": "^4.17.15",
     "moment": "^2.24.0",
     "normalize.css": "^8.0.1",
@@ -72,6 +74,8 @@
     "redux-thunk": "^2.3.0",
     "rimraf": "^3.0.2",
     "styled-components": "^5.1.1",
+    "uglifyjs-webpack-plugin": "^2.2.0",
+    "webpack-dashboard": "^3.3.1",
     "yup": "^0.32.8"
   },
   "devDependencies": {

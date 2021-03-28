@@ -5,7 +5,9 @@ const CopyWebpackPlugin = require('copy-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const OptimizeCssAssetWebpackPlugin = require('optimize-css-assets-webpack-plugin');
 const TerserWebpackPlugin = require('terser-webpack-plugin');
-const { BundleAnalyzerPlugin } = require('webpack-bundle-analyzer');
+const DashboardPlugin = require('webpack-dashboard/plugin');
+const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
+const CssnanoPlugin = require('cssnano-webpack-plugin');
 
 const isDev = process.env.NODE_ENV === 'development';
 const isProd = !isDev;
@@ -13,12 +15,19 @@ const isProd = !isDev;
 const optimization = () => {
   const config = {
     splitChunks: {
-      chunks: 'all'
+      chunks: 'all',
+      minSize: 10000,
+      maxSize: 500000
     }
   };
 
   if (isProd) {
-    config.minimizer = [new OptimizeCssAssetWebpackPlugin(), new TerserWebpackPlugin()];
+    config.minimizer = [
+      new OptimizeCssAssetWebpackPlugin(),
+      new TerserWebpackPlugin(),
+      new UglifyJsPlugin(),
+      new CssnanoPlugin()
+    ];
   }
   return config;
 };
@@ -88,19 +97,16 @@ const plugins = () => {
     ]),
     new MiniCssExtractPlugin({
       filename: filename('css')
-    })
+    }),
+    new DashboardPlugin()
   ];
-
-  if (isProd) {
-    base.push(new BundleAnalyzerPlugin());
-  }
 
   return base;
 };
 
 module.exports = {
   context: path.resolve(__dirname, 'src'),
-  mode: 'development',
+  mode: process.env.NODE_ENV,
   entry: {
     main: ['@babel/polyfill', './index.js']
   },
@@ -109,7 +115,7 @@ module.exports = {
     path: path.resolve(__dirname, 'build')
   },
   resolve: {
-    extensions: ['.mjs', '.js', '.jsx', '.json', '.png', 'jpg', 'jpeg', 'svg']
+    extensions: ['.mjs', '.js', '.jsx', '.json', '.png', 'jpg', 'jpeg', 'svg', 'webp', 'jp2']
   },
   optimization: optimization(),
   devServer: {
@@ -120,6 +126,11 @@ module.exports = {
   },
   devtool: isDev ? 'source-map' : '',
   plugins: plugins(),
+  performance: {
+    hints: isProd ? 'warning' : false,
+    maxEntrypointSize: 512000,
+    maxAssetSize: 512000
+  },
   module: {
     rules: [
       {
@@ -135,8 +146,31 @@ module.exports = {
         use: cssLoaders('sass-loader')
       },
       {
-        test: /\.(png|jpe?g|svg|gif)$/,
-        use: ['file-loader']
+        test: /\.(png|jpe?g|svg|gif|webp|jp2)$/,
+        use: [
+          'file-loader',
+          {
+            loader: 'image-webpack-loader',
+            options: {
+              mozjpeg: {
+                progressive: true
+              },
+              optipng: {
+                enabled: false
+              },
+              pngquant: {
+                quality: [0.65, 0.9],
+                speed: 4
+              },
+              gifsicle: {
+                interlaced: false
+              },
+              webp: {
+                quality: 96
+              }
+            }
+          }
+        ]
       },
       {
         test: /\.(ttf|woff|woff2|eot)$/,
