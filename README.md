@@ -25,7 +25,7 @@ $ npm start
 # Project structure
 ```sh
 .
-├── client
+├── client 
 │   ├── .storybook
 |   |   ├── addons.js
 |   |   └── config.js
