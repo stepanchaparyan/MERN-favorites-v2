@@ -28,6 +28,8 @@ Netlify - https://favorites-page.netlify.app
 Firebase - https://favorites-page.web.app
 ```
 
+[![Netlify Status](https://api.netlify.com/api/v1/badges/ef54a94d-46a0-4b4d-9d67-73fade3287d6/deploy-status)](https://app.netlify.com/sites/favorites-page/deploys)
+
 # Project structure
 ```sh
 .
