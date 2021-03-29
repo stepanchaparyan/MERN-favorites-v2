@@ -8,7 +8,7 @@ Simple web page about your favourite items
 ```
 Webpack, ESLint, Prettier
 Javascript, ES6,7,8
-React, hooks, useContext
+React, hooks, useContext, redux
 Styled Components
 Node, Express, Mongo, Mangoose
 Jest, Enzhyme
@@ -20,6 +20,12 @@ StoryBook
 $ cd  client
 $ npm install
 $ npm start
+```
+
+# Project is running on
+```sh
+Netlify - https://favorites-page.netlify.app
+Firebase - https://favorites-page.web.app
 ```
 
 # Project structure
