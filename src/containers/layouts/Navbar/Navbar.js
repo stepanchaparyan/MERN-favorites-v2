@@ -1,8 +1,9 @@
-import React, { useContext, useState, useRef } from 'react';
+import React, { useEffect, useContext, useState, useRef } from 'react';
 import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import { useIntl } from 'react-intl';
 import AuthContext from '../../../context/authContext/authContext';
+import ProfileContext from '../../../context/profileContext/profileContext';
 import {
   Container,
   Logo,
@@ -26,10 +27,15 @@ const { ARMENIAN, ENGLISH } = LANGUAGES;
 
 const Navbar = ({ changeLocale }) => {
   const { user, logout, isAuthencated, clearErrors } = useContext(AuthContext);
+  const { profile, getProfile } = useContext(ProfileContext);
   const [open, setOpen] = useState(false);
   const { formatMessage } = useIntl();
   const alt = 'logo';
   const node = useRef();
+
+  useEffect(() => {
+    getProfile();
+  }, []);
 
   useOnClickOutside(node, () => setOpen(false));
 
@@ -45,11 +51,14 @@ const Navbar = ({ changeLocale }) => {
     <NavLinks open={open}>
       {isAuthencated && (
         <>
+          <LinkStyled to={`${LINK.TO.HOME}`}>
+            <UserName>{formatMessage(localization.cards)}</UserName>
+          </LinkStyled>
           <LinkStyled to={`${LINK.TO.PRODUCTS}`}>
             <UserName>{formatMessage(localization.products)}</UserName>
           </LinkStyled>
           <LinkStyled to={LINK.TO.PROFILE_PAGE}>
-            <UserName>{user && user.name}</UserName>
+            <UserName>{profile && profile[0].name}</UserName>
           </LinkStyled>
         </>
       )}

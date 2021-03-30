@@ -20,5 +20,9 @@ export default defineMessages({
   products: {
     id: 'navbar.products',
     defaultMessage: 'PRODUCTS'
+  },
+  cards: {
+    id: 'navbar.cards',
+    defaultMessage: 'CARDS'
   }
 });

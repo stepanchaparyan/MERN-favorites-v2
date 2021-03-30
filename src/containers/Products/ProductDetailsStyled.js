@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 
 export const Container = styled.div`
   max-width: 1300px;
-  margin: 1rem auto;
+  padding-top: 24px;
   display: flex;
 `;
 
