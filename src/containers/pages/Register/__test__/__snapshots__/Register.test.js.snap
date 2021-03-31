@@ -60,8 +60,6 @@ exports[`Register component test with Enzyme renders snapshot 1`] = `
             },
             "spec": Object {
               "abortEarly": true,
-              "label": undefined,
-              "meta": undefined,
               "nullable": false,
               "presence": "required",
               "recursive": true,
@@ -97,8 +95,6 @@ exports[`Register component test with Enzyme renders snapshot 1`] = `
             },
             "spec": Object {
               "abortEarly": true,
-              "label": undefined,
-              "meta": undefined,
               "nullable": false,
               "presence": "required",
               "recursive": true,
@@ -134,8 +130,6 @@ exports[`Register component test with Enzyme renders snapshot 1`] = `
             },
             "spec": Object {
               "abortEarly": true,
-              "label": undefined,
-              "meta": undefined,
               "nullable": false,
               "presence": "required",
               "recursive": true,
@@ -183,8 +177,6 @@ exports[`Register component test with Enzyme renders snapshot 1`] = `
             },
             "spec": Object {
               "abortEarly": true,
-              "label": undefined,
-              "meta": undefined,
               "nullable": false,
               "presence": "required",
               "recursive": true,
@@ -202,8 +194,6 @@ exports[`Register component test with Enzyme renders snapshot 1`] = `
         },
         "spec": Object {
           "abortEarly": true,
-          "label": undefined,
-          "meta": undefined,
           "nullable": false,
           "presence": "optional",
           "recursive": true,
@@ -230,9 +220,10 @@ exports[`Register component test with Enzyme renders snapshot 1`] = `
           Object {
             "$$typeof": Symbol(react.forward_ref),
             "attrs": Array [],
-            "componentStyle": ComponentStyle {
-              "baseHash": -1474970742,
-              "componentId": "sc-Axmtr",
+            "componentStyle": e {
+              "baseHash": 1059715860,
+              "baseStyle": undefined,
+              "componentId": "sc-iBPRYJ",
               "isStatic": false,
               "rules": Array [
                 "color:red;width:30%;font-size:12px;",
@@ -243,7 +234,7 @@ exports[`Register component test with Enzyme renders snapshot 1`] = `
             "foldedComponentIds": Array [],
             "render": [Function],
             "shouldForwardProp": undefined,
-            "styledComponentId": "sc-Axmtr",
+            "styledComponentId": "sc-iBPRYJ",
             "target": "div",
             "toString": [Function],
             "warnTooManyClasses": [Function],
@@ -263,9 +254,10 @@ exports[`Register component test with Enzyme renders snapshot 1`] = `
           Object {
             "$$typeof": Symbol(react.forward_ref),
             "attrs": Array [],
-            "componentStyle": ComponentStyle {
-              "baseHash": -1474970742,
-              "componentId": "sc-Axmtr",
+            "componentStyle": e {
+              "baseHash": 1059715860,
+              "baseStyle": undefined,
+              "componentId": "sc-iBPRYJ",
               "isStatic": false,
               "rules": Array [
                 "color:red;width:30%;font-size:12px;",
@@ -276,7 +268,7 @@ exports[`Register component test with Enzyme renders snapshot 1`] = `
             "foldedComponentIds": Array [],
             "render": [Function],
             "shouldForwardProp": undefined,
-            "styledComponentId": "sc-Axmtr",
+            "styledComponentId": "sc-iBPRYJ",
             "target": "div",
             "toString": [Function],
             "warnTooManyClasses": [Function],
@@ -296,9 +288,10 @@ exports[`Register component test with Enzyme renders snapshot 1`] = `
           Object {
             "$$typeof": Symbol(react.forward_ref),
             "attrs": Array [],
-            "componentStyle": ComponentStyle {
-              "baseHash": -1474970742,
-              "componentId": "sc-Axmtr",
+            "componentStyle": e {
+              "baseHash": 1059715860,
+              "baseStyle": undefined,
+              "componentId": "sc-iBPRYJ",
               "isStatic": false,
               "rules": Array [
                 "color:red;width:30%;font-size:12px;",
@@ -309,7 +302,7 @@ exports[`Register component test with Enzyme renders snapshot 1`] = `
             "foldedComponentIds": Array [],
             "render": [Function],
             "shouldForwardProp": undefined,
-            "styledComponentId": "sc-Axmtr",
+            "styledComponentId": "sc-iBPRYJ",
             "target": "div",
             "toString": [Function],
             "warnTooManyClasses": [Function],
@@ -329,9 +322,10 @@ exports[`Register component test with Enzyme renders snapshot 1`] = `
           Object {
             "$$typeof": Symbol(react.forward_ref),
             "attrs": Array [],
-            "componentStyle": ComponentStyle {
-              "baseHash": -1474970742,
-              "componentId": "sc-Axmtr",
+            "componentStyle": e {
+              "baseHash": 1059715860,
+              "baseStyle": undefined,
+              "componentId": "sc-iBPRYJ",
               "isStatic": false,
               "rules": Array [
                 "color:red;width:30%;font-size:12px;",
@@ -342,7 +336,7 @@ exports[`Register component test with Enzyme renders snapshot 1`] = `
             "foldedComponentIds": Array [],
             "render": [Function],
             "shouldForwardProp": undefined,
-            "styledComponentId": "sc-Axmtr",
+            "styledComponentId": "sc-iBPRYJ",
             "target": "div",
             "toString": [Function],
             "warnTooManyClasses": [Function],

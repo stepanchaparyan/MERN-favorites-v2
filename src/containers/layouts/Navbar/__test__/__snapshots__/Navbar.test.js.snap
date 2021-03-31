@@ -14,11 +14,23 @@ exports[`Navbar component test with Enzyme renders snapshot 1`] = `
     open={false}
   >
     <Styled(Link)
-      to="/profilePage"
+      to="/home"
     >
       <styled.div>
-        testName
+        CARDS
       </styled.div>
+    </Styled(Link)>
+    <Styled(Link)
+      to="/products"
+    >
+      <styled.div>
+        PRODUCTS
+      </styled.div>
+    </Styled(Link)>
+    <Styled(Link)
+      to="/profilePage"
+    >
+      <styled.div />
     </Styled(Link)>
     <styled.div>
       <styled.img

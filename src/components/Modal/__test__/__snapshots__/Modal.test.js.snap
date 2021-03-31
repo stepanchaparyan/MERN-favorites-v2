@@ -2,14 +2,17 @@
 
 exports[`Modal component test with Enzyme renders correct snapshot 1`] = `
 <Modal
-  ariaHideApp={true}
+  ariaHideApp={false}
   bodyOpenClassName="ReactModal__Body--open"
   closeTimeoutMS={0}
+  contentElement={[Function]}
   contentLabel="Modal"
   isOpen={true}
   onRequestClose={[MockFunction]}
+  overlayElement={[Function]}
   parentSelector={[Function]}
   portalClassName="ReactModalPortal"
+  preventScroll={false}
   role="dialog"
   shouldCloseOnEsc={true}
   shouldCloseOnOverlayClick={true}
@@ -22,19 +25,21 @@ exports[`Modal component test with Enzyme renders correct snapshot 1`] = `
         "bottom": "auto",
         "display": "flex",
         "flexDirection": "column",
-        "height": "200px",
         "left": "50%",
         "marginRight": "-50%",
+        "minHeight": "200px",
+        "minWidth": "350px",
         "padding": "0",
         "right": "auto",
         "top": "50%",
         "transform": "translate(-50%, -50%)",
-        "width": "350px",
       },
     }
   }
 >
-  <styled.div>
+  <styled.div
+    isBigSize={false}
+  >
     <styled.div
       bgColor="blue"
     >
@@ -53,12 +58,12 @@ exports[`Modal component test with Enzyme renders correct snapshot 1`] = `
     </styled.div>
     <styled.div>
       <styled.button
+        color="red"
         onClick={[MockFunction]}
       >
         text
       </styled.button>
       <styled.button
-        color="red"
         onClick={[MockFunction]}
       >
         text

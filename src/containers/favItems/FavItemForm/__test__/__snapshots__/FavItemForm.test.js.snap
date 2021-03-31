@@ -52,8 +52,6 @@ exports[`FavItemForm component test with Enzyme render change on Input component
             },
             "spec": Object {
               "abortEarly": true,
-              "label": undefined,
-              "meta": undefined,
               "nullable": false,
               "presence": "required",
               "recursive": true,
@@ -88,8 +86,6 @@ exports[`FavItemForm component test with Enzyme render change on Input component
             },
             "spec": Object {
               "abortEarly": true,
-              "label": undefined,
-              "meta": undefined,
               "nullable": false,
               "presence": "required",
               "recursive": true,
@@ -124,8 +120,6 @@ exports[`FavItemForm component test with Enzyme render change on Input component
             },
             "spec": Object {
               "abortEarly": true,
-              "label": undefined,
-              "meta": undefined,
               "nullable": false,
               "presence": "required",
               "recursive": true,
@@ -161,8 +155,6 @@ exports[`FavItemForm component test with Enzyme render change on Input component
             },
             "spec": Object {
               "abortEarly": true,
-              "label": undefined,
-              "meta": undefined,
               "nullable": false,
               "presence": "required",
               "recursive": true,
@@ -181,8 +173,6 @@ exports[`FavItemForm component test with Enzyme render change on Input component
         },
         "spec": Object {
           "abortEarly": true,
-          "label": undefined,
-          "meta": undefined,
           "nullable": false,
           "presence": "optional",
           "recursive": true,
@@ -254,8 +244,6 @@ exports[`FavItemForm component test with Enzyme render click on ErrorButton when
             },
             "spec": Object {
               "abortEarly": true,
-              "label": undefined,
-              "meta": undefined,
               "nullable": false,
               "presence": "required",
               "recursive": true,
@@ -290,8 +278,6 @@ exports[`FavItemForm component test with Enzyme render click on ErrorButton when
             },
             "spec": Object {
               "abortEarly": true,
-              "label": undefined,
-              "meta": undefined,
               "nullable": false,
               "presence": "required",
               "recursive": true,
@@ -326,8 +312,6 @@ exports[`FavItemForm component test with Enzyme render click on ErrorButton when
             },
             "spec": Object {
               "abortEarly": true,
-              "label": undefined,
-              "meta": undefined,
               "nullable": false,
               "presence": "required",
               "recursive": true,
@@ -363,8 +347,6 @@ exports[`FavItemForm component test with Enzyme render click on ErrorButton when
             },
             "spec": Object {
               "abortEarly": true,
-              "label": undefined,
-              "meta": undefined,
               "nullable": false,
               "presence": "required",
               "recursive": true,
@@ -383,8 +365,6 @@ exports[`FavItemForm component test with Enzyme render click on ErrorButton when
         },
         "spec": Object {
           "abortEarly": true,
-          "label": undefined,
-          "meta": undefined,
           "nullable": false,
           "presence": "optional",
           "recursive": true,
@@ -463,8 +443,6 @@ exports[`FavItemForm component test with Enzyme render click on ErrorButton when
             },
             "spec": Object {
               "abortEarly": true,
-              "label": undefined,
-              "meta": undefined,
               "nullable": false,
               "presence": "required",
               "recursive": true,
@@ -499,8 +477,6 @@ exports[`FavItemForm component test with Enzyme render click on ErrorButton when
             },
             "spec": Object {
               "abortEarly": true,
-              "label": undefined,
-              "meta": undefined,
               "nullable": false,
               "presence": "required",
               "recursive": true,
@@ -535,8 +511,6 @@ exports[`FavItemForm component test with Enzyme render click on ErrorButton when
             },
             "spec": Object {
               "abortEarly": true,
-              "label": undefined,
-              "meta": undefined,
               "nullable": false,
               "presence": "required",
               "recursive": true,
@@ -572,8 +546,6 @@ exports[`FavItemForm component test with Enzyme render click on ErrorButton when
             },
             "spec": Object {
               "abortEarly": true,
-              "label": undefined,
-              "meta": undefined,
               "nullable": false,
               "presence": "required",
               "recursive": true,
@@ -592,8 +564,6 @@ exports[`FavItemForm component test with Enzyme render click on ErrorButton when
         },
         "spec": Object {
           "abortEarly": true,
-          "label": undefined,
-          "meta": undefined,
           "nullable": false,
           "presence": "optional",
           "recursive": true,
@@ -672,8 +642,6 @@ exports[`FavItemForm component test with Enzyme renders correct snapshot 1`] = `
             },
             "spec": Object {
               "abortEarly": true,
-              "label": undefined,
-              "meta": undefined,
               "nullable": false,
               "presence": "required",
               "recursive": true,
@@ -708,8 +676,6 @@ exports[`FavItemForm component test with Enzyme renders correct snapshot 1`] = `
             },
             "spec": Object {
               "abortEarly": true,
-              "label": undefined,
-              "meta": undefined,
               "nullable": false,
               "presence": "required",
               "recursive": true,
@@ -744,8 +710,6 @@ exports[`FavItemForm component test with Enzyme renders correct snapshot 1`] = `
             },
             "spec": Object {
               "abortEarly": true,
-              "label": undefined,
-              "meta": undefined,
               "nullable": false,
               "presence": "required",
               "recursive": true,
@@ -781,8 +745,6 @@ exports[`FavItemForm component test with Enzyme renders correct snapshot 1`] = `
             },
             "spec": Object {
               "abortEarly": true,
-              "label": undefined,
-              "meta": undefined,
               "nullable": false,
               "presence": "required",
               "recursive": true,
@@ -801,8 +763,6 @@ exports[`FavItemForm component test with Enzyme renders correct snapshot 1`] = `
         },
         "spec": Object {
           "abortEarly": true,
-          "label": undefined,
-          "meta": undefined,
           "nullable": false,
           "presence": "optional",
           "recursive": true,

@@ -31,6 +31,38 @@ exports[`Welcome component test with Enzyme renders snapshot 1`] = `
     <styled.img
       src="test-file-stub"
     />
+    <styled.div>
+      <styled.div
+        inherit="inherit"
+        per={10}
+      >
+        <styled.div />
+      </styled.div>
+      <styled.div
+        inherit="inherit"
+        per={25}
+      >
+        <styled.div />
+      </styled.div>
+      <styled.div
+        inherit="inherit"
+        per={50}
+      >
+        <styled.div />
+      </styled.div>
+      <styled.div
+        inherit="none"
+        per={75}
+      >
+        <styled.div />
+      </styled.div>
+      <styled.div
+        inherit="none"
+        per={95}
+      >
+        <styled.div />
+      </styled.div>
+    </styled.div>
   </styled.div>
 </styled.div>
 `;

@@ -4,7 +4,7 @@ import { shallow } from 'enzyme';
 import 'jest-styled-components';
 import Profile from '../Profile.js';
 import { Button, LoadingMessage } from '../ProfileStyled';
-import Message from '../../../Message/Message';
+import Message from '../../../../components/Message/Message';
 import FileUpload from '../../ProfileForm/FileUpload';
 
 jest.mock('react-intl', () => ({
