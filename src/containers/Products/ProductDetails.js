@@ -59,7 +59,6 @@ const ProductScreen = ({ match, history }) => {
             <Price>Price: ${product.price}</Price>
             <Description>Description: {product.description}</Description>
           </InfoContainer>
-          <button onClick={deleteHandler}>Delete product</button>
           <CartContainer>
             <CartPrice>
               Price:<span>${product.price}</span>
@@ -78,9 +77,8 @@ const ProductScreen = ({ match, history }) => {
               </StyledSelect>
             </SelectContainer>
             <ButtonContainer>
-              <StyledButton type="button" onClick={addToCartHandler}>
-                Add To Cart
-              </StyledButton>
+              <StyledButton onClick={addToCartHandler}>Add To Cart</StyledButton>
+              <StyledButton onClick={deleteHandler}>Delete product</StyledButton>
             </ButtonContainer>
           </CartContainer>
         </>

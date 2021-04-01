@@ -64,13 +64,13 @@ const HomeScreen = () => {
 
   return (
     <Container>
-      <AddProduct onClick={toggleOpen}>{formatMessage(localization.addProduct)}</AddProduct>
       <LinkContainer>
         <StyledLink to="/cart">
           <Text>Cart</Text>
           <CardCount>{getCartCount()}</CardCount>
         </StyledLink>
       </LinkContainer>
+      <AddProduct onClick={toggleOpen}>{formatMessage(localization.addProduct)}</AddProduct>
       <Context>
         {loading ? (
           <h2>Loading...</h2>

@@ -1,112 +1,110 @@
 import styled from 'styled-components';
-import { Link } from 'react-router-dom';
+import { tabletUp } from '../../styles/mediaQueries/mixins';
 
 export const Container = styled.div`
-  max-width: 1300px;
-  padding-top: 24px;
   display: flex;
+  flex-direction: column;
+  max-width: 1300px;
+  margin: 24px;
+  align-items: center;
+  padding-bottom: 60px;
+  ${tabletUp`
+    flex-direction: row;
+  `};
 `;
 
 export const ImageContainer = styled.div`
-  margin: 1rem;
-  flex: 0.6;
+  margin: auto;
 `;
 
 export const Image = styled.img`
-  width: 400px;
-  height: auto;
+  max-width: 250px;
+  max-height: 250px;
 `;
 
 export const InfoContainer = styled.div`
-  margin: 1rem;
-  flex: 0.4;
-  background: #fff;
+  width: 60%;
+  margin: auto 24px;
+  background: ${props => props.theme.white};
   height: fit-content;
-  font-size: 0.9rem;
+  font-size: 14px;
 `;
 
 export const Name = styled.p`
   font-weight: bold;
-  font-size: 1.3rem;
+  font-size: 20px;
+  margin: auto;
 `;
 
 export const Price = styled.p`
-  padding: 1rem;
-  border-bottom: 1px solid rgba(0, 0, 0, 0.2);
-  :last-child {
-    border: none;
-  }
+  width: fit-content;
+  border-bottom: 1px solid lightgray;
 `;
 
-export const Description = styled.p`
-  padding: 1rem;
-  border-bottom: 1px solid rgba(0, 0, 0, 0.2);
-  :last-child {
-    border: none;
-  }
-`;
+export const Description = styled.p``;
 
 export const CartContainer = styled.div`
   width: 250px;
-  margin: 1rem;
-  background: #fff;
-  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.4);
+  margin: 12px;
+  border: 1px solid gray;
+  box-shadow: 0 1px 4px lightgray;
+  ${tabletUp`
+    width: 300px;
+  `};
 `;
 
 export const CartPrice = styled.p`
-  padding: 1rem;
-  padding: 1rem;
-  font-size: 0.8rem;
+  padding: 12px 20px;
+  margin: 0;
+  font-size: 14px;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   border-bottom: 1px solid rgba(0, 0, 0, 0.2);
-  :last-child {
-    border: none;
-  }
 `;
 
 export const CartStatus = styled.p`
-  padding: 1rem;
-  padding: 1rem;
-  font-size: 0.8rem;
+  padding: 12px 20px;
+  margin: 0;
+  font-size: 14px;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   border-bottom: 1px solid rgba(0, 0, 0, 0.2);
-  :last-child {
-    border: none;
-  }
-`;
-
-export const StyledSelect = styled.select`
-  padding: 10px 16px;
-`;
-
-export const StyledButton = styled.button`
-  grid-column: 1/-1;
-  width: 100%;
-  padding: 10px 16px;
-  background: #171717;
-  color: #f4f4f4;
-  border: 1px solid #171717;
-  cursor: pointer;
-  border-radius: 5px;
 `;
 
 export const SelectContainer = styled.p`
-  padding: 1rem;
-  border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+  padding: 12px 20px;
+  margin: 0;
+  font-size: 14px;
+  border-bottom: 1px solid ${props => props.theme.black};
   font-size: 0.8rem;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  :last-child {
-    border: none;
-  }
 `;
 
-export const ButtonContainer = styled.p`
-  padding: 1rem;
-  border-bottom: 1px solid rgba(0, 0, 0, 0.2);
-  :last-child {
-    border: none;
+export const StyledSelect = styled.select`
+  padding: 0 4px;
+  width: 44px;
+`;
+
+export const ButtonContainer = styled.div`
+  padding: 10px;
+  border-bottom: 1px solid ${props => props.theme.lightGray};
+`;
+
+export const StyledButton = styled.button`
+  padding: 10px 16px;
+  background: ${props => props.theme.cadetblue};
+  color: ${props => props.theme.black};
+  border: 1px solid ${props => props.theme.lightGray};
+  cursor: pointer;
+  border-radius: 4px;
+  width: 100%;
+  font-weight: 600;
+  font-size: 14px;
+  margin: 2px;
+  outline: none;
+  opacity: 0.9;
+  :hover {
+    opacity: 1;
   }
 `;

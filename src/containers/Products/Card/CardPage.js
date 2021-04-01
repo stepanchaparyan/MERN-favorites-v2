@@ -5,10 +5,10 @@ import CartItem from './CardItem';
 import { addToCart, removeFromCart } from '../../../redux/actions/cartActions';
 import {
   Container,
-  LeftPart,
-  CardTitle,
+  CardsContainer,
+  PageTitle,
   EmptyCard,
-  RightPart,
+  Checkout,
   Info,
   ButtonContainer,
   ButtonStyled
@@ -41,34 +41,34 @@ const CardPage = () => {
   return (
     <>
       <Container>
-        <LeftPart>
-          <CardTitle>Shopping Cart</CardTitle>
-
-          {cartItems.length === 0 ? (
-            <EmptyCard>
-              Your Cart Is Empty <Link to="/">Go Back</Link>
-            </EmptyCard>
-          ) : (
-            cartItems.map(item => (
-              <CartItem
-                key={item.product}
-                item={item}
-                qtyChangeHandler={qtyChangeHandler}
-                removeHandler={removeFromCartHandler}
-              />
-            ))
-          )}
-        </LeftPart>
-
-        <RightPart>
-          <Info>
-            <p>Subtotal ({getCartCount()}) items</p>
-            <p>${getCartSubTotal()}</p>
-          </Info>
-          <ButtonContainer>
-            <ButtonStyled>Proceed To Checkout</ButtonStyled>
-          </ButtonContainer>
-        </RightPart>
+        <PageTitle>Shopping Cart</PageTitle>
+        <>
+          <CardsContainer>
+            {!cartItems?.length ? (
+              <EmptyCard>
+                Your Cart Is Empty <Link to="/">Go Back</Link>
+              </EmptyCard>
+            ) : (
+              cartItems.map(item => (
+                <CartItem
+                  key={item.product}
+                  item={item}
+                  qtyChangeHandler={qtyChangeHandler}
+                  removeHandler={removeFromCartHandler}
+                />
+              ))
+            )}
+          </CardsContainer>
+          <Checkout>
+            <Info>
+              <p>Subtotal ({getCartCount()}) items</p>
+              <p>${getCartSubTotal()}</p>
+            </Info>
+            <ButtonContainer>
+              <ButtonStyled>Proceed To Checkout</ButtonStyled>
+            </ButtonContainer>
+          </Checkout>
+        </>
       </Container>
     </>
   );

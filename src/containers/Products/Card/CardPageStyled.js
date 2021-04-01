@@ -5,34 +5,29 @@ export const Container = styled.div`
   display: flex;
   flex-direction: column;
   max-width: 1300px;
-  padding: 24px;
-  ${tabletUp`
-    flex-direction: row;
-  `};
+  padding: 24px 24px 60px;
 `;
 
-export const LeftPart = styled.div`
+export const CardsContainer = styled.div`
   flex: 0.7;
   margin-right: 1rem;
   background: transparent;
   padding: 12px;
 `;
 
-export const CardTitle = styled.div`
-  margin-bottom: 1rem;
+export const PageTitle = styled.div`
+  margin: auto;
+  font-size: 24px;
+  font-weight: bold;
+  color: ${props => props.theme.cadetblue};
 `;
 
 export const EmptyCard = styled.p``;
 
-export const RightPart = styled.div`
-  flex: 0.3;
+export const Checkout = styled.div`
   box-shadow: 0 1px 4px rgba(0, 0, 0, 0.4);
-  height: fit-content;
-  margin-top: 48px;
-  & > div {
-    border-bottom: 1px solid rgba(0, 0, 0, 0.2);
-    padding: 12px;
-  }
+  width: 50%;
+  margin: 12px auto 24px auto;
 `;
 
 export const Info = styled.div`

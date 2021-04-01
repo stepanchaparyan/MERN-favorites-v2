@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
 import { Form, Field } from 'formik';
-import { tabletUp } from '../../styles/mediaQueries/mixins';
+import { tabletUp, desktopUp } from '../../styles/mediaQueries/mixins';
 
 export const Container = styled.div`
   max-width: 1300px;
@@ -16,15 +16,27 @@ export const FormContainer = styled.div`
 export const AddProduct = styled.div`
   font-size: 36px;
   font-weight: bold;
-  margin: 24px auto;
+  margin: 8px auto;
   text-align: center;
   color: ${props => props.theme.cadetblue};
   cursor: pointer;
+  ${tabletUp`
+    width: 33%;
+    margin: 0 auto;
+  `};
 `;
 
 export const Context = styled.div`
+  margin: 8px 24px;
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(1, 1fr);
+  ${tabletUp`
+    grid-template-columns: repeat(2, 1fr);
+    margin: 24px;
+  `};
+  ${desktopUp`
+    grid-template-columns: repeat(3, 1fr);
+  `};
 `;
 
 export const StyledLink = styled(Link)`
@@ -62,7 +74,7 @@ export const Text = styled.p`
 export const LinkContainer = styled.div`
   display: flex;
   font-size: 1.2rem;
-  padding-right: 24px;
+  padding: 8px 24px 0;
   justify-content: flex-end;
 `;
 
