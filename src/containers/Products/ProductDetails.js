@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import { useSelector, useDispatch } from 'react-redux';
 import { getProductDetails, deleteProduct } from '../../redux/actions/productActions';
 import { addToCart } from '../../redux/actions/cartActions';
+import { LINK } from '../../constants';
 import {
   Container,
   ImageContainer,
@@ -20,7 +21,7 @@ import {
   ButtonContainer
 } from './ProductDetailsStyled';
 
-const ProductScreen = ({ match, history }) => {
+const ProductDetails = ({ match, history }) => {
   const [qty, setQty] = useState(1);
   const dispatch = useDispatch();
 
@@ -35,12 +36,12 @@ const ProductScreen = ({ match, history }) => {
 
   const addToCartHandler = () => {
     dispatch(addToCart(product._id, qty));
-    history.push('/cart');
+    history.push(LINK.TO.CART);
   };
 
   const deleteHandler = () => {
     dispatch(deleteProduct(product._id));
-    history.push('/products');
+    history.push(LINK.TO.PRODUCTS);
   };
 
   return (
@@ -87,9 +88,9 @@ const ProductScreen = ({ match, history }) => {
   );
 };
 
-ProductScreen.propTypes = {
+ProductDetails.propTypes = {
   match: PropTypes.object.isRequired,
   history: PropTypes.object.isRequired
 };
 
-export default ProductScreen;
+export default ProductDetails;

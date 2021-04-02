@@ -5,6 +5,7 @@ export const LINK = {
     LOGIN: '/login',
     HOME: '/home',
     WELCOME: '/',
-    PRODUCTS: '/products'
+    PRODUCTS: '/products',
+    CART: '/cart'
   }
 };

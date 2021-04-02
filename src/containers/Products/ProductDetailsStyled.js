@@ -54,31 +54,30 @@ export const CartContainer = styled.div`
 `;
 
 export const CartPrice = styled.p`
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
   padding: 12px 20px;
   margin: 0;
   font-size: 14px;
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+  border-bottom: 1px solid #00000033;
 `;
 
 export const CartStatus = styled.p`
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
   padding: 12px 20px;
   margin: 0;
   font-size: 14px;
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+  border-bottom: 1px solid #00000033;
 `;
 
 export const SelectContainer = styled.p`
-  padding: 12px 20px;
-  margin: 0;
-  font-size: 14px;
-  border-bottom: 1px solid ${props => props.theme.black};
-  font-size: 0.8rem;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
+  padding: 12px 20px;
+  margin: 0;
+  font-size: 0.8rem;
+  border-bottom: 1px solid ${props => props.theme.black};
 `;
 
 export const StyledSelect = styled.select`

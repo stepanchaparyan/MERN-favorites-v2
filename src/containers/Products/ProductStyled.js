@@ -2,16 +2,16 @@ import styled from 'styled-components';
 import { Link } from 'react-router-dom';
 
 export const Container = styled.div`
-  width: 300px;
-  padding: 1rem;
-  background: #fff;
-  cursor: pointer;
-  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.4);
-  margin: 8px auto;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
   flex-direction: column;
+  justify-content: space-between;
+  width: 300px;
+  padding: 1rem;
+  margin: 8px auto;
+  background: ${props => props.theme.white};
+  cursor: pointer;
+  box-shadow: 0 1px 4px #0000006b;
 `;
 
 export const Image = styled.img`
@@ -43,13 +43,13 @@ export const StyledLink = styled(Link)`
   display: block;
   text-decoration: none;
   text-align: center;
-  color: #171717;
+  color: ${props => props.theme.veryDarkGray};
   padding: 8px 16px;
-  background-color: #f4f4f4;
-  border: 1px solid #171717;
+  background-color: ${props => props.theme.lightGray};
+  border: 1px solid ${props => props.theme.veryDarkGray};
   font-size: 1rem;
   :hover {
-    background: #171717;
-    color: #f4f4f4;
+    background: ${props => props.theme.veryDarkGray};
+    color: ${props => props.theme.lightGray};
   }
 `;

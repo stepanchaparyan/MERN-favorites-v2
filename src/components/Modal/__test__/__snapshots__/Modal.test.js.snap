@@ -30,9 +30,15 @@ exports[`Modal component test with Enzyme renders correct snapshot 1`] = `
         "minHeight": "200px",
         "minWidth": "350px",
         "padding": "0",
+        "position": "absolute",
         "right": "auto",
-        "top": "50%",
+        "top": "20%",
         "transform": "translate(-50%, -50%)",
+      },
+      "overlay": Object {
+        "backgroundColor": "rgba(255, 255, 255, 0.75)",
+        "position": "absolute",
+        "top": 55,
       },
     }
   }

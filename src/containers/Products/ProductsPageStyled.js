@@ -10,7 +10,7 @@ export const Container = styled.div`
 `;
 
 export const FormContainer = styled.div`
-  margin: 24px 24px 0 24px;
+  margin: 24px 24px 0;
 `;
 
 export const AddProduct = styled.div`
@@ -24,6 +24,10 @@ export const AddProduct = styled.div`
     width: 33%;
     margin: 0 auto;
   `};
+  opacity: 0.9;
+  :hover {
+    opacity: 1;
+  }
 `;
 
 export const Context = styled.div`
@@ -41,11 +45,11 @@ export const Context = styled.div`
 
 export const StyledLink = styled(Link)`
   display: flex;
-  background: #333;
+  background: ${props => props.theme.midGray};
   padding: 2px 10px;
   border-radius: 8px;
   text-decoration: none;
-  color: white;
+  color: ${props => props.theme.white};
   :hover {
     background: ${props => props.theme.cadetblue};
   }
@@ -55,9 +59,9 @@ export const CardCount = styled.p`
   width: 25px;
   height: 25px;
   display: flex;
-  background-color: #f4f4f4;
+  background-color: ${props => props.theme.lightGray};
   border-radius: 50%;
-  color: #171717;
+  color: ${props => props.theme.veryDarkGray};
   justify-content: center;
   align-items: center;
   margin: 5px;
@@ -74,7 +78,7 @@ export const Text = styled.p`
 export const LinkContainer = styled.div`
   display: flex;
   font-size: 1.2rem;
-  padding: 8px 24px 0;
+  padding: 16px 24px 0;
   justify-content: flex-end;
 `;
 

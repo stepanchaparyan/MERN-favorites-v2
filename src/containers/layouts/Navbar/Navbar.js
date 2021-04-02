@@ -38,7 +38,7 @@ const Navbar = ({ changeLocale }) => {
     getProfile();
   }, []);
 
-  const myProfile = profile[0];
+  const myProfile = profile && profile[0];
 
   useOnClickOutside(node, () => setOpen(false));
 

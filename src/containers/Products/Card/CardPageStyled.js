@@ -1,5 +1,4 @@
 import styled from 'styled-components';
-import { tabletUp } from '../../../styles/mediaQueries/mixins';
 
 export const Container = styled.div`
   display: flex;
@@ -9,8 +8,6 @@ export const Container = styled.div`
 `;
 
 export const CardsContainer = styled.div`
-  flex: 0.7;
-  margin-right: 1rem;
   background: transparent;
   padding: 12px;
 `;
@@ -25,9 +22,13 @@ export const PageTitle = styled.div`
 export const EmptyCard = styled.p``;
 
 export const Checkout = styled.div`
-  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.4);
-  width: 50%;
-  margin: 12px auto 24px auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  width: 30%;
+  align-self: flex-end;
+  margin: 16px 24px 24px;
+  box-shadow: 0 1px 4px #00000066;
 `;
 
 export const Info = styled.div`
@@ -44,9 +45,9 @@ export const ButtonContainer = styled.div``;
 export const ButtonStyled = styled.button`
   padding: 10px 17px;
   width: 100%;
-  background: #171717;
-  color: #f4f4f4;
-  border: 1px solid #171717;
+  background: ${props => props.theme.veryDarkGray};
+  color: ${props => props.theme.lightGray};
+  border: 1px solid ${props => props.theme.veryDarkGray};
   cursor: pointer;
   :hover {
     opacity: 0.9;

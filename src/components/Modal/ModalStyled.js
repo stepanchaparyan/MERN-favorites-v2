@@ -2,7 +2,7 @@ import styled from 'styled-components';
 
 export const customStyles = {
   content: {
-    top: '50%',
+    top: '20%',
     left: '50%',
     right: 'auto',
     bottom: 'auto',
@@ -13,7 +13,13 @@ export const customStyles = {
     padding: '0',
     minWidth: '350px',
     minHeight: '200px',
-    backgroundColor: '#f8f8f8'
+    backgroundColor: '#f8f8f8',
+    position: 'absolute'
+  },
+  overlay: {
+    position: 'absolute',
+    top: 55,
+    backgroundColor: 'rgba(255, 255, 255, 0.75)'
   }
 };
 

@@ -3,6 +3,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import { Link } from 'react-router-dom';
 import CartItem from './CardItem';
 import { addToCart, removeFromCart } from '../../../redux/actions/cartActions';
+import { LINK } from '../../../constants';
 import {
   Container,
   CardsContainer,
@@ -39,38 +40,36 @@ const CardPage = () => {
   };
 
   return (
-    <>
-      <Container>
-        <PageTitle>Shopping Cart</PageTitle>
-        <>
-          <CardsContainer>
-            {!cartItems?.length ? (
-              <EmptyCard>
-                Your Cart Is Empty <Link to="/">Go Back</Link>
-              </EmptyCard>
-            ) : (
-              cartItems.map(item => (
-                <CartItem
-                  key={item.product}
-                  item={item}
-                  qtyChangeHandler={qtyChangeHandler}
-                  removeHandler={removeFromCartHandler}
-                />
-              ))
-            )}
-          </CardsContainer>
-          <Checkout>
-            <Info>
-              <p>Subtotal ({getCartCount()}) items</p>
-              <p>${getCartSubTotal()}</p>
-            </Info>
-            <ButtonContainer>
-              <ButtonStyled>Proceed To Checkout</ButtonStyled>
-            </ButtonContainer>
-          </Checkout>
-        </>
-      </Container>
-    </>
+    <Container>
+      <PageTitle>Shopping Cart</PageTitle>
+      <>
+        <CardsContainer>
+          {!cartItems?.length ? (
+            <EmptyCard>
+              Your Cart Is Empty <Link to={LINK.TO.HOME}>Go Back</Link>
+            </EmptyCard>
+          ) : (
+            cartItems.map(item => (
+              <CartItem
+                key={item.product}
+                item={item}
+                qtyChangeHandler={qtyChangeHandler}
+                removeHandler={removeFromCartHandler}
+              />
+            ))
+          )}
+        </CardsContainer>
+        <Checkout>
+          <Info>
+            <p>Subtotal ({getCartCount()}) items</p>
+            <p>${getCartSubTotal()}</p>
+          </Info>
+          <ButtonContainer>
+            <ButtonStyled>Proceed To Checkout</ButtonStyled>
+          </ButtonContainer>
+        </Checkout>
+      </>
+    </Container>
   );
 };
 
