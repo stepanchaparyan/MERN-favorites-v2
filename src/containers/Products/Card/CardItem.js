@@ -4,33 +4,51 @@ import {
   Container,
   ImageContainer,
   Image,
-  CardPrice,
-  LinkStyled,
-  ButtonStyled
+  InfoContainer,
+  Name,
+  Price,
+  Description,
+  CartContainer,
+  CartPrice,
+  CartStatus,
+  SelectContainer,
+  StyledSelect,
+  ButtonContainer,
+  StyledButton
 } from './CardItemStyled';
 
 const CardItem = ({ item, qtyChangeHandler, removeHandler }) => {
+  const { imageUrl, name, price, countInStock, qty, product } = item;
   return (
     <Container>
       <ImageContainer>
-        <Image src={item.imageUrl} alt={item.name} />
+        <Image src={imageUrl} alt={name} />
       </ImageContainer>
-      <LinkStyled to={`/product/${item.product}`}>
-        <p>{item.name}</p>
-      </LinkStyled>
-      <CardPrice>${item.price}</CardPrice>
-      <select
-        value={item.qty}
-        onChange={e => qtyChangeHandler(item.product, e.target.value)}
-        className="cartItem__select"
-      >
-        {[...Array(item.countInStock).keys()].map(x => (
-          <option key={x + 1} value={x + 1}>
-            {x + 1}
-          </option>
-        ))}
-      </select>
-      <ButtonStyled onClick={() => removeHandler(item.product)}>Delete Card</ButtonStyled>
+      <InfoContainer>
+        <Name>{name}</Name>
+        <Price>Price: ${price}</Price>
+      </InfoContainer>
+      <CartContainer>
+        <CartPrice>
+          Price:<span>${price}</span>
+        </CartPrice>
+        <CartStatus>
+          Status:<span>{countInStock > 0 ? 'In Stock' : 'Out of Stock'}</span>
+        </CartStatus>
+        <SelectContainer>
+          Qty
+          <StyledSelect value={qty} onChange={e => qtyChangeHandler(product, e.target.value)}>
+            {[...Array(countInStock).keys()].map(x => (
+              <option key={x + 1} value={x + 1}>
+                {x + 1}
+              </option>
+            ))}
+          </StyledSelect>
+        </SelectContainer>
+        <ButtonContainer>
+          <StyledButton onClick={() => removeHandler(product)}>Remove from Cart</StyledButton>
+        </ButtonContainer>
+      </CartContainer>
     </Container>
   );
 };

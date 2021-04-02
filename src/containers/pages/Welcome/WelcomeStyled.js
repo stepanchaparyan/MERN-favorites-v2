@@ -107,11 +107,16 @@ export const Other = styled.span`
 `;
 
 export const PieContainer = styled.div`
-  display: flex;
+  display: none;
+  margin-top: 24px;
+  ${tabletUp`
+    display: flex;
+  `};
 `;
 
 export const Pie = styled.div`
   position: relative;
+  margin: 4px;
   width: 100px;
   height: 100px;
   border-radius: 50%;

@@ -9,7 +9,9 @@ const theme = {
   white: 'white',
   lightGray: '#F5F5F5',
   veryLightGray: '#f8f8f8',
-  darkgray: 'darkgray'
+  darkgray: 'darkgray',
+  veryDarkGray: '#171717',
+  midGray: '#333'
 };
 
 export default theme;

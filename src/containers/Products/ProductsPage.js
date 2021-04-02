@@ -21,13 +21,13 @@ import CustomModal from '../../components/Modal/Modal';
 import ModalFooter from '../../components/Modal/ModalFooter';
 import theme from '../../styles/theme';
 import productsFormikProps from './ProductsFormikProps';
-import { FORM } from '../../constants';
+import { FORM, LINK } from '../../constants';
 import localization from './localization';
 
 const { INPUT } = FORM;
 const { cadetblue } = theme;
 
-const HomeScreen = () => {
+const ProductPage = () => {
   const dispatch = useDispatch();
   const { formatMessage } = useIntl();
   const [isOpen, setIsOpen] = useState(false);
@@ -64,13 +64,13 @@ const HomeScreen = () => {
 
   return (
     <Container>
-      <AddProduct onClick={toggleOpen}>{formatMessage(localization.addProduct)}</AddProduct>
       <LinkContainer>
-        <StyledLink to="/cart">
+        <StyledLink to={LINK.TO.CART}>
           <Text>Cart</Text>
           <CardCount>{getCartCount()}</CardCount>
         </StyledLink>
       </LinkContainer>
+      <AddProduct onClick={toggleOpen}>{formatMessage(localization.addProduct)}</AddProduct>
       <Context>
         {loading ? (
           <h2>Loading...</h2>
@@ -156,4 +156,4 @@ const HomeScreen = () => {
   );
 };
 
-export default HomeScreen;
+export default ProductPage;

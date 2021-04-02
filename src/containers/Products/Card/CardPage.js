@@ -3,12 +3,13 @@ import { useSelector, useDispatch } from 'react-redux';
 import { Link } from 'react-router-dom';
 import CartItem from './CardItem';
 import { addToCart, removeFromCart } from '../../../redux/actions/cartActions';
+import { LINK } from '../../../constants';
 import {
   Container,
-  LeftPart,
-  CardTitle,
+  CardsContainer,
+  PageTitle,
   EmptyCard,
-  RightPart,
+  Checkout,
   Info,
   ButtonContainer,
   ButtonStyled
@@ -39,14 +40,13 @@ const CardPage = () => {
   };
 
   return (
-    <>
-      <Container>
-        <LeftPart>
-          <CardTitle>Shopping Cart</CardTitle>
-
-          {cartItems.length === 0 ? (
+    <Container>
+      <PageTitle>Shopping Cart</PageTitle>
+      <>
+        <CardsContainer>
+          {!cartItems?.length ? (
             <EmptyCard>
-              Your Cart Is Empty <Link to="/">Go Back</Link>
+              Your Cart Is Empty <Link to={LINK.TO.HOME}>Go Back</Link>
             </EmptyCard>
           ) : (
             cartItems.map(item => (
@@ -58,9 +58,8 @@ const CardPage = () => {
               />
             ))
           )}
-        </LeftPart>
-
-        <RightPart>
+        </CardsContainer>
+        <Checkout>
           <Info>
             <p>Subtotal ({getCartCount()}) items</p>
             <p>${getCartSubTotal()}</p>
@@ -68,9 +67,9 @@ const CardPage = () => {
           <ButtonContainer>
             <ButtonStyled>Proceed To Checkout</ButtonStyled>
           </ButtonContainer>
-        </RightPart>
-      </Container>
-    </>
+        </Checkout>
+      </>
+    </Container>
   );
 };
 

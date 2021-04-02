@@ -10,6 +10,7 @@ import {
   NavLinks,
   LinkStyled,
   UserName,
+  SubPages,
   Logout,
   Flag,
   Hamburger,
@@ -26,7 +27,7 @@ import { useOnClickOutside } from '../../hooks/clickOutSide';
 const { ARMENIAN, ENGLISH } = LANGUAGES;
 
 const Navbar = ({ changeLocale }) => {
-  const { user, logout, isAuthencated, clearErrors } = useContext(AuthContext);
+  const { logout, isAuthencated, clearErrors } = useContext(AuthContext);
   const { profile, getProfile } = useContext(ProfileContext);
   const [open, setOpen] = useState(false);
   const { formatMessage } = useIntl();
@@ -36,6 +37,8 @@ const Navbar = ({ changeLocale }) => {
   useEffect(() => {
     getProfile();
   }, []);
+
+  const myProfile = profile && profile[0];
 
   useOnClickOutside(node, () => setOpen(false));
 
@@ -47,18 +50,19 @@ const Navbar = ({ changeLocale }) => {
     logout();
     clearErrors();
   };
+
   const authLinks = (
     <NavLinks open={open}>
       {isAuthencated && (
         <>
           <LinkStyled to={`${LINK.TO.HOME}`}>
-            <UserName>{formatMessage(localization.cards)}</UserName>
+            <SubPages>{formatMessage(localization.cards)}</SubPages>
           </LinkStyled>
           <LinkStyled to={`${LINK.TO.PRODUCTS}`}>
-            <UserName>{formatMessage(localization.products)}</UserName>
+            <SubPages>{formatMessage(localization.products)}</SubPages>
           </LinkStyled>
           <LinkStyled to={LINK.TO.PROFILE_PAGE}>
-            <UserName>{profile && profile[0].name}</UserName>
+            <UserName>{myProfile?.name}</UserName>
           </LinkStyled>
         </>
       )}
