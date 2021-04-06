@@ -33,6 +33,11 @@ export const UserName = styled.div`
   ${tabletUp`
     margin-top: 0;
   `};
+  color: ${props => props.theme.white};
+  transition: color 600ms;
+  :hover {
+    color: ${props => props.theme.black};
+  }
 `;
 
 export const SubPages = styled.div`
@@ -41,6 +46,10 @@ export const SubPages = styled.div`
   ${tabletUp`
     margin-top: 0;
   `};
+  transition: color 600ms;
+  :hover {
+    color: ${props => props.theme.white};
+  }
 `;
 
 export const NavLinks = styled.div`
