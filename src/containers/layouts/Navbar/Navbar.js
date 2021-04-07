@@ -23,11 +23,12 @@ import armFlag from '../../../assets/arm.png';
 import usaFlag from '../../../assets/usa.png';
 import { LINK, LANGUAGES } from '../../../constants';
 import { useOnClickOutside } from '../../hooks/clickOutSide';
+import Loading from '../../../components/Loading/Loading';
 
 const { ARMENIAN, ENGLISH } = LANGUAGES;
 
 const Navbar = ({ changeLocale }) => {
-  const { logout, isAuthencated, clearErrors } = useContext(AuthContext);
+  const { logout, isAuthencated, loading, clearErrors } = useContext(AuthContext);
   const { profile, getProfile } = useContext(ProfileContext);
   const [open, setOpen] = useState(false);
   const { formatMessage } = useIntl();
@@ -53,19 +54,15 @@ const Navbar = ({ changeLocale }) => {
 
   const authLinks = (
     <NavLinks open={open}>
-      {isAuthencated && (
-        <>
-          <LinkStyled to={`${LINK.TO.HOME}`}>
-            <SubPages>{formatMessage(localization.cards)}</SubPages>
-          </LinkStyled>
-          <LinkStyled to={`${LINK.TO.PRODUCTS}`}>
-            <SubPages>{formatMessage(localization.products)}</SubPages>
-          </LinkStyled>
-          <LinkStyled to={LINK.TO.PROFILE_PAGE}>
-            <UserName>{myProfile?.name}</UserName>
-          </LinkStyled>
-        </>
-      )}
+      <LinkStyled to={`${LINK.TO.HOME}`}>
+        <SubPages>{formatMessage(localization.cards)}</SubPages>
+      </LinkStyled>
+      <LinkStyled to={`${LINK.TO.PRODUCTS}`}>
+        <SubPages>{formatMessage(localization.products)}</SubPages>
+      </LinkStyled>
+      <LinkStyled to={LINK.TO.PROFILE_PAGE}>
+        <UserName>{myProfile?.name}</UserName>
+      </LinkStyled>
       <FlagContainer>
         <Flag src={armFlag} onClick={() => changeLocale(ARMENIAN)}></Flag>
         <Flag src={usaFlag} onClick={() => changeLocale(ENGLISH)}></Flag>
@@ -90,7 +87,13 @@ const Navbar = ({ changeLocale }) => {
       <Link to={LINK.TO.WELCOME}>
         <Logo src={logo} alt={alt} />
       </Link>
-      {isAuthencated ? authLinks : favItemLinks}
+      {loading ? (
+        <Loading type="ThreeDots" color="black" height={20} width={60} isNavbar></Loading>
+      ) : isAuthencated ? (
+        authLinks
+      ) : (
+        favItemLinks
+      )}
       <Hamburger src={hamburger} onClick={toggle}></Hamburger>
     </Container>
   );

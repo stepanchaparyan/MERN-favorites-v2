@@ -7,7 +7,6 @@ import {
   InfoContainer,
   Name,
   Price,
-  Description,
   CartContainer,
   CartPrice,
   CartStatus,

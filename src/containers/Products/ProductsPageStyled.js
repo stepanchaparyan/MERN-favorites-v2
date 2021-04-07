@@ -5,7 +5,7 @@ import { tabletUp, desktopUp } from '../../styles/mediaQueries/mixins';
 
 export const Container = styled.div`
   max-width: 1300px;
-  margin: auto;
+  margin: ${props => (props.loading ? '25% auto' : 'auto')};
   padding-bottom: 60px;
 `;
 

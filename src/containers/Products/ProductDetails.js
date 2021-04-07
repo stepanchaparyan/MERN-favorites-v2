@@ -20,6 +20,7 @@ import {
   SelectContainer,
   ButtonContainer
 } from './ProductDetailsStyled';
+import Loading from '../../components/Loading/Loading';
 
 const ProductDetails = ({ match, history }) => {
   const [qty, setQty] = useState(1);
@@ -45,9 +46,9 @@ const ProductDetails = ({ match, history }) => {
   };
 
   return (
-    <Container>
+    <Container loading={loading}>
       {loading ? (
-        <h2>Loading...</h2>
+        <Loading type="ThreeDots" color="cadetblue" height={80} width={80}></Loading>
       ) : error ? (
         <h2>{error}</h2>
       ) : (

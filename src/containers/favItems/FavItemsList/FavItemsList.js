@@ -32,8 +32,11 @@ const FavItemsList = () => {
 
   return (
     <Container>
-      {loading && <LoadingMessage>{formatMessage(localization.loadingFavItems)}</LoadingMessage>}
-      <Button onClick={toggleFormStatus}>{formatMessage(localization.addNewItem)}</Button>
+      {loading ? (
+        <LoadingMessage>{formatMessage(localization.loadingFavItems)}</LoadingMessage>
+      ) : (
+        <Button onClick={toggleFormStatus}>{formatMessage(localization.addNewItem)}</Button>
+      )}
       {!filterFavItems && !searchFavItem ? (
         <CardContainer myOpacity={toggleForm}>
           {favItems.map(favItem => (

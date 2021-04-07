@@ -5,7 +5,7 @@ export const Container = styled.div`
   display: flex;
   flex-direction: column;
   max-width: 1300px;
-  margin: 24px;
+  margin: ${props => (props.loading ? '25% auto' : '24px')};
   align-items: center;
   padding-bottom: 60px;
   ${tabletUp`

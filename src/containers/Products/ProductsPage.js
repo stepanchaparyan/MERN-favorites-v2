@@ -23,6 +23,7 @@ import theme from '../../styles/theme';
 import productsFormikProps from './ProductsFormikProps';
 import { FORM, LINK } from '../../constants';
 import localization from './localization';
+import Loading from '../../components/Loading/Loading';
 
 const { INPUT } = FORM;
 const { cadetblue } = theme;
@@ -63,95 +64,97 @@ const ProductPage = () => {
   ]);
 
   return (
-    <Container>
-      <LinkContainer>
-        <StyledLink to={LINK.TO.CART}>
-          <Text>Cart</Text>
-          <CardCount>{getCartCount()}</CardCount>
-        </StyledLink>
-      </LinkContainer>
-      <AddProduct onClick={toggleOpen}>{formatMessage(localization.addProduct)}</AddProduct>
-      <Context>
-        {loading ? (
-          <h2>Loading...</h2>
-        ) : error ? (
-          <h2>{error}</h2>
-        ) : (
-          products.map(product => (
-            <Product
-              key={product._id}
-              name={product.name}
-              description={product.description}
-              price={product.price}
-              imageUrl={product.imageUrl}
-              productId={product._id}
-            />
-          ))
-        )}
-      </Context>
-      <CustomModal
-        modalIsOpen={isOpen}
-        closeModal={toggleOpen}
-        title={formatMessage(localization.addProduct)}
-        titleBgColor={cadetblue}
-        isBigSize
-        shouldShowFooter={false}
-      >
-        <FormContainer>
-          <Formik initialValues={initialValues} validationSchema={validationSchema}>
-            {({ values, isValid }) => {
-              return (
-                <>
-                  <FormStyled>
-                    <FieldStyled
-                      type={INPUT.TYPE.TEXT}
-                      name={INPUT.NAME.NAME}
-                      id={INPUT.NAME.NAME}
-                      placeholder={formatMessage(localization.name)}
-                    />
-                    <ErrorMessage name={INPUT.NAME.NAME} component={ErrorMessages} />
-                    <FieldStyled
-                      type={INPUT.TYPE.TEXT}
-                      name={INPUT.NAME.DESCRIPTION}
-                      id={INPUT.NAME.DESCRIPTION}
-                      placeholder={formatMessage(localization.description)}
-                    />
-                    <ErrorMessage name={INPUT.NAME.DESCRIPTION} component={ErrorMessages} />
-                    <FieldStyled
-                      type={INPUT.TYPE.TEXT}
-                      name={INPUT.NAME.PRICE}
-                      id={INPUT.NAME.PRICE}
-                      placeholder={formatMessage(localization.price)}
-                    />
-                    <ErrorMessage name={INPUT.NAME.PRICE} component={ErrorMessages} />
-                    <FieldStyled
-                      type={INPUT.TYPE.TEXT}
-                      name={INPUT.NAME.COUNT_IN_STOCK}
-                      id={INPUT.NAME.COUNT_IN_STOCK}
-                      placeholder={formatMessage(localization.countInStock)}
-                    />
-                    <ErrorMessage name={INPUT.NAME.COUNT_IN_STOCK} component={ErrorMessages} />
-                    <FieldStyled
-                      type={INPUT.TYPE.TEXT}
-                      name={INPUT.NAME.IMAGE_URL}
-                      id={INPUT.NAME.IMAGE_URL}
-                      placeholder={formatMessage(localization.imageUrl)}
-                    />
-                    <ErrorMessage name={INPUT.NAME.IMAGE_URL} component={ErrorMessages} />
-                  </FormStyled>
-                  <ModalFooter
-                    primaryButtonMessage={localization.save}
-                    primaryButtonCallBack={() => onSubmit(isValid, values)}
-                    secondaryButtonMessage={localization.cancel}
-                    secondaryButtonCallBack={toggleOpen}
-                    isPrimaryButtonDisabled={!isValid}
-                  />
-                </>
-              );
-            }}
-          </Formik>
-        </FormContainer>
-      </CustomModal>
+    <Container loading={loading}>
+      {loading ? (
+        <Loading type="ThreeDots" color="cadetblue" height={80} width={80}></Loading>
+      ) : error ? (
+        <h2>{error}</h2>
+      ) : (
+        <>
+          <LinkContainer>
+            <StyledLink to={LINK.TO.CART}>
+              <Text>Cart</Text>
+              <CardCount>{getCartCount()}</CardCount>
+            </StyledLink>
+          </LinkContainer>
+          <AddProduct onClick={toggleOpen}>{formatMessage(localization.addProduct)}</AddProduct>
+          <Context>
+            {products.map(product => (
+              <Product
+                key={product._id}
+                name={product.name}
+                description={product.description}
+                price={product.price}
+                imageUrl={product.imageUrl}
+                productId={product._id}
+              />
+            ))}
+          </Context>
+          <CustomModal
+            modalIsOpen={isOpen}
+            closeModal={toggleOpen}
+            title={formatMessage(localization.addProduct)}
+            titleBgColor={cadetblue}
+            isBigSize
+            shouldShowFooter={false}
+          >
+            <FormContainer>
+              <Formik initialValues={initialValues} validationSchema={validationSchema}>
+                {({ values, isValid }) => {
+                  return (
+                    <>
+                      <FormStyled>
+                        <FieldStyled
+                          type={INPUT.TYPE.TEXT}
+                          name={INPUT.NAME.NAME}
+                          id={INPUT.NAME.NAME}
+                          placeholder={formatMessage(localization.name)}
+                        />
+                        <ErrorMessage name={INPUT.NAME.NAME} component={ErrorMessages} />
+                        <FieldStyled
+                          type={INPUT.TYPE.TEXT}
+                          name={INPUT.NAME.DESCRIPTION}
+                          id={INPUT.NAME.DESCRIPTION}
+                          placeholder={formatMessage(localization.description)}
+                        />
+                        <ErrorMessage name={INPUT.NAME.DESCRIPTION} component={ErrorMessages} />
+                        <FieldStyled
+                          type={INPUT.TYPE.TEXT}
+                          name={INPUT.NAME.PRICE}
+                          id={INPUT.NAME.PRICE}
+                          placeholder={formatMessage(localization.price)}
+                        />
+                        <ErrorMessage name={INPUT.NAME.PRICE} component={ErrorMessages} />
+                        <FieldStyled
+                          type={INPUT.TYPE.TEXT}
+                          name={INPUT.NAME.COUNT_IN_STOCK}
+                          id={INPUT.NAME.COUNT_IN_STOCK}
+                          placeholder={formatMessage(localization.countInStock)}
+                        />
+                        <ErrorMessage name={INPUT.NAME.COUNT_IN_STOCK} component={ErrorMessages} />
+                        <FieldStyled
+                          type={INPUT.TYPE.TEXT}
+                          name={INPUT.NAME.IMAGE_URL}
+                          id={INPUT.NAME.IMAGE_URL}
+                          placeholder={formatMessage(localization.imageUrl)}
+                        />
+                        <ErrorMessage name={INPUT.NAME.IMAGE_URL} component={ErrorMessages} />
+                      </FormStyled>
+                      <ModalFooter
+                        primaryButtonMessage={localization.save}
+                        primaryButtonCallBack={() => onSubmit(isValid, values)}
+                        secondaryButtonMessage={localization.cancel}
+                        secondaryButtonCallBack={toggleOpen}
+                        isPrimaryButtonDisabled={!isValid}
+                      />
+                    </>
+                  );
+                }}
+              </Formik>
+            </FormContainer>
+          </CustomModal>
+        </>
+      )}
     </Container>
   );
 };
