@@ -1,8 +1,10 @@
 import {
-  ADD_PROFILE,
+  ADD_PROFILE_REQUEST,
+  ADD_PROFILE_SUCCESS,
   EDIT_PROFILE,
   UPDATE_PROFILE,
-  GET_PROFILE,
+  GET_PROFILE_REQUEST,
+  GET_PROFILE_SUCCESS,
   PROFILE_ERROR,
   TOGGLE_FORM,
   UPDATE_FILE,
@@ -14,17 +16,23 @@ import {
 
 export default (state, { type, payload }) => {
   switch (type) {
-    case GET_PROFILE:
+    case GET_PROFILE_REQUEST:
+    case ADD_PROFILE_REQUEST:
+      return {
+        ...state,
+        loading: true
+      };
+    case GET_PROFILE_SUCCESS:
       return {
         ...state,
         profile: payload,
         loading: false,
         error: null
       };
-    case ADD_PROFILE:
+    case ADD_PROFILE_SUCCESS:
       return {
         ...state,
-        profile: [...state.profile, payload],
+        profile: [payload],
         loading: false
       };
     case EDIT_PROFILE:

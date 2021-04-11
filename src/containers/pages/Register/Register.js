@@ -18,11 +18,12 @@ import {
 import localization from './localization';
 import { FORM, LINK } from '../../../constants';
 import registerFormFormikProps from './RegisterFormFormikProps';
+import Loading from '../../../components/Loading/Loading';
 
 const { INPUT } = FORM;
 
 const Register = props => {
-  const { register, isAuthencated, error, clearErrors } = useContext(AuthContext);
+  const { register, isAuthencated, error, clearErrors, loading } = useContext(AuthContext);
   const { formatMessage } = useIntl();
 
   useEffect(() => {
@@ -46,52 +47,62 @@ const Register = props => {
   return (
     <Container>
       <Title>{formatMessage(localization.signup)}</Title>
-      <Formik initialValues={initialValues} validationSchema={validationSchema} onSubmit={onSubmit}>
-        <FormStyled>
-          <FieldStyled
-            type={INPUT.TYPE.TEXT}
-            name={INPUT.NAME.NAME}
-            id={INPUT.NAME.NAME}
-            placeholder={formatMessage(localization.name)}
-          />
-          <ErrorMessage name={INPUT.NAME.NAME} component={ErrorMessages} />
-          <FieldStyled
-            type={INPUT.TYPE.EMAIL}
-            name={INPUT.NAME.EMAIL}
-            id={INPUT.NAME.EMAIL}
-            placeholder={formatMessage(localization.email)}
-          />
-          <ErrorMessage name={INPUT.NAME.EMAIL} component={ErrorMessages} />
-          <FieldStyled
-            type={INPUT.TYPE.PASSWORD}
-            name={INPUT.NAME.PASSWORD}
-            id={INPUT.NAME.PASSWORD}
-            placeholder={formatMessage(localization.password)}
-          />
-          <ErrorMessage name={INPUT.NAME.PASSWORD} component={ErrorMessages} />
-          <FieldStyled
-            type={INPUT.TYPE.PASSWORD}
-            name={INPUT.NAME.PASSWORD_2}
-            id={INPUT.NAME.PASSWORD_2}
-            placeholder={formatMessage(localization.confirmPassword)}
-          />
-          <ErrorMessage name={INPUT.NAME.PASSWORD_2} component={ErrorMessages} />
-          {error && (
-            <Errors>
-              <ErrorButton type={INPUT.TYPE.BUTTON} onClick={() => clearErrors()}>
-                {error}
-              </ErrorButton>
-            </Errors>
-          )}
-          <RegisterButton type={INPUT.TYPE.SUBMIT} disabled={error}>
-            {formatMessage(localization.signup)}
-          </RegisterButton>
-        </FormStyled>
-      </Formik>
-      <QuestionText>
-        {formatMessage(localization.alreadyHaveAnAccout)} &nbsp;
-        <Link to={LINK.TO.LOGIN}>{formatMessage(localization.signin)}</Link>
-      </QuestionText>
+      {loading ? (
+        <Loading type="ThreeDots" color="cadetblue" height={20} width={60}></Loading>
+      ) : (
+        <>
+          <Formik
+            initialValues={initialValues}
+            validationSchema={validationSchema}
+            onSubmit={onSubmit}
+          >
+            <FormStyled>
+              <FieldStyled
+                type={INPUT.TYPE.TEXT}
+                name={INPUT.NAME.NAME}
+                id={INPUT.NAME.NAME}
+                placeholder={formatMessage(localization.name)}
+              />
+              <ErrorMessage name={INPUT.NAME.NAME} component={ErrorMessages} />
+              <FieldStyled
+                type={INPUT.TYPE.EMAIL}
+                name={INPUT.NAME.EMAIL}
+                id={INPUT.NAME.EMAIL}
+                placeholder={formatMessage(localization.email)}
+              />
+              <ErrorMessage name={INPUT.NAME.EMAIL} component={ErrorMessages} />
+              <FieldStyled
+                type={INPUT.TYPE.PASSWORD}
+                name={INPUT.NAME.PASSWORD}
+                id={INPUT.NAME.PASSWORD}
+                placeholder={formatMessage(localization.password)}
+              />
+              <ErrorMessage name={INPUT.NAME.PASSWORD} component={ErrorMessages} />
+              <FieldStyled
+                type={INPUT.TYPE.PASSWORD}
+                name={INPUT.NAME.PASSWORD_2}
+                id={INPUT.NAME.PASSWORD_2}
+                placeholder={formatMessage(localization.confirmPassword)}
+              />
+              <ErrorMessage name={INPUT.NAME.PASSWORD_2} component={ErrorMessages} />
+              {error && (
+                <Errors>
+                  <ErrorButton type={INPUT.TYPE.BUTTON} onClick={() => clearErrors()}>
+                    {error}
+                  </ErrorButton>
+                </Errors>
+              )}
+              <RegisterButton type={INPUT.TYPE.SUBMIT}>
+                {formatMessage(localization.signup)}
+              </RegisterButton>
+            </FormStyled>
+          </Formik>
+          <QuestionText>
+            {formatMessage(localization.alreadyHaveAnAccout)} &nbsp;
+            <Link to={LINK.TO.LOGIN}>{formatMessage(localization.signin)}</Link>
+          </QuestionText>
+        </>
+      )}
     </Container>
   );
 };

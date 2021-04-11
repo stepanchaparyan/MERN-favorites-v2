@@ -28,7 +28,7 @@ import Loading from '../../../components/Loading/Loading';
 const { ARMENIAN, ENGLISH } = LANGUAGES;
 
 const Navbar = ({ changeLocale }) => {
-  const { logout, isAuthencated, loading, clearErrors } = useContext(AuthContext);
+  const { logout, user, isAuthencated, loading, clearErrors } = useContext(AuthContext);
   const { profile, getProfile } = useContext(ProfileContext);
   const [open, setOpen] = useState(false);
   const { formatMessage } = useIntl();
@@ -61,7 +61,7 @@ const Navbar = ({ changeLocale }) => {
         <SubPages>{formatMessage(localization.products)}</SubPages>
       </LinkStyled>
       <LinkStyled to={LINK.TO.PROFILE_PAGE}>
-        <UserName>{myProfile?.name}</UserName>
+        <UserName>{myProfile ? myProfile?.name : user?.name}</UserName>
       </LinkStyled>
       <FlagContainer>
         <Flag src={armFlag} onClick={() => changeLocale(ARMENIAN)}></Flag>

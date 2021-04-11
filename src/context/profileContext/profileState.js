@@ -5,10 +5,12 @@ import { HEADER_CONFIG, URL, ERRORS, COMMON } from '../../constants';
 import ProfileContext from './profileContext';
 import ProfileReducer from './profileReducer';
 import {
-  ADD_PROFILE,
+  ADD_PROFILE_REQUEST,
+  ADD_PROFILE_SUCCESS,
   EDIT_PROFILE,
   UPDATE_PROFILE,
-  GET_PROFILE,
+  GET_PROFILE_REQUEST,
+  GET_PROFILE_SUCCESS,
   PROFILE_ERROR,
   TOGGLE_FORM,
   UPDATE_FILE,
@@ -37,9 +39,14 @@ const ProfileState = props => {
   // get profile
   const getProfile = async () => {
     try {
+      dispatch({
+        type: GET_PROFILE_REQUEST,
+        loading: true
+      });
+
       const res = await axios.get(PROFILE);
       dispatch({
-        type: GET_PROFILE,
+        type: GET_PROFILE_SUCCESS,
         payload: res.data
       });
     } catch (err) {
@@ -53,15 +60,21 @@ const ProfileState = props => {
   // Add Profile
   const addProfile = async profile => {
     try {
+      dispatch({
+        type: ADD_PROFILE_REQUEST,
+        loading: true
+      });
+
       const res = await axios.post(
         PROFILE_ADD,
         profile,
         HEADER_CONFIG.CONTENT_TYPE_APPLICATION_JSON
       );
       dispatch({
-        type: ADD_PROFILE,
+        type: ADD_PROFILE_SUCCESS,
         payload: res.data
       });
+      getProfile();
     } catch (err) {
       dispatch({
         type: PROFILE_ERROR,

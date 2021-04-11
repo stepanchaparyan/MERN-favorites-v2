@@ -24,7 +24,6 @@ const cartItemsInLocalStorage = localStorage.getItem('cart')
   : [];
 
 const initialState = {
-  // getProducts: null,
   cart: {
     cartItems: cartItemsInLocalStorage
   }

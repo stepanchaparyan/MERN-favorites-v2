@@ -1,13 +1,9 @@
 import * as actionTypes from '../constants/cartConstants';
 
-const CART_INITIAL_STATE = {
-  cartItems: []
-};
-
-export const cartReducer = (state = CART_INITIAL_STATE, action) => {
-  switch (action.type) {
+export const cartReducer = (state = { cartItems: [] }, { type, payload }) => {
+  switch (type) {
     case actionTypes.ADD_TO_CART:
-      const item = action.payload;
+      const item = payload;
 
       const existItem = state.cartItems.find(x => x.product === item.product);
 
@@ -25,7 +21,7 @@ export const cartReducer = (state = CART_INITIAL_STATE, action) => {
     case actionTypes.REMOVE_FROM_CART:
       return {
         ...state,
-        cartItems: state.cartItems.filter(x => x.product !== action.payload)
+        cartItems: state.cartItems.filter(x => x.product !== payload)
       };
     default:
       return state;

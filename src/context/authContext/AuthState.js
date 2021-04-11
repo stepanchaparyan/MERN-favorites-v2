@@ -6,8 +6,10 @@ import authReducer from './authReducer';
 import AuthContext from './authContext';
 import setAuthToken from '../../utils/setAuthToken';
 import {
+  REGISTER_REQUEST,
   REGISTER_SUCCESS,
   REGISTER_FAIL,
+  LOGIN_REQUEST,
   LOGIN_SUCCESS,
   LOGIN_FAIL,
   USER_LOADED,
@@ -49,6 +51,11 @@ const AuthState = props => {
   //Register User
   const register = async formData => {
     try {
+      dispatch({
+        type: REGISTER_REQUEST,
+        loading: true
+      });
+
       const res = await axios.post(REGISTER, formData, HEADER_CONFIG.CONTENT_TYPE_APPLICATION_JSON);
       dispatch({
         type: REGISTER_SUCCESS,
@@ -66,6 +73,11 @@ const AuthState = props => {
   //login user
   const login = async formData => {
     try {
+      dispatch({
+        type: LOGIN_REQUEST,
+        loading: true
+      });
+
       const res = await axios.post(AUTH, formData, HEADER_CONFIG.CONTENT_TYPE_APPLICATION_JSON);
       dispatch({
         type: LOGIN_SUCCESS,

@@ -1,8 +1,10 @@
 import {
+  REGISTER_REQUEST,
   REGISTER_SUCCESS,
   REGISTER_FAIL,
   USER_LOADED,
   AUTH_ERROR,
+  LOGIN_REQUEST,
   LOGIN_SUCCESS,
   LOGIN_FAIL,
   LOGOUT,
@@ -18,6 +20,12 @@ export default (state, { type, payload }) => {
         user: payload,
         loading: false,
         error: null
+      };
+    case LOGIN_REQUEST:
+    case REGISTER_REQUEST:
+      return {
+        ...state,
+        loading: true
       };
     case REGISTER_SUCCESS:
     case LOGIN_SUCCESS:
