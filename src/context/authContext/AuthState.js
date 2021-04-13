@@ -24,7 +24,7 @@ const AuthState = props => {
   const intialState = {
     token: localStorage.getItem('token'),
     isAuthencated: null,
-    loading: true,
+    loading: null,
     user: null,
     error: null
   };

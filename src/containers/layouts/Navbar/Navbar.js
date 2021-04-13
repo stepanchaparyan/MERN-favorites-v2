@@ -36,8 +36,8 @@ const Navbar = ({ changeLocale }) => {
   const node = useRef();
 
   useEffect(() => {
-    getProfile();
-  }, []);
+    if (isAuthencated) getProfile();
+  }, [isAuthencated]);
 
   const myProfile = profile && profile[0];
 
@@ -61,7 +61,7 @@ const Navbar = ({ changeLocale }) => {
         <SubPages>{formatMessage(localization.products)}</SubPages>
       </LinkStyled>
       <LinkStyled to={LINK.TO.PROFILE_PAGE}>
-        <UserName>{myProfile ? myProfile?.name : user?.name}</UserName>
+        <UserName>{myProfile?.name}</UserName>
       </LinkStyled>
       <FlagContainer>
         <Flag src={armFlag} onClick={() => changeLocale(ARMENIAN)}></Flag>

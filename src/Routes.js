@@ -9,17 +9,17 @@ import Profile from './containers/pages/Profile/Profile';
 import PrivateRoute from './routing/PrivateRoute';
 import AuthContext from './context/authContext/authContext';
 import Books from './containers/Books/Books';
-import BookDetail from './containers/Books/BookDetail';
+// import BookDetail from './containers/Books/BookDetail';
 import ProductsPage from './containers/Products/ProductsPage';
 import ProductDetails from './containers/Products/ProductDetails';
 import CardPage from './containers/Products/Card/CardPage';
 
 const App = () => {
-  const { loadUser } = useContext(AuthContext);
+  const { isAuthencated, loadUser } = useContext(AuthContext);
 
   useEffect(() => {
-    loadUser();
-  }, []);
+    if (isAuthencated) loadUser();
+  }, [isAuthencated]);
 
   return (
     <Switch>

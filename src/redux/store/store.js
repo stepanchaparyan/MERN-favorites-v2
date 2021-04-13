@@ -2,9 +2,9 @@ import { createStore, combineReducers, applyMiddleware } from 'redux';
 import thunk from 'redux-thunk';
 import { composeWithDevTools } from 'redux-devtools-extension';
 
-import createdBookReducer from '../reducers/createdBookReducer';
-import booksListReducer from '../reducers/booksListReducer';
-import bookDetailReducer from '../reducers/bookDetailsReducer';
+// import createdBookReducer from '../reducers/createdBookReducer';
+// import booksListReducer from '../reducers/booksListReducer';
+// import bookDetailReducer from '../reducers/bookDetailsReducer';
 import { cartReducer } from '../reducers/cartReducers';
 import { productsReducer, productDetailsReducer } from '../reducers/productReducers';
 
