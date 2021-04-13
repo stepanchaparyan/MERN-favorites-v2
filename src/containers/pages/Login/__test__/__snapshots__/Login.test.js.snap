@@ -192,12 +192,6 @@ exports[`Login component test with Enzyme renders snapshot 1`] = `
         name="password"
       />
       <styled.button
-        disabled={
-          Array [
-            "a",
-            "b",
-          ]
-        }
         type="submit"
       >
         LogIn

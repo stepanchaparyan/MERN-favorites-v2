@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { tabletUp } from '../../styles/mediaQueries/mixins';
 
 export const customStyles = {
   content: {
@@ -22,6 +23,15 @@ export const customStyles = {
     backgroundColor: 'rgba(255, 255, 255, 0.75)'
   }
 };
+
+export const ModalContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  width: auto;
+  ${tabletUp`
+    width: ${props => (props.isBigSize ? '450px' : 'auto')};
+  `};
+`;
 
 export const ButtonConfirm = styled.button`
   border: 0;
@@ -58,12 +68,6 @@ export const ButtonCancel = styled.button`
   padding: 8px;
 `;
 
-export const ModalContainer = styled.div`
-  display: flex;
-  flex-direction: column;
-  width: ${props => (props.isBigSize ? '450px' : 'auto')};
-`;
-
 export const ModalTitleContainer = styled.div`
   background-color: ${props => (props.bgColor ? props.bgColor : props.theme.cadetblue)};
   display: flex;
@@ -86,11 +90,12 @@ export const ModalTextContainer = styled.div`
   align-items: center;
   padding: 0 4%;
   text-align: center;
+  white-space: pre-wrap;
 `;
 
 export const ModalButtonsContainer = styled.div`
   display: flex;
-  justify-content: space-between;
+  justify-content: ${props => (props.inCenter ? 'center' : 'space-between')};
   border-top: 1px solid lightGray;
 `;
 

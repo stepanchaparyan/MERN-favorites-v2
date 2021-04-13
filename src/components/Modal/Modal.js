@@ -41,17 +41,21 @@ const CustomModal = ({
       <ModalContainer isBigSize={isBigSize}>
         <ModalTitleContainer bgColor={titleBgColor}>
           <ModalTitle>{title}</ModalTitle>
-          <ButtonClose onClick={closeModal} bgColor={titleBgColor}>
-            {X}
-          </ButtonClose>
+          {closeModal && (
+            <ButtonClose onClick={closeModal} bgColor={titleBgColor}>
+              {X}
+            </ButtonClose>
+          )}
         </ModalTitleContainer>
         {text && <ModalTextContainer>{text}</ModalTextContainer>}
         {children}
         {shouldShowFooter && (
-          <ModalButtonsContainer>
-            <ButtonCancel onClick={closeModal} color={cancelButtonColor}>
-              {buttonCancelText}
-            </ButtonCancel>
+          <ModalButtonsContainer inCenter={!buttonCancelText}>
+            {buttonCancelText && (
+              <ButtonCancel onClick={closeModal} color={cancelButtonColor}>
+                {buttonCancelText}
+              </ButtonCancel>
+            )}
             {buttonConfirmText && (
               <ButtonConfirm onClick={onConfirm}>{buttonConfirmText}</ButtonConfirm>
             )}
@@ -64,7 +68,7 @@ const CustomModal = ({
 
 CustomModal.propTypes = {
   modalIsOpen: PropTypes.bool.isRequired,
-  closeModal: PropTypes.func.isRequired,
+  closeModal: PropTypes.func,
   onConfirm: PropTypes.func,
   title: PropTypes.string,
   text: PropTypes.string,
@@ -79,6 +83,7 @@ CustomModal.propTypes = {
 
 CustomModal.defaultProps = {
   onConfirm: NOOP,
+  closeModal: null,
   title: DEFAULT_PROPS.TITLE,
   text: DEFAULT_PROPS.PLEASE_CONFIRM,
   buttonConfirmText: DEFAULT_PROPS.CONFIRM,

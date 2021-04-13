@@ -62,7 +62,9 @@ exports[`Modal component test with Enzyme renders correct snapshot 1`] = `
     <styled.div>
       text
     </styled.div>
-    <styled.div>
+    <styled.div
+      inCenter={false}
+    >
       <styled.button
         color="red"
         onClick={[MockFunction]}

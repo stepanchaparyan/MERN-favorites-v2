@@ -5,6 +5,52 @@ exports[`Register component test with Enzyme renders snapshot 1`] = `
   <styled.div>
     Sign Up
   </styled.div>
+  <Modal
+    ariaHideApp={true}
+    bodyOpenClassName="ReactModal__Body--open"
+    closeTimeoutMS={0}
+    contentElement={[Function]}
+    isOpen={false}
+    onConfirm={[Function]}
+    overlayElement={[Function]}
+    parentSelector={[Function]}
+    portalClassName="ReactModalPortal"
+    preventScroll={false}
+    role="dialog"
+    shouldCloseOnEsc={true}
+    shouldCloseOnOverlayClick={true}
+    shouldFocusAfterRender={true}
+    shouldReturnFocusAfterClose={true}
+    style={
+      Object {
+        "content": Object {
+          "border": "none",
+          "position": "unset",
+        },
+        "overlay": Object {
+          "inset": "0%",
+          "position": "fixed",
+          "zIndex": "1",
+        },
+      }
+    }
+  >
+    <styled.div>
+      <styled.div>
+        <styled.div>
+          Welcome to our board
+        </styled.div>
+      </styled.div>
+      <styled.div>
+        There you can create cards for your favorite Items, favorite products and add them to your card
+      </styled.div>
+      <styled.button
+        onClick={[Function]}
+      >
+        Let's go
+      </styled.button>
+    </styled.div>
+  </Modal>
   <Formik
     initialValues={
       Object {
@@ -354,7 +400,6 @@ exports[`Register component test with Enzyme renders snapshot 1`] = `
         </styled.button>
       </styled.div>
       <styled.button
-        disabled="a"
         type="submit"
       >
         Sign Up

@@ -54,6 +54,7 @@ export const LoadingMessage = styled.h3`
   display: flex;
   justify-content: center;
   color: ${props => props.theme.cadetblue};
+  text-align: center;
 `;
 
 export const Info = styled.div`

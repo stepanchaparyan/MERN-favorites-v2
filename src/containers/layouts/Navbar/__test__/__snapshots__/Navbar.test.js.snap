@@ -30,7 +30,9 @@ exports[`Navbar component test with Enzyme renders snapshot 1`] = `
     <Styled(Link)
       to="/profilePage"
     >
-      <styled.div />
+      <styled.div>
+        testName
+      </styled.div>
     </Styled(Link)>
     <styled.div>
       <styled.img

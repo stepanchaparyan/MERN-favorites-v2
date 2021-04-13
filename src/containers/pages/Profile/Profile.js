@@ -1,6 +1,5 @@
 import React, { useContext, useEffect } from 'react';
 import { useIntl } from 'react-intl';
-import AuthContext from '../../../context/authContext/authContext';
 import ProfileContext from '../../../context/profileContext/profileContext';
 import ProfileForm from '../ProfileForm/ProfileForm';
 import FileUpload from '../ProfileForm/FileUpload';
@@ -33,26 +32,14 @@ const { PLACE, EFFECT } = REACT_TOOLTIP_STYLED;
 
 const Profile = () => {
   const { cadetblue } = theme;
-  const { user } = useContext(AuthContext);
-  let {
-    loading,
-    getProfile,
-    addProfile,
-    profile,
-    edit_Profile,
-    toggle_Form,
-    toggleForm,
-    message
-  } = useContext(ProfileContext);
+  let { loading, getProfile, profile, edit_Profile, toggle_Form, toggleForm, message } = useContext(
+    ProfileContext
+  );
   const { formatMessage } = useIntl();
 
   useEffect(() => {
     getProfile();
   }, []);
-
-  const add = () => {
-    addProfile({ name: user.name, email: user.email });
-  };
 
   if (profile === null || profile.length === 0 || profile === undefined) {
     return (
@@ -60,7 +47,7 @@ const Profile = () => {
         {loading ? (
           <LoadingMessage>{formatMessage(localization.loadingProfile)}</LoadingMessage>
         ) : (
-          <>{add()}</>
+          <LoadingMessage>{formatMessage(localization.noAnyProfile)}</LoadingMessage>
         )}
       </>
     );

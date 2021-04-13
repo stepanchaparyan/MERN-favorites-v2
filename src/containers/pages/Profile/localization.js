@@ -5,6 +5,11 @@ export default defineMessages({
     id: 'profile.loadingProfile',
     defaultMessage: 'Loading profile...'
   },
+  noAnyProfile: {
+    id: 'profile.noAnyProfile',
+    defaultMessage:
+      'Whoops, the profile is not created for you, yoo can register again and profile will be created for you automatically'
+  },
   profilePage: {
     id: 'profile.profilePage',
     defaultMessage: 'Profile page'
