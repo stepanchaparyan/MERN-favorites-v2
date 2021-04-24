@@ -39,12 +39,10 @@
   },
   "lint-staged": {
     "*.{js,jsx}": [
-      "npm run eslint",
-      "git add"
+      "npm run eslint"
     ],
     "*.{json|css|scss|md}": [
-      "prettier --write",
-      "git add"
+      "prettier --write"
     ]
   },
   "dependencies": {
