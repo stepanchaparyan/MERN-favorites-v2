@@ -1,9 +1,9 @@
 import React, { useContext, useEffect } from 'react';
 import { Route, Switch } from 'react-router-dom';
 import Home from './containers/pages/Home/Home';
-import Register from './containers/pages/Register/Register';
-import Login from './containers/pages/Login/Login';
-import PageNotFound from './containers/pages/PageNotFound/PageNotFound';
+import Register from './components/Register/Register';
+import Login from './components/Login/Login';
+import PageNotFound from './components/PageNotFound/PageNotFound';
 import Welcome from './containers/pages/Welcome/Welcome';
 import Profile from './containers/pages/Profile/Profile';
 import PrivateRoute from './routing/PrivateRoute';

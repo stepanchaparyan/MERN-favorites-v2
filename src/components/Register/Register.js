@@ -4,8 +4,8 @@ import { Link } from 'react-router-dom';
 import { Formik, ErrorMessage } from 'formik';
 import Modal from 'react-modal';
 import PropTypes from 'prop-types';
-import AuthContext from '../../../context/authContext/authContext';
-import ProfileContext from '../../../context/profileContext/profileContext';
+import AuthContext from '../../context/authContext/authContext';
+import ProfileContext from '../../context/profileContext/profileContext';
 import {
   Container,
   Title,
@@ -24,9 +24,9 @@ import {
   ButtonConfirm
 } from './RegisterStyled';
 import localization from './localization';
-import { FORM, LINK } from '../../../constants';
+import { FORM, LINK } from '../../constants';
 import registerFormFormikProps from './RegisterFormFormikProps';
-import Loading from '../../../components/Loading/Loading';
+import Loading from '../../components/Loading/Loading';
 
 const { INPUT } = FORM;
 

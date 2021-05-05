@@ -1,9 +1,9 @@
 import React from 'react';
 import { useIntl } from 'react-intl';
 import { Container, Module, PageNotFoundText, LinkStyled, Logo } from './PageNotFoundStyled';
-import Img from '../../../assets/elephant.png';
+import Img from '../../assets/elephant.png';
 import localization from './localization';
-import { LINK } from '../../../constants';
+import { LINK } from '../../constants';
 
 const NotFound = () => {
   const { formatMessage } = useIntl();

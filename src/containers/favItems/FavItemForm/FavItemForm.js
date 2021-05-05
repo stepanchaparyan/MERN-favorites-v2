@@ -16,7 +16,7 @@ import {
 } from './FavItemFormStyled';
 import { FORM } from '../../../constants';
 import localization from './localization';
-import { useOnClickOutside } from '../../hooks/clickOutSide';
+import { useOnClickOutside } from '../../../hooks/clickOutSide';
 import favItemFormFormikProps from './FavItemFormFormikProps';
 
 const { INPUT, SELECT } = FORM;

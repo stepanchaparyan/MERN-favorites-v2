@@ -3,7 +3,7 @@ import { useIntl } from 'react-intl';
 import { Link } from 'react-router-dom';
 import { Formik, ErrorMessage } from 'formik';
 import PropTypes from 'prop-types';
-import AuthContext from '../../../context/authContext/authContext';
+import AuthContext from '../../context/authContext/authContext';
 import {
   Container,
   Title,
@@ -16,7 +16,7 @@ import {
   ErrorButton
 } from './LoginStyled';
 import localization from './localization';
-import { FORM, LINK } from '../../../constants';
+import { FORM, LINK } from '../../constants';
 import loginFormFormikProps from './LoginFormFormikProps';
 
 const { INPUT } = FORM;

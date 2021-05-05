@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { tabletUp } from '../../../styles/mediaQueries/mixins';
+import { tabletUp } from '../../styles/mediaQueries/mixins';
 import { Form, Field } from 'formik';
 
 export const Container = styled.div`

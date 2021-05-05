@@ -1,5 +1,5 @@
 import { useEffect } from 'react';
-import { EVENTS } from '../../constants';
+import { EVENTS } from '../constants';
 const { CLICK } = EVENTS;
 
 export const useOnClickOutside = (ref, handler) => {

@@ -1,5 +1,5 @@
-import { renderToJSON } from '../../../../utils/tests';
-import theme from '../../../../styles/theme';
+import { renderToJSON } from '../../../utils/tests';
+import theme from '../../../styles/theme';
 import { Container, NavLinks } from '../NavbarStyled';
 
 describe('NavbarStyled component test with Enzyme', () => {

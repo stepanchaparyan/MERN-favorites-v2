@@ -2,8 +2,8 @@ import React, { useEffect, useContext, useState, useRef } from 'react';
 import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import { useIntl } from 'react-intl';
-import AuthContext from '../../../context/authContext/authContext';
-import ProfileContext from '../../../context/profileContext/profileContext';
+import AuthContext from '../../context/authContext/authContext';
+import ProfileContext from '../../context/profileContext/profileContext';
 import {
   Container,
   Logo,
@@ -16,19 +16,19 @@ import {
   Hamburger,
   FlagContainer
 } from './NavbarStyled';
-import logo from '../../../assets/logo.png';
-import hamburger from '../../../assets/hamburger.png';
+import logo from '../../assets/logo.png';
+import hamburger from '../../assets/hamburger.png';
 import localization from './localization';
-import armFlag from '../../../assets/arm.png';
-import usaFlag from '../../../assets/usa.png';
-import { LINK, LANGUAGES } from '../../../constants';
-import { useOnClickOutside } from '../../hooks/clickOutSide';
-import Loading from '../../../components/Loading/Loading';
+import armFlag from '../../assets/arm.png';
+import usaFlag from '../../assets/usa.png';
+import { LINK, LANGUAGES } from '../../constants';
+import { useOnClickOutside } from '../..//hooks/clickOutSide';
+import Loading from '../Loading/Loading';
 
 const { ARMENIAN, ENGLISH } = LANGUAGES;
 
 const Navbar = ({ changeLocale }) => {
-  const { logout, user, isAuthencated, loading, clearErrors } = useContext(AuthContext);
+  const { logout, isAuthencated, loading, clearErrors } = useContext(AuthContext);
   const { profile, getProfile } = useContext(ProfileContext);
   const [open, setOpen] = useState(false);
   const { formatMessage } = useIntl();
