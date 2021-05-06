@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { HashRouter as Router } from 'react-router-dom';
 import { IntlProvider } from 'react-intl';
 import { ThemeProvider } from 'styled-components';
+import { Helmet, HelmetProvider } from 'react-helmet-async';
 import Navbar from './components/Navbar/Navbar';
 import Footer from './components/Footer/Footer';
 import Routes from './Routes';
@@ -35,23 +36,34 @@ const App = () => {
   };
 
   return (
-    <IntlProvider locale={myLocale} messages={messages[myLocale]}>
-      <ThemeProvider theme={theme}>
-        <AuthState>
-          <FavItemState>
-            <ProfileState>
-              <Router>
-                <div>
-                  <Navbar changeLocale={changeLocale} />
-                  <Routes />
-                  <Footer />
-                </div>
-              </Router>
-            </ProfileState>
-          </FavItemState>
-        </AuthState>
-      </ThemeProvider>
-    </IntlProvider>
+    <HelmetProvider>
+      <Helmet>
+        <title>My favorite items</title>
+        <link rel="shortcut icon" href="favicon.ico" />
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta name="description" content="Favorite cards page" />
+        <meta name="keywords" content="HTML, CSS, JavaScript, React, cards, favorites" />
+        <meta name="author" content="Stepan Chaparyan" />
+      </Helmet>
+      <IntlProvider locale={myLocale} messages={messages[myLocale]}>
+        <ThemeProvider theme={theme}>
+          <AuthState>
+            <FavItemState>
+              <ProfileState>
+                <Router>
+                  <div>
+                    <Navbar changeLocale={changeLocale} />
+                    <Routes />
+                    <Footer />
+                  </div>
+                </Router>
+              </ProfileState>
+            </FavItemState>
+          </AuthState>
+        </ThemeProvider>
+      </IntlProvider>
+    </HelmetProvider>
   );
 };
 

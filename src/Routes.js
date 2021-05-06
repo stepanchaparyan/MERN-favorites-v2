@@ -14,7 +14,7 @@ import ProductsPage from './containers/Products/ProductsPage';
 import ProductDetails from './containers/Products/ProductDetails';
 import CardPage from './containers/Products/Card/CardPage';
 
-const App = () => {
+const Routes = () => {
   const { isAuthencated, loadUser } = useContext(AuthContext);
 
   useEffect(() => {
@@ -37,4 +37,4 @@ const App = () => {
   );
 };
 
-export default App;
+export default Routes;
