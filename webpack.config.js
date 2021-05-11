@@ -115,7 +115,7 @@ module.exports = {
     path: path.resolve(__dirname, 'build')
   },
   resolve: {
-    extensions: ['.mjs', '.js', '.jsx', '.json', '.png', 'jpg', 'jpeg', 'svg', 'webp', 'jp2']
+    extensions: ['.mjs', '.js', '.jsx', '.json', '.png', 'jpg', 'jpeg', 'svg', 'webp', 'jp2', 'pdf']
   },
   optimization: optimization(),
   devServer: {
@@ -146,7 +146,7 @@ module.exports = {
         use: cssLoaders('sass-loader')
       },
       {
-        test: /\.(png|jpe?g|svg|gif|webp|jp2)$/,
+        test: /\.(png|jpe?g|svg|gif|webp|pdf|jp2)$/,
         use: [
           'file-loader',
           {

@@ -56,6 +56,20 @@ const Welcome = () => {
             <Pie2></Pie2>
           </Pie>
         </PieContainer>
+        <div onClick={() => window.open(require('../../../assets/123.pdf'), '_blank')}>
+          Download
+        </div>
+        <div onClick={() => window.open(require('../src/assets/123.pdf'), '_blank')}>Download</div>
+        <div
+          onClick={() =>
+            window.open(
+              require('https://bucketforfavorites.s3.eu-north-1.amazonaws.com/123.pdf'),
+              '_blank'
+            )
+          }
+        >
+          Download
+        </div>
       </Module>
     </Container>
   );
