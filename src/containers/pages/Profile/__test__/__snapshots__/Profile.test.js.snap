@@ -52,7 +52,7 @@ exports[`Profile component test with Enzyme renders snapshot 1`] = `
             :
           </styled.div>
           <styled.div>
-            Apr 14, 2021
+            May 11, 2021
           </styled.div>
         </styled.div>
         <styled.div>

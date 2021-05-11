@@ -1,13 +1,16 @@
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
+import PNF from '../../assets/404.jpg';
 
 export const Container = styled.div`
-  display: flex;
-  justify-content: center;
-  color: ${props => props.theme.cadetblue};
-  padding: 0 32px 50px 32px;
+  text-align: center;
   font-weight: 600;
   font-size: 24px;
+  background-image: url(${PNF});
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  height: 70vh;
 `;
 
 export const Module = styled.div`
@@ -17,22 +20,11 @@ export const Module = styled.div`
   padding: 16px;
 `;
 
-export const PageNotFoundText = styled.div`
-  font-size: 50px;
-  padding: 32px;
-  color: red;
-`;
-
 export const LinkStyled = styled(Link)`
   color: ${props => props.theme.cadetblue};
   margin: 32px;
   text-decoration: none;
-  font-size: 32px;
-`;
-
-export const Logo = styled.img`
-  height: 200px;
+  font-size: 28px;
   position: absolute;
-  bottom: 150px;
-  right: 150px;
+  bottom: 10vh;
 `;
