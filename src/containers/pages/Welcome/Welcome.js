@@ -56,6 +56,12 @@ const Welcome = () => {
             <Pie2></Pie2>
           </Pie>
         </PieContainer>
+        <a
+          href="https://bucketforfavorites.s3.eu-north-1.amazonaws.com/test.pdf"
+          download="test.pdf"
+        >
+          Download
+        </a>
       </Module>
     </Container>
   );
