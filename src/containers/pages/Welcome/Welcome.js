@@ -59,8 +59,7 @@ const Welcome = () => {
         <div onClick={() => window.open(require('../../../assets/123.pdf'), '_blank')}>
           Download
         </div>
-        <div onClick={() => window.open(require('../src/assets/123.pdf'), '_blank')}>Download</div>
-        <div
+        {/* <div
           onClick={() =>
             window.open(
               require('https://bucketforfavorites.s3.eu-north-1.amazonaws.com/123.pdf'),
@@ -69,7 +68,13 @@ const Welcome = () => {
           }
         >
           Download
-        </div>
+        </div> */}
+        <a
+          href="https://bucketforfavorites.s3.eu-north-1.amazonaws.com/123.pdf"
+          download="w3logo.pdf"
+        >
+          XXXXXXXXXXXXX
+        </a>
       </Module>
     </Container>
   );
