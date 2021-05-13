@@ -101,14 +101,7 @@ const plugins = () => {
       linkType: 'text/css'
     }),
     new LinkTypePlugin({
-      '*.css': 'text/css',
-      '*.js': 'text/javascript',
-      '*.png': 'image/png',
-      '*.jpg': 'image/jpeg',
-      '*.jpeg': 'image/jpeg',
-      '*.gif': 'image/gif',
-      '*.webp': 'image/webp',
-      '*.bmp': 'image/bmp'
+      '*.css': 'text/css'
     }),
     new DashboardPlugin()
   ];
