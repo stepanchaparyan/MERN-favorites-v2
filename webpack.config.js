@@ -96,7 +96,8 @@ const plugins = () => {
       }
     ]),
     new MiniCssExtractPlugin({
-      filename: filename('css')
+      filename: filename('css'),
+      linkType: 'text/css'
     }),
     new DashboardPlugin()
   ];
