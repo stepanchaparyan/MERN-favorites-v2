@@ -8,6 +8,7 @@ const TerserWebpackPlugin = require('terser-webpack-plugin');
 const DashboardPlugin = require('webpack-dashboard/plugin');
 const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
 const CssnanoPlugin = require('cssnano-webpack-plugin');
+const LinkTypePlugin = require('html-webpack-link-type-plugin').HtmlWebpackLinkTypePlugin;
 
 const isDev = process.env.NODE_ENV === 'development';
 const isProd = !isDev;
@@ -98,6 +99,16 @@ const plugins = () => {
     new MiniCssExtractPlugin({
       filename: filename('css'),
       linkType: 'text/css'
+    }),
+    new LinkTypePlugin({
+      '*.css': 'text/css',
+      '*.js': 'text/javascript',
+      '*.png': 'image/png',
+      '*.jpg': 'image/jpeg',
+      '*.jpeg': 'image/jpeg',
+      '*.gif': 'image/gif',
+      '*.webp': 'image/webp',
+      '*.bmp': 'image/bmp'
     }),
     new DashboardPlugin()
   ];

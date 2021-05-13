@@ -53,6 +53,7 @@
     "faker": "^4.1.0",
     "formik": "^2.2.6",
     "fs-extra": "^9.0.1",
+    "html-webpack-link-type-plugin": "^1.1.0",
     "image-webpack-loader": "^7.0.1",
     "lodash": "^4.17.15",
     "moment": "^2.24.0",
