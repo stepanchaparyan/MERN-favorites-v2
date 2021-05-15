@@ -3,6 +3,7 @@ import {
   REGISTER_SUCCESS,
   REGISTER_FAIL,
   USER_LOADED,
+  USER_LOAD_REQUEST,
   AUTH_ERROR,
   LOGIN_REQUEST,
   LOGIN_SUCCESS,
@@ -21,6 +22,7 @@ export default (state, { type, payload }) => {
         loading: false,
         error: null
       };
+    case USER_LOAD_REQUEST:
     case LOGIN_REQUEST:
     case REGISTER_REQUEST:
       return {

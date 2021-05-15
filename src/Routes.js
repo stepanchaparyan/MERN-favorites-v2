@@ -15,11 +15,11 @@ import ProductDetails from './containers/Products/ProductDetails';
 import CardPage from './containers/Products/Card/CardPage';
 
 const Routes = () => {
-  const { isAuthencated, loadUser } = useContext(AuthContext);
+  const { loadUser } = useContext(AuthContext);
 
   useEffect(() => {
-    if (isAuthencated) loadUser();
-  }, [isAuthencated]);
+    loadUser();
+  }, []);
 
   return (
     <Switch>

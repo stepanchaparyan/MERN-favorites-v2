@@ -12,6 +12,7 @@ import {
   LOGIN_REQUEST,
   LOGIN_SUCCESS,
   LOGIN_FAIL,
+  USER_LOAD_REQUEST,
   USER_LOADED,
   AUTH_ERROR,
   LOGOUT,
@@ -24,7 +25,7 @@ const AuthState = props => {
   const intialState = {
     token: localStorage.getItem('token'),
     isAuthencated: null,
-    loading: null,
+    loading: false,
     user: null,
     error: null
   };
@@ -35,7 +36,10 @@ const AuthState = props => {
     if (localStorage.token) {
       setAuthToken(localStorage.token);
     }
+
     try {
+      dispatch({ type: USER_LOAD_REQUEST });
+
       const res = await axios.get(AUTH);
       dispatch({
         type: USER_LOADED,
