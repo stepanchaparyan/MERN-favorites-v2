@@ -50,23 +50,6 @@ describe('Profile component test with Enzyme', () => {
     expect(component.exists(LoadingMessage)).toBe(true);
   });
 
-  test('should render a new profile', () => {
-    useContext.mockImplementation(
-      jest.fn(() => ({
-        profile: null,
-        loading: false,
-        getProfile: jest.fn(),
-        addProfile: jest.fn(),
-        user: {
-          name: 'name',
-          email: 'email'
-        }
-      }))
-    );
-    const component = shallow(<Profile />);
-    expect(component.exists(LoadingMessage)).toBe(false);
-  });
-
   test('should render Message component', () => {
     useContext.mockImplementation(
       jest.fn(() => ({

@@ -1,10 +1,10 @@
 import React from 'react';
-import { renderSnapshot } from '../../../../utils/tests';
 import { shallow } from 'enzyme';
+import Modal from 'react-modal';
 import 'jest-styled-components';
+import { renderSnapshot } from '../../../../utils/tests';
 import FileUpload from '../FileUpload.js';
 import { InputHidden, Input } from '../FileUploadStyled';
-import Modal from 'react-modal';
 
 jest.mock('react-intl', () => ({
   useIntl: jest.fn(() => ({ formatMessage: m => m.defaultMessage })),

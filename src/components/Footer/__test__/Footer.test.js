@@ -1,4 +1,4 @@
-import { renderSnapshot } from '../../../../utils/tests';
+import { renderSnapshot } from '../../../utils/tests';
 import Footer from '../Footer.js';
 
 jest.mock('react-intl', () => ({

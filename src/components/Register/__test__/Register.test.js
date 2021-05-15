@@ -1,7 +1,7 @@
 import React, { useContext } from 'react';
-import { renderSnapshot } from '../../../../utils/tests';
 import { shallow } from 'enzyme';
 import 'jest-styled-components';
+import { renderSnapshot } from '../../../utils/tests';
 import Register from '../Register.js';
 import { FieldStyled, FormStyled, ErrorButton } from '../RegisterStyled';
 

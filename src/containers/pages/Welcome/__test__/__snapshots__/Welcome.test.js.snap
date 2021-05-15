@@ -63,6 +63,14 @@ exports[`Welcome component test with Enzyme renders snapshot 1`] = `
         <styled.div />
       </styled.div>
     </styled.div>
+    <a
+      download="test.pdf"
+      href="https://bucketforfavorites.s3.eu-north-1.amazonaws.com/test.pdf"
+      rel="noreferrer"
+      target="_blank"
+    >
+      Download
+    </a>
   </styled.div>
 </styled.div>
 `;

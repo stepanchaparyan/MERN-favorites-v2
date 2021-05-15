@@ -4,7 +4,7 @@ import { Container, Module, LinkStyled } from './PageNotFoundStyled';
 import localization from './localization';
 import { LINK } from '../../constants';
 
-const NotFound = () => {
+const PageNotFound = () => {
   const { formatMessage } = useIntl();
 
   return (
@@ -15,4 +15,4 @@ const NotFound = () => {
     </Container>
   );
 };
-export default NotFound;
+export default PageNotFound;

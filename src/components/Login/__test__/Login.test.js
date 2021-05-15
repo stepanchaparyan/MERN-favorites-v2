@@ -1,5 +1,5 @@
 import React, { useContext } from 'react';
-import { renderSnapshot } from '../../../../utils/tests';
+import { renderSnapshot } from '../../../utils/tests';
 import { shallow } from 'enzyme';
 import 'jest-styled-components';
 import Login from '../Login.js';

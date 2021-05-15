@@ -1,8 +1,8 @@
 import React from 'react';
 import renderer from 'react-test-renderer';
 import { Formik } from 'formik';
-import { renderToJSON } from '../../../../utils/tests';
-import theme from '../../../../styles/theme';
+import { renderToJSON } from '../../../utils/tests';
+import theme from '../../../styles/theme';
 import { Container, FieldStyled, FormStyled, LoginButton } from '../LoginStyled';
 
 describe('LoginStyled component test with Enzyme', () => {
