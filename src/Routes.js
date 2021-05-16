@@ -18,7 +18,7 @@ const Routes = () => {
   const { loadUser } = useContext(AuthContext);
 
   useEffect(() => {
-    loadUser();
+    if (localStorage.token) loadUser();
   }, []);
 
   return (

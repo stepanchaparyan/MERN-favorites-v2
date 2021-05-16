@@ -12,7 +12,6 @@ import {
   LOGIN_REQUEST,
   LOGIN_SUCCESS,
   LOGIN_FAIL,
-  USER_LOAD_REQUEST,
   USER_LOADED,
   AUTH_ERROR,
   LOGOUT,
@@ -38,7 +37,7 @@ const AuthState = props => {
     }
 
     try {
-      dispatch({ type: USER_LOAD_REQUEST });
+      dispatch({ type: LOGIN_REQUEST });
 
       const res = await axios.get(AUTH);
       dispatch({

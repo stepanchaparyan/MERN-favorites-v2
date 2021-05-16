@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { HashRouter as Router } from 'react-router-dom';
+import { HashRouter as Router, useHistory } from 'react-router-dom';
 import { IntlProvider } from 'react-intl';
 import { ThemeProvider } from 'styled-components';
 import { Helmet, HelmetProvider } from 'react-helmet-async';
@@ -30,6 +30,7 @@ let locale =
 locale = locale.split(/[-_]/)[0]; // language without region code
 
 const App = () => {
+  const history = useHistory();
   const [myLocale, setLocale] = useState(locale);
   const changeLocale = lang => {
     setLocale(lang);
@@ -51,7 +52,7 @@ const App = () => {
           <AuthState>
             <FavItemState>
               <ProfileState>
-                <Router>
+                <Router history={history}>
                   <div>
                     <Navbar changeLocale={changeLocale} />
                     <Routes />
