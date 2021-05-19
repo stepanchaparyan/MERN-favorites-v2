@@ -1,6 +1,7 @@
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
 import { tabletUp } from '../../styles/mediaQueries/mixins';
+import ReactFlagsSelect from 'react-flags-select';
 
 export const Container = styled.div`
   display: flex;
@@ -111,23 +112,27 @@ export const Logout = styled.div`
   `};
 `;
 
-export const Flag = styled.img`
-  width: 20px;
-  height: 16px;
-  margin: 4px 10px 0 0;
-  cursor: pointer;
-  &:hover {
-    opacity: 0.5;
-  }
-  ${tabletUp`
-    margin: 4px 10px 0 10px;
-  `};
-`;
-
 export const FlagContainer = styled.div`
   text-align: center;
   margin-top: 8px;
   ${tabletUp`
-    margin: 0 8px 0 0;
+    margin: -4px 8px 0 0;
+  `};
+`;
+
+export const ReactFlagsSelectStyled = styled(ReactFlagsSelect)`
+  button {
+    color: white;
+    padding: 4px;
+    font-weight: bold;
+    border: 1px solid;
+    outline: none;
+    ${tabletUp`
+      background: slategray;
+      border: none;
+    `};
+  }
+  ${tabletUp`
+    min-width: 130px;
   `};
 `;

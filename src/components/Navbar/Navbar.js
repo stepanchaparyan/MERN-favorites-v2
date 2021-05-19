@@ -14,26 +14,26 @@ import {
   Logout,
   Flag,
   Hamburger,
-  FlagContainer
+  FlagContainer,
+  ReactFlagsSelectStyled
 } from './NavbarStyled';
 import logo from '../../assets/logo.png';
 import hamburger from '../../assets/hamburger.png';
 import localization from './localization';
-import armFlag from '../../assets/arm.png';
-import usaFlag from '../../assets/usa.png';
-import { LINK, LANGUAGES } from '../../constants';
+import { LINK } from '../../constants';
 import { useOnClickOutside } from '../..//hooks/clickOutSide';
 import Loading from '../Loading/Loading';
+import { languageTransformer, setLanguage } from '../../utils/languageTransformer';
 
-const { ARMENIAN, ENGLISH } = LANGUAGES;
-
-const Navbar = ({ changeLocale }) => {
+const Navbar = ({ setLocale, myLocale }) => {
   const { logout, isAuthencated, loading, clearErrors } = useContext(AuthContext);
   const { profile, getProfile } = useContext(ProfileContext);
   const [open, setOpen] = useState(false);
   const { formatMessage } = useIntl();
   const alt = 'logo';
   const node = useRef();
+
+  const languagesList = ['en', 'es', 'de', 'fr', 'ru', 'hy']; // will delete later
 
   useEffect(() => {
     if (isAuthencated) getProfile();
@@ -64,8 +64,22 @@ const Navbar = ({ changeLocale }) => {
         <UserName>{myProfile?.name}</UserName>
       </LinkStyled>
       <FlagContainer>
-        <Flag src={armFlag} onClick={() => changeLocale(ARMENIAN)}></Flag>
-        <Flag src={usaFlag} onClick={() => changeLocale(ENGLISH)}></Flag>
+        <ReactFlagsSelectStyled
+          countries={languageTransformer(languagesList)}
+          customLabels={{
+            US: 'English',
+            ES: 'Español',
+            FR: 'Français',
+            DE: 'Deutsch',
+            RU: 'Русский',
+            AM: 'Հայերեն'
+          }}
+          selected={myLocale}
+          onSelect={code => setLanguage(code, setLocale)}
+          selectedSize={14}
+          optionsSize={13}
+          placeholder={'English'}
+        />
       </FlagContainer>
       <Logout onClick={onLogout}>{formatMessage(localization.logout)}</Logout>
     </NavLinks>
@@ -74,8 +88,22 @@ const Navbar = ({ changeLocale }) => {
   const favItemLinks = (
     <NavLinks open={open}>
       <FlagContainer>
-        <Flag src={armFlag} onClick={() => changeLocale(LANGUAGES.ARMENIAN)}></Flag>
-        <Flag src={usaFlag} onClick={() => changeLocale(LANGUAGES.ENGLISH)}></Flag>
+        <ReactFlagsSelectStyled
+          countries={languageTransformer(languagesList)}
+          customLabels={{
+            US: 'English',
+            ES: 'Español',
+            FR: 'Français',
+            DE: 'Deutsch',
+            RU: 'Русский',
+            AM: 'Հայերեն'
+          }}
+          selected={myLocale}
+          onSelect={code => setLanguage(code, setLocale)}
+          selectedSize={14}
+          optionsSize={13}
+          placeholder={'English'}
+        />
       </FlagContainer>
       <LinkStyled to={LINK.TO.REGISTER}>{formatMessage(localization.signUp)}</LinkStyled>
       <LinkStyled to={LINK.TO.LOGIN}>{formatMessage(localization.logIn)}</LinkStyled>
@@ -100,7 +128,8 @@ const Navbar = ({ changeLocale }) => {
 };
 
 Navbar.propTypes = {
-  changeLocale: PropTypes.func
+  setLocale: PropTypes.func,
+  myLocale: PropTypes.string
 };
 
 export default Navbar;
