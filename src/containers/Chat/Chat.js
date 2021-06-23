@@ -2,7 +2,7 @@ import React, { useState, useEffect, useRef } from 'react';
 import io from 'socket.io-client';
 import { useParams, useHistory } from 'react-router-dom';
 
-function Chat() {
+const Chat = () => {
   const params = useParams();
   const history = useHistory();
 
@@ -158,6 +158,6 @@ function Chat() {
       </div>
     </div>
   );
-}
+};
 
 export default Chat;
