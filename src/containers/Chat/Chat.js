@@ -1,6 +1,23 @@
 import React, { useState, useEffect, useRef } from 'react';
 import io from 'socket.io-client';
 import { useParams, useHistory } from 'react-router-dom';
+import { URL } from '../../constants';
+import {
+  Container,
+  Wrapper,
+  MessageContainer,
+  Messages,
+  NoMessages,
+  TextAreaContainer,
+  TextareaStyled,
+  ButtonContainer,
+  SendButton,
+  JoiningMessage,
+  UserName,
+  MyMessageContainer,
+  MyMessage
+} from './ChatStyled.js';
+const { CHAT } = URL;
 
 const Chat = () => {
   const params = useParams();
@@ -19,8 +36,7 @@ const Chat = () => {
     setUser(user);
 
     // Subscribe to socket
-    const url = 'http://localhost:4000';
-    const socket = io(url, { transports: ['websocket', 'polling', 'flashsocket'] });
+    const socket = io(CHAT, { transports: ['websocket', 'polling', 'flashsocket'] });
     setSocket(socket);
 
     // Join to chat room
@@ -68,7 +84,7 @@ const Chat = () => {
       user,
       isUserJoined: true
     };
-    setNewMessage([...messages, messageEvent]);
+    setMessages([...messages, messageEvent]);
   };
 
   const handleUserLeft = (user, messages) => {
@@ -76,87 +92,71 @@ const Chat = () => {
       user,
       isUserLeft: true
     };
-    setNewMessage([...messages, messageEvent]);
+    setMessages([...messages, messageEvent]);
   };
 
   console.log(messages);
 
   return (
-    <div>
-      <div>
+    <Container>
+      <Wrapper>
         <div>
           <button type="submit" onClick={leaveChat}>
             Leave chat
           </button>
         </div>
-        <div>
-          <div>
+        <MessageContainer>
+          <Messages>
             {messages.length ? (
               messages.map(message => {
                 if (message.isUserJoined) {
                   return (
-                    <div key={Math.random()}>
-                      <div>
-                        <div>
-                          <span>{`${message.user.name} joined the chat`}</span>
-                        </div>
-                      </div>
-                    </div>
+                    <JoiningMessage>
+                      <UserName>{`${message.user.name}`}</UserName>joined the chat
+                    </JoiningMessage>
                   );
                 } else if (message.isUserLeft) {
                   return (
                     <div key={Math.random()}>
                       <div>
-                        <div>
-                          <span>{`${message.user.name} left the chat`}</span>
-                        </div>
+                        <span>{`${message.user.name} left the chat`}</span>
                       </div>
                     </div>
                   );
                 } else if (parseInt(message.userId) === parseInt(user.id)) {
                   return (
-                    <div key={Math.random()}>
-                      <div>
-                        <div>
-                          <div>
-                            <div>{message.text}</div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
+                    <MyMessageContainer>
+                      <MyMessage>{message.text}</MyMessage>
+                    </MyMessageContainer>
                   );
                 } else {
                   return (
                     <div key={Math.random()}>
-                      <div>11{message.userName}</div>
-                      <div>
-                        <div>22{message.text}</div>
-                      </div>
+                      <div>{message.userName}</div>
+                      <div>{message.text}</div>
                     </div>
                   );
                 }
               })
             ) : (
-              <div>No Messages yet</div>
+              <NoMessages>No Messages yet</NoMessages>
             )}
-          </div>
-        </div>
-        <div>
-          <textarea
+          </Messages>
+        </MessageContainer>
+        <TextAreaContainer>
+          <TextareaStyled
             name="text"
             row="5"
             onChange={event => handleMessageTextChange(event)}
-            placeholder="Tyoe your message"
-            vale={newMessage}
+            placeholder="Type your message"
+            value={newMessage}
           />
-          <div>
-            <button type="submit" onClick={sendMessage}>
-              Send
-            </button>
-          </div>
-        </div>
-      </div>
-    </div>
+          <ButtonContainer>
+            <SendButton onClick={sendMessage}>Send</SendButton>
+          </ButtonContainer>
+        </TextAreaContainer>
+      </Wrapper>
+    </Container>
   );
 };
 

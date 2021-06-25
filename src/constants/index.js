@@ -10,6 +10,7 @@ import { FILE_UPLOAD } from './fileUpload';
 import { URL } from './url';
 import { ERRORS } from './errors';
 import { COMMON } from './common';
+import { CHAT_EVENTS } from './chatEvents';
 
 const NOOP = () => {};
 
@@ -26,5 +27,6 @@ export {
   URL,
   ERRORS,
   COMMON,
-  NOOP
+  NOOP,
+  CHAT_EVENTS
 };
