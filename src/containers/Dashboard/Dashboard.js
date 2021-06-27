@@ -39,7 +39,11 @@ const Dashboard = () => {
 
   return (
     <Container>
-      <WelcomeText>{formatMessage(localization.title)}</WelcomeText>
+      {!isJoinSectionShown ? (
+        <WelcomeText>{formatMessage(localization.title)}</WelcomeText>
+      ) : (
+        <WelcomeText>{formatMessage(localization.enterYourName)}</WelcomeText>
+      )}
       {!isJoinSectionShown && (
         <ButtonStyled onClick={openJoinModal}>{formatMessage(localization.joinChat)}</ButtonStyled>
       )}

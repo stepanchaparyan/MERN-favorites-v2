@@ -16,5 +16,9 @@ export default defineMessages({
   nameIsRequired: {
     id: 'products.nameIsRequired',
     defaultMessage: 'Name is required'
+  },
+  enterYourName: {
+    id: 'products.enterYourName',
+    defaultMessage: 'Please Enter Your Name'
   }
 });

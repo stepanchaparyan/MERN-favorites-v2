@@ -12,10 +12,14 @@ import {
   TextareaStyled,
   ButtonContainer,
   SendButton,
-  JoiningMessage,
+  LeaveButton,
+  JoinAndLeftMessage,
   UserName,
   MyMessageContainer,
-  MyMessage
+  MyMessage,
+  OtherMessageContainer,
+  OtherMessagerName,
+  OtherMessage
 } from './ChatStyled.js';
 const { CHAT } = URL;
 
@@ -100,28 +104,26 @@ const Chat = () => {
   return (
     <Container>
       <Wrapper>
-        <div>
-          <button type="submit" onClick={leaveChat}>
-            Leave chat
-          </button>
-        </div>
+        <ButtonContainer>
+          <LeaveButton onClick={leaveChat}>Leave the chat</LeaveButton>
+        </ButtonContainer>
         <MessageContainer>
           <Messages>
             {messages.length ? (
               messages.map(message => {
                 if (message.isUserJoined) {
                   return (
-                    <JoiningMessage>
-                      <UserName>{`${message.user.name}`}</UserName>joined the chat
-                    </JoiningMessage>
+                    <JoinAndLeftMessage>
+                      <UserName>{`${message.user.name}`}</UserName>
+                      <span>Joined the chat</span>
+                    </JoinAndLeftMessage>
                   );
                 } else if (message.isUserLeft) {
                   return (
-                    <div key={Math.random()}>
-                      <div>
-                        <span>{`${message.user.name} left the chat`}</span>
-                      </div>
-                    </div>
+                    <JoinAndLeftMessage>
+                      <UserName>{`${message.user.name}`}</UserName>
+                      <span>Left the chat</span>
+                    </JoinAndLeftMessage>
                   );
                 } else if (parseInt(message.userId) === parseInt(user.id)) {
                   return (
@@ -131,10 +133,10 @@ const Chat = () => {
                   );
                 } else {
                   return (
-                    <div key={Math.random()}>
-                      <div>{message.userName}</div>
-                      <div>{message.text}</div>
-                    </div>
+                    <OtherMessageContainer>
+                      <OtherMessagerName>{message.userName}</OtherMessagerName>
+                      <OtherMessage>{message.text}</OtherMessage>
+                    </OtherMessageContainer>
                   );
                 }
               })

@@ -35,6 +35,7 @@ export const Messages = styled.div`
 export const NoMessages = styled.div`
   color: ${props => props.theme.midGray};
   font-size: 18px;
+  text-align: center;
 `;
 
 export const TextAreaContainer = styled.div`
@@ -65,19 +66,25 @@ export const SendButton = styled.div`
   width: 48px;
 `;
 
-export const JoiningMessage = styled.div`
+export const LeaveButton = styled(SendButton)`
+  width: 130px;
+`;
+
+export const JoinAndLeftMessage = styled.div`
   display: flex;
   justify-content: center;
 `;
 
 export const UserName = styled.span`
   font-weight: bold;
+  margin-right: 4px;
 `;
 
 export const MyMessage = styled.div`
   display: flex;
   background: ${props => props.theme.cadetblue};
   padding: 8px 20px 8px 8px;
+  margin: 1px 0;
   font-size: 14px;
   letter-spacing: 1px;
   border-radius: 6px 0 6px 6px;
@@ -86,4 +93,25 @@ export const MyMessage = styled.div`
 export const MyMessageContainer = styled.div`
   display: flex;
   justify-content: flex-end;
+`;
+
+export const OtherMessageContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+`;
+
+export const OtherMessage = styled.div`
+  display: flex;
+  background: ${props => props.theme.lightGray};
+  padding: 8px 20px 8px 8px;
+  margin: 1px 0;
+  font-size: 14px;
+  letter-spacing: 1px;
+  border-radius: 0 6px 6px 6px;
+  width: fit-content;
+`;
+
+export const OtherMessagerName = styled.div`
+  font-size: 14px;
 `;
