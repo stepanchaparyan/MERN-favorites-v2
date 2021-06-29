@@ -30,6 +30,8 @@ export const MessageContainer = styled.div`
 
 export const Messages = styled.div`
   width: 100%;
+  max-height: 315px;
+  overflow-y: auto;
 `;
 
 export const NoMessages = styled.div`
@@ -55,15 +57,16 @@ export const ButtonContainer = styled.div`
   justify-content: flex-end;
 `;
 
-export const SendButton = styled.div`
+export const SendButton = styled.button`
   display: flex;
-  padding: 10px 20px;
+  padding: 8px;
   justify-content: center;
   color: white;
   background: ${props => props.theme.cadetblue};
+  cursor: ${props => (props.disabled ? 'not-allowed;' : 'pointer')};
   border-radius: 4px;
-  cursor: pointer;
-  width: 48px;
+  width: 90px;
+  border: none;
 `;
 
 export const LeaveButton = styled(SendButton)`
@@ -73,6 +76,7 @@ export const LeaveButton = styled(SendButton)`
 export const JoinAndLeftMessage = styled.div`
   display: flex;
   justify-content: center;
+  margin-bottom: 8px;
 `;
 
 export const UserName = styled.span`
@@ -103,7 +107,7 @@ export const OtherMessageContainer = styled.div`
 
 export const OtherMessage = styled.div`
   display: flex;
-  background: ${props => props.theme.lightGray};
+  background: ${props => props.theme.lightslategray};
   padding: 8px 20px 8px 8px;
   margin: 1px 0;
   font-size: 14px;
@@ -114,4 +118,5 @@ export const OtherMessage = styled.div`
 
 export const OtherMessagerName = styled.div`
   font-size: 14px;
+  margin-bottom: 2px;
 `;

@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import io from 'socket.io-client';
 import { useParams, useHistory } from 'react-router-dom';
-import { URL } from '../../constants';
+import { URL, CHAT_EVENTS } from '../../constants';
 import {
   Container,
   Wrapper,
@@ -22,6 +22,7 @@ import {
   OtherMessage
 } from './ChatStyled.js';
 const { CHAT } = URL;
+const { JOIN, MESSAGE_RECEIVED, USER_JOINED, LEAVE_CHAT, SEND_MESSAGE } = CHAT_EVENTS;
 
 const Chat = () => {
   const params = useParams();
@@ -31,8 +32,14 @@ const Chat = () => {
   const [user, setUser] = useState({ id: '', name: '' });
   const [newMessage, setNewMessage] = useState('');
   const [messages, setMessages] = useState([]);
+  const messagesEndRef = useRef(null);
 
-  const messageRef = useRef(messages);
+  const scrollToBottom = () => {
+    const scroll = messagesEndRef.current.scrollHeight - messagesEndRef.current.clientHeight;
+    messagesEndRef.current.scrollTo(0, scroll);
+  };
+
+  useEffect(scrollToBottom, [messages, newMessage]);
 
   useEffect(() => {
     const { userId, userName } = params;
@@ -44,14 +51,14 @@ const Chat = () => {
     setSocket(socket);
 
     // Join to chat room
-    socket.emit('join', { user });
+    socket.emit(JOIN, { user });
 
     // Handle events
-    socket.on('messageReceived', message => handleMessageReceived(message, messageRef.current));
+    socket.on(MESSAGE_RECEIVED, message => handleMessageReceived(message));
     // User joined
-    socket.on('userJoined', user => handleUserJoined(user, messageRef.current));
+    socket.on(USER_JOINED, user => handleUserJoined(user));
     // User left
-    socket.on('leaveChat', user => handleUserLeft(user, messageRef.current));
+    socket.on(LEAVE_CHAT, user => handleUserLeft(user));
   }, []);
 
   const handleMessageTextChange = event => {
@@ -69,37 +76,35 @@ const Chat = () => {
     };
     setMessages(prevValue => [...prevValue, message]);
     setNewMessage('');
-    socket.emit('sendMessage', { message });
+    socket.emit(SEND_MESSAGE, { message });
   };
 
   const leaveChat = () => {
-    socket.emit('leaveChat', { user });
+    socket.emit(LEAVE_CHAT, { user });
     socket.off();
     history.push('/');
   };
 
   // Handle socket events
-  const handleMessageReceived = (message, messages) => {
-    setMessages([...messages, message]);
+  const handleMessageReceived = message => {
+    setMessages(prevValue => [...prevValue, message]);
   };
 
-  const handleUserJoined = (user, messages) => {
+  const handleUserJoined = user => {
     const messageEvent = {
       user,
       isUserJoined: true
     };
-    setMessages([...messages, messageEvent]);
+    setMessages(prevValue => [...prevValue, messageEvent]);
   };
 
-  const handleUserLeft = (user, messages) => {
+  const handleUserLeft = user => {
     const messageEvent = {
       user,
       isUserLeft: true
     };
-    setMessages([...messages, messageEvent]);
+    setMessages(prevValue => [...prevValue, messageEvent]);
   };
-
-  console.log(messages);
 
   return (
     <Container>
@@ -108,9 +113,9 @@ const Chat = () => {
           <LeaveButton onClick={leaveChat}>Leave the chat</LeaveButton>
         </ButtonContainer>
         <MessageContainer>
-          <Messages>
+          <Messages ref={messagesEndRef}>
             {messages.length ? (
-              messages.map(message => {
+              messages.map((message, i) => {
                 if (message.isUserJoined) {
                   return (
                     <JoinAndLeftMessage>
@@ -134,7 +139,9 @@ const Chat = () => {
                 } else {
                   return (
                     <OtherMessageContainer>
-                      <OtherMessagerName>{message.userName}</OtherMessagerName>
+                      {messages[i].userName !== messages[i - 1].userName && (
+                        <OtherMessagerName>{message.userName}</OtherMessagerName>
+                      )}
                       <OtherMessage>{message.text}</OtherMessage>
                     </OtherMessageContainer>
                   );
@@ -154,7 +161,9 @@ const Chat = () => {
             value={newMessage}
           />
           <ButtonContainer>
-            <SendButton onClick={sendMessage}>Send</SendButton>
+            <SendButton onClick={sendMessage} disabled={!newMessage}>
+              Send
+            </SendButton>
           </ButtonContainer>
         </TextAreaContainer>
       </Wrapper>
