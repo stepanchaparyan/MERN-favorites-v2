@@ -1,4 +1,4 @@
-import { serverUrl } from '../../environment';
+import { serverUrl, chatServerUrl } from '../../environment';
 
 const API = 'api';
 
@@ -12,5 +12,6 @@ export const URL = {
   PROFILE_ADD: `${serverUrl}/${API}/profile/add`,
   PROFILE_UPDATE: `${serverUrl}/${API}/profile/update`,
   UPLOAD: `${serverUrl}/${API}/upload`,
-  PRODUCTS: `${serverUrl}/${API}/products`
+  PRODUCTS: `${serverUrl}/${API}/products`,
+  CHAT: `${chatServerUrl}`
 };

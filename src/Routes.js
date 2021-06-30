@@ -13,6 +13,8 @@ import Books from './containers/Books/Books';
 import ProductsPage from './containers/Products/ProductsPage';
 import ProductDetails from './containers/Products/ProductDetails';
 import CardPage from './containers/Products/Card/CardPage';
+import Chat from './containers/Chat/Chat';
+import Dashboard from './containers/Dashboard/Dashboard';
 
 const Routes = () => {
   const { loadUser } = useContext(AuthContext);
@@ -32,6 +34,8 @@ const Routes = () => {
       <PrivateRoute exact path="/products" component={ProductsPage} />
       <PrivateRoute exact path="/product/:id" component={ProductDetails} />
       <PrivateRoute exact path="/cart" component={CardPage} />
+      <Route exact path="/dashboard" component={Dashboard} />
+      <Route exact path="/chat/:userId/:userName" component={Chat} />
       <Route exact path="*" component={PageNotFound} />
     </Switch>
   );
