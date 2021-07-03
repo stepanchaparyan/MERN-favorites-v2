@@ -2,10 +2,10 @@ import React, { useState } from 'react';
 import { useHistory } from 'react-router-dom';
 import { useIntl } from 'react-intl';
 import Join from './Join/Join';
-import { Container, WelcomeText, ButtonStyled } from './DashboardStyled';
+import { Container, WelcomeText, ButtonStyled } from './ChatboardStyled';
 import localization from './localization';
 
-const Dashboard = () => {
+const Chatboard = () => {
   const history = useHistory();
   const [userName, setUserName] = useState('');
   const { formatMessage } = useIntl();
@@ -60,4 +60,4 @@ const Dashboard = () => {
   );
 };
 
-export default Dashboard;
+export default Chatboard;

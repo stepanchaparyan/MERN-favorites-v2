@@ -6,6 +6,7 @@ export const LINK = {
     HOME: '/home',
     WELCOME: '/',
     PRODUCTS: '/products',
-    CART: '/cart'
+    CART: '/cart',
+    CHAT: '/chatBoard'
   }
 };

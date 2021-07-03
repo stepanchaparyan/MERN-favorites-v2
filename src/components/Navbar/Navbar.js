@@ -12,7 +12,6 @@ import {
   UserName,
   SubPages,
   Logout,
-  Flag,
   Hamburger,
   FlagContainer,
   ReactFlagsSelectStyled
