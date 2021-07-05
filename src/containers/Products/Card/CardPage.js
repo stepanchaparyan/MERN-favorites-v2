@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { Link } from 'react-router-dom';
+import { useLocation, Link } from 'react-router-dom';
 import CartItem from './CardItem';
 import { addToCart, removeFromCart } from '../../../redux/actions/cartActions';
 import { LINK } from '../../../constants';
@@ -17,11 +17,14 @@ import {
 
 const CardPage = () => {
   const dispatch = useDispatch();
+  const { pathname } = useLocation();
 
   const cart = useSelector(state => state.cart);
   const { cartItems } = cart;
 
-  useEffect(() => {}, []);
+  useEffect(() => {
+    localStorage.setItem('from', pathname);
+  }, []);
 
   const qtyChangeHandler = (id, qty) => {
     dispatch(addToCart(id, qty));

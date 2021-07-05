@@ -26,9 +26,9 @@ const Routes = () => {
   return (
     <Switch>
       <Route exact path="/" component={Welcome} />
-      <PrivateRoute exact path="/home" component={Home} />
       <Route exact path="/register" component={Register} />
       <Route exact path="/login" component={Login} />
+      <PrivateRoute exact path="/home" component={Home} />
       <PrivateRoute exact path="/profilePage" component={Profile} />
       <PrivateRoute exact path="/books" component={Books} />
       <PrivateRoute exact path="/products" component={ProductsPage} />

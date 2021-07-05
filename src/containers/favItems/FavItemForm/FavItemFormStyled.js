@@ -16,6 +16,7 @@ export const Container = styled.div`
   min-width: 66%;
   min-height: 20%;
   text-align: center;
+  font-size: 14px;
   ${tabletUp`
     top: 36%;
     min-width: 50%;
@@ -114,7 +115,7 @@ export const StyledSelectField = styled(Field)`
   padding-left: 5px;
   margin: 4px;
   ${tabletUp`
-    width: 44%;
+    width: 45%;
   `};
 `;
 

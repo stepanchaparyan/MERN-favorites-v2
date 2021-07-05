@@ -1,4 +1,5 @@
 import React, { useContext, useEffect } from 'react';
+import { useLocation } from 'react-router-dom';
 import { useIntl } from 'react-intl';
 import ProfileContext from '../../../context/profileContext/profileContext';
 import ProfileForm from '../ProfileForm/ProfileForm';
@@ -36,9 +37,11 @@ const Profile = () => {
     ProfileContext
   );
   const { formatMessage } = useIntl();
+  const { pathname } = useLocation();
 
   useEffect(() => {
     getProfile();
+    localStorage.setItem('from', pathname);
   }, []);
 
   if (profile === null || profile.length === 0 || profile === undefined) {

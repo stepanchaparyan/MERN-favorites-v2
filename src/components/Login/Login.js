@@ -27,8 +27,9 @@ const Login = props => {
   const { formatMessage } = useIntl();
 
   useEffect(() => {
+    const urlFrom = localStorage.getItem('from');
     if (isAuthencated) {
-      props.history.push(LINK.TO.WELCOME);
+      props.history.push(urlFrom);
     }
     clearErrors();
   }, [isAuthencated, props.history]);

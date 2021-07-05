@@ -1,4 +1,5 @@
 import React, { useEffect, useMemo, useState } from 'react';
+import { useLocation } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { Formik, ErrorMessage } from 'formik';
 import { useIntl } from 'react-intl';
@@ -30,6 +31,7 @@ const { cadetblue } = theme;
 
 const ProductPage = () => {
   const dispatch = useDispatch();
+  const { pathname } = useLocation();
   const { formatMessage } = useIntl();
   const [isOpen, setIsOpen] = useState(false);
 
@@ -45,6 +47,7 @@ const ProductPage = () => {
 
   useEffect(() => {
     dispatch(getProducts());
+    localStorage.setItem('from', pathname);
   }, [dispatch]);
 
   const toggleOpen = () => {

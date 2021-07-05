@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { useLocation } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import { useSelector, useDispatch } from 'react-redux';
 import { getProductDetails, deleteProduct } from '../../redux/actions/productActions';
@@ -25,6 +26,7 @@ import Loading from '../../components/Loading/Loading';
 const ProductDetails = ({ match, history }) => {
   const [qty, setQty] = useState(1);
   const dispatch = useDispatch();
+  const { pathname } = useLocation();
 
   const productDetails = useSelector(state => state.productDetails);
   const { loading, error, product } = productDetails;
@@ -32,6 +34,7 @@ const ProductDetails = ({ match, history }) => {
   useEffect(() => {
     if (product && match.params.id !== product._id) {
       dispatch(getProductDetails(match.params.id));
+      localStorage.setItem('from', pathname);
     }
   }, [dispatch, match, product]);
 
