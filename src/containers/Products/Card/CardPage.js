@@ -1,8 +1,8 @@
 import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { useLocation, Link } from 'react-router-dom';
-import CartItem from './CardItem';
-import { addToCart, removeFromCart } from '../../../redux/actions/cartActions';
+import CardItem from './CardItem';
+import { addToCard, removeFromCard } from '../../../redux/actions/cardActions';
 import { LINK } from '../../../constants';
 import {
   Container,
@@ -19,53 +19,53 @@ const CardPage = () => {
   const dispatch = useDispatch();
   const { pathname } = useLocation();
 
-  const cart = useSelector(state => state.cart);
-  const { cartItems } = cart;
+  const card = useSelector(state => state.card);
+  const { cardItems } = card;
 
   useEffect(() => {
     localStorage.setItem('from', pathname);
   }, []);
 
   const qtyChangeHandler = (id, qty) => {
-    dispatch(addToCart(id, qty));
+    dispatch(addToCard(id, qty));
   };
 
-  const removeFromCartHandler = id => {
-    dispatch(removeFromCart(id));
+  const removeFromCardHandler = id => {
+    dispatch(removeFromCard(id));
   };
 
-  const getCartCount = () => {
-    return cartItems.reduce((qty, item) => Number(item.qty) + qty, 0);
+  const getCardCount = () => {
+    return cardItems.reduce((qty, item) => Number(item.qty) + qty, 0);
   };
 
-  const getCartSubTotal = () => {
-    return cartItems.reduce((price, item) => price + item.price * item.qty, 0).toFixed(2);
+  const getCardSubTotal = () => {
+    return cardItems.reduce((price, item) => price + item.price * item.qty, 0).toFixed(2);
   };
 
   return (
     <Container>
-      <PageTitle>Shopping Cart</PageTitle>
+      <PageTitle>Shopping Card</PageTitle>
       <>
         <CardsContainer>
-          {!cartItems?.length ? (
+          {!cardItems?.length ? (
             <EmptyCard>
-              Your Cart Is Empty <Link to={LINK.TO.HOME}>Go Back</Link>
+              Your Card Is Empty <Link to={LINK.TO.HOME}>Go Back</Link>
             </EmptyCard>
           ) : (
-            cartItems.map(item => (
-              <CartItem
+            cardItems.map(item => (
+              <CardItem
                 key={item.product}
                 item={item}
                 qtyChangeHandler={qtyChangeHandler}
-                removeHandler={removeFromCartHandler}
+                removeHandler={removeFromCardHandler}
               />
             ))
           )}
         </CardsContainer>
         <Checkout>
           <Info>
-            <p>Subtotal ({getCartCount()}) items</p>
-            <p>${getCartSubTotal()}</p>
+            <p>Subtotal ({getCardCount()}) items</p>
+            <p>${getCardSubTotal()}</p>
           </Info>
           <ButtonContainer>
             <ButtonStyled>Proceed To Checkout</ButtonStyled>

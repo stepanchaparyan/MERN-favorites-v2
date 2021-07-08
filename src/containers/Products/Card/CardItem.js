@@ -7,9 +7,9 @@ import {
   InfoContainer,
   Name,
   Price,
-  CartContainer,
-  CartPrice,
-  CartStatus,
+  CardContainer,
+  CardPrice,
+  CardStatus,
   SelectContainer,
   StyledSelect,
   ButtonContainer,
@@ -27,13 +27,13 @@ const CardItem = ({ item, qtyChangeHandler, removeHandler }) => {
         <Name>{name}</Name>
         <Price>Price: ${price}</Price>
       </InfoContainer>
-      <CartContainer>
-        <CartPrice>
+      <CardContainer>
+        <CardPrice>
           Price:<span>${price}</span>
-        </CartPrice>
-        <CartStatus>
+        </CardPrice>
+        <CardStatus>
           Status:<span>{countInStock > 0 ? 'In Stock' : 'Out of Stock'}</span>
-        </CartStatus>
+        </CardStatus>
         <SelectContainer>
           Qty
           <StyledSelect value={qty} onChange={e => qtyChangeHandler(product, e.target.value)}>
@@ -45,9 +45,9 @@ const CardItem = ({ item, qtyChangeHandler, removeHandler }) => {
           </StyledSelect>
         </SelectContainer>
         <ButtonContainer>
-          <StyledButton onClick={() => removeHandler(product)}>Remove from Cart</StyledButton>
+          <StyledButton onClick={() => removeHandler(product)}>Remove from Card</StyledButton>
         </ButtonContainer>
-      </CartContainer>
+      </CardContainer>
     </Container>
   );
 };

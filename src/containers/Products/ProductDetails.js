@@ -3,7 +3,7 @@ import { useLocation } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import { useSelector, useDispatch } from 'react-redux';
 import { getProductDetails, deleteProduct } from '../../redux/actions/productActions';
-import { addToCart } from '../../redux/actions/cartActions';
+import { addToCard } from '../../redux/actions/cardActions';
 import { LINK } from '../../constants';
 import {
   Container,
@@ -13,9 +13,9 @@ import {
   Name,
   Price,
   Description,
-  CartContainer,
-  CartPrice,
-  CartStatus,
+  CardContainer,
+  CardPrice,
+  CardStatus,
   StyledSelect,
   StyledButton,
   SelectContainer,
@@ -38,9 +38,9 @@ const ProductDetails = ({ match, history }) => {
     }
   }, [dispatch, match, product]);
 
-  const addToCartHandler = () => {
-    dispatch(addToCart(product._id, qty));
-    history.push(LINK.TO.CART);
+  const addToCardHandler = () => {
+    dispatch(addToCard(product._id, qty));
+    history.push(LINK.TO.CARD);
   };
 
   const deleteHandler = () => {
@@ -64,13 +64,13 @@ const ProductDetails = ({ match, history }) => {
             <Price>Price: ${product.price}</Price>
             <Description>Description: {product.description}</Description>
           </InfoContainer>
-          <CartContainer>
-            <CartPrice>
+          <CardContainer>
+            <CardPrice>
               Price:<span>${product.price}</span>
-            </CartPrice>
-            <CartStatus>
+            </CardPrice>
+            <CardStatus>
               Status:<span>{product.countInStock > 0 ? 'In Stock' : 'Out of Stock'}</span>
-            </CartStatus>
+            </CardStatus>
             <SelectContainer>
               Qty
               <StyledSelect value={qty} onChange={e => setQty(e.target.value)}>
@@ -82,10 +82,10 @@ const ProductDetails = ({ match, history }) => {
               </StyledSelect>
             </SelectContainer>
             <ButtonContainer>
-              <StyledButton onClick={addToCartHandler}>Add To Cart</StyledButton>
+              <StyledButton onClick={addToCardHandler}>Add To Card</StyledButton>
               <StyledButton onClick={deleteHandler}>Delete product</StyledButton>
             </ButtonContainer>
-          </CartContainer>
+          </CardContainer>
         </>
       )}
     </Container>

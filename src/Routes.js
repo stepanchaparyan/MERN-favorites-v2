@@ -33,7 +33,7 @@ const Routes = () => {
       <PrivateRoute exact path="/books" component={Books} />
       <PrivateRoute exact path="/products" component={ProductsPage} />
       <PrivateRoute exact path="/product/:id" component={ProductDetails} />
-      <PrivateRoute exact path="/cart" component={CardPage} />
+      <PrivateRoute exact path="/card" component={CardPage} />
       <Route exact path="/chatboard" component={Chatboard} />
       <Route exact path="/chat/:userId/:userName" component={Chat} />
       <Route exact path="*" component={PageNotFound} />

@@ -35,14 +35,14 @@ const ProductPage = () => {
   const { formatMessage } = useIntl();
   const [isOpen, setIsOpen] = useState(false);
 
-  const cart = useSelector(state => state.cart);
-  const { cartItems } = cart;
+  const card = useSelector(state => state.card);
+  const { cardItems } = card;
 
   const productsList = useSelector(state => state.products);
   const { products, loading, error } = productsList;
 
-  const getCartCount = () => {
-    return cartItems.reduce((qty, item) => Number(item.qty) + qty, 0);
+  const getCardCount = () => {
+    return cardItems.reduce((qty, item) => Number(item.qty) + qty, 0);
   };
 
   useEffect(() => {
@@ -75,9 +75,9 @@ const ProductPage = () => {
       ) : (
         <>
           <LinkContainer>
-            <StyledLink to={LINK.TO.CART}>
-              <Text>Cart</Text>
-              <CardCount>{getCartCount()}</CardCount>
+            <StyledLink to={LINK.TO.CARD}>
+              <Text>Card</Text>
+              <CardCount>{getCardCount()}</CardCount>
             </StyledLink>
           </LinkContainer>
           <AddProduct onClick={toggleOpen}>{formatMessage(localization.addProduct)}</AddProduct>

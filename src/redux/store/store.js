@@ -5,7 +5,7 @@ import { composeWithDevTools } from 'redux-devtools-extension';
 // import createdBookReducer from '../reducers/createdBookReducer';
 // import booksListReducer from '../reducers/booksListReducer';
 // import bookDetailReducer from '../reducers/bookDetailsReducer';
-import { cartReducer } from '../reducers/cartReducers';
+import { cardReducer } from '../reducers/cardReducers';
 import { productsReducer, productDetailsReducer } from '../reducers/productReducers';
 
 const middleware = [thunk];
@@ -14,18 +14,18 @@ const reducer = combineReducers({
   // bookCreated: createdBookReducer,
   // booksList: booksListReducer,
   // bookDetails: bookDetailReducer,
-  cart: cartReducer,
+  card: cardReducer,
   products: productsReducer,
   productDetails: productDetailsReducer
 });
 
-const cartItemsInLocalStorage = localStorage.getItem('cart')
-  ? JSON.parse(localStorage.getItem('cart'))
+const cardItemsInLocalStorage = localStorage.getItem('card')
+  ? JSON.parse(localStorage.getItem('card'))
   : [];
 
 const initialState = {
-  cart: {
-    cartItems: cartItemsInLocalStorage
+  card: {
+    cardItems: cardItemsInLocalStorage
   }
 };
 
