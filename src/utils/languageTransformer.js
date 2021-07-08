@@ -51,3 +51,16 @@ export const setLanguage = (code, setLocale) => {
     setLocale(getKeyByValue(dict, code.toLowerCase()));
   }
 };
+
+export const changeToCountyUpperCode = code => {
+  switch (code) {
+    case 'en':
+      return 'US';
+    case 'hy':
+      return 'AM';
+    case 'ru':
+      return 'RU';
+    default:
+      return 'US';
+  }
+};

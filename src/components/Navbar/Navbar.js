@@ -22,7 +22,11 @@ import localization from './localization';
 import { LINK } from '../../constants';
 import { useOnClickOutside } from '../..//hooks/clickOutSide';
 import Loading from '../Loading/Loading';
-import { languageTransformer, setLanguage } from '../../utils/languageTransformer';
+import {
+  languageTransformer,
+  setLanguage,
+  changeToCountyUpperCode
+} from '../../utils/languageTransformer';
 
 const Navbar = ({ setLocale, myLocale }) => {
   const { logout, isAuthencated, loading, clearErrors } = useContext(AuthContext);
@@ -51,6 +55,26 @@ const Navbar = ({ setLocale, myLocale }) => {
     clearErrors();
   };
 
+  const flagsContainer = () => (
+    <FlagContainer>
+      <ReactFlagsSelectStyled
+        countries={languageTransformer(languagesList)}
+        customLabels={{
+          US: 'English',
+          ES: 'Español',
+          FR: 'Français',
+          DE: 'Deutsch',
+          RU: 'Русский',
+          AM: 'Հայերեն'
+        }}
+        selected={changeToCountyUpperCode(myLocale)}
+        onSelect={code => setLanguage(code, setLocale)}
+        selectedSize={14}
+        optionsSize={13}
+      />
+    </FlagContainer>
+  );
+
   const authLinks = (
     <NavLinks open={open}>
       <LinkStyled to={`${LINK.TO.HOME}`}>
@@ -62,48 +86,14 @@ const Navbar = ({ setLocale, myLocale }) => {
       <LinkStyled to={LINK.TO.PROFILE_PAGE}>
         <UserName>{myProfile?.name}</UserName>
       </LinkStyled>
-      <FlagContainer>
-        <ReactFlagsSelectStyled
-          countries={languageTransformer(languagesList)}
-          customLabels={{
-            US: 'English',
-            ES: 'Español',
-            FR: 'Français',
-            DE: 'Deutsch',
-            RU: 'Русский',
-            AM: 'Հայերեն'
-          }}
-          selected={myLocale}
-          onSelect={code => setLanguage(code, setLocale)}
-          selectedSize={14}
-          optionsSize={13}
-          placeholder={'English'}
-        />
-      </FlagContainer>
+      {flagsContainer()}
       <Logout onClick={onLogout}>{formatMessage(localization.logout)}</Logout>
     </NavLinks>
   );
 
   const favItemLinks = (
     <NavLinks open={open}>
-      <FlagContainer>
-        <ReactFlagsSelectStyled
-          countries={languageTransformer(languagesList)}
-          customLabels={{
-            US: 'English',
-            ES: 'Español',
-            FR: 'Français',
-            DE: 'Deutsch',
-            RU: 'Русский',
-            AM: 'Հայերեն'
-          }}
-          selected={myLocale}
-          onSelect={code => setLanguage(code, setLocale)}
-          selectedSize={14}
-          optionsSize={13}
-          placeholder={'English'}
-        />
-      </FlagContainer>
+      {flagsContainer()}
       <LinkStyled to={LINK.TO.REGISTER}>{formatMessage(localization.signUp)}</LinkStyled>
       <LinkStyled to={LINK.TO.LOGIN}>{formatMessage(localization.logIn)}</LinkStyled>
     </NavLinks>

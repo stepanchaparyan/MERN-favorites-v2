@@ -31,7 +31,8 @@ locale = locale.split(/[-_]/)[0]; // language without region code
 
 const App = () => {
   const history = useHistory();
-  const [myLocale, setLocale] = useState(locale);
+  const [myLocale, setLocale] = useState(localStorage.getItem('locale') || locale);
+  localStorage.setItem('locale', myLocale);
 
   return (
     <HelmetProvider>
@@ -51,7 +52,7 @@ const App = () => {
               <ProfileState>
                 <Router history={history}>
                   <div>
-                    <Navbar setLocale={setLocale} />
+                    <Navbar setLocale={setLocale} myLocale={myLocale} />
                     <Routes />
                     <Footer />
                   </div>
