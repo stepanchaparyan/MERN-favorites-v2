@@ -7,16 +7,16 @@ import {
   InfoContainer,
   Name,
   Price,
-  CardContainer,
-  CardPrice,
-  CardStatus,
+  CartContainer,
+  CartPrice,
+  CartStatus,
   SelectContainer,
   StyledSelect,
   ButtonContainer,
   StyledButton
-} from './CardItemStyled';
+} from './CartItemStyled';
 
-const CardItem = ({ item, qtyChangeHandler, removeHandler }) => {
+const CartItem = ({ item, qtyChangeHandler, removeHandler }) => {
   const { imageUrl, name, price, countInStock, qty, product } = item;
   return (
     <Container>
@@ -27,13 +27,13 @@ const CardItem = ({ item, qtyChangeHandler, removeHandler }) => {
         <Name>{name}</Name>
         <Price>Price: ${price}</Price>
       </InfoContainer>
-      <CardContainer>
-        <CardPrice>
+      <CartContainer>
+        <CartPrice>
           Price:<span>${price}</span>
-        </CardPrice>
-        <CardStatus>
+        </CartPrice>
+        <CartStatus>
           Status:<span>{countInStock > 0 ? 'In Stock' : 'Out of Stock'}</span>
-        </CardStatus>
+        </CartStatus>
         <SelectContainer>
           Qty
           <StyledSelect value={qty} onChange={e => qtyChangeHandler(product, e.target.value)}>
@@ -45,23 +45,23 @@ const CardItem = ({ item, qtyChangeHandler, removeHandler }) => {
           </StyledSelect>
         </SelectContainer>
         <ButtonContainer>
-          <StyledButton onClick={() => removeHandler(product)}>Remove from Card</StyledButton>
+          <StyledButton onClick={() => removeHandler(product)}>Remove from Cart</StyledButton>
         </ButtonContainer>
-      </CardContainer>
+      </CartContainer>
     </Container>
   );
 };
 
-CardItem.propTypes = {
+CartItem.propTypes = {
   item: PropTypes.object,
   qtyChangeHandler: PropTypes.func,
   removeHandler: PropTypes.func
 };
 
-CardItem.defaultProps = {
+CartItem.defaultProps = {
   item: {},
   qtyChangeHandler: () => {},
   removeHandler: () => {}
 };
 
-export default CardItem;
+export default CartItem;

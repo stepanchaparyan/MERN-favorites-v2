@@ -43,7 +43,7 @@ export const Price = styled.p`
 
 export const Description = styled.p``;
 
-export const CardContainer = styled.div`
+export const CartContainer = styled.div`
   width: 250px;
   margin: 12px;
   border: 1px solid gray;
@@ -53,7 +53,7 @@ export const CardContainer = styled.div`
   `};
 `;
 
-export const CardPrice = styled.p`
+export const CartPrice = styled.p`
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   padding: 12px 20px;
@@ -62,7 +62,7 @@ export const CardPrice = styled.p`
   border-bottom: 1px solid #00000033;
 `;
 
-export const CardStatus = styled.p`
+export const CartStatus = styled.p`
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   padding: 12px 20px;

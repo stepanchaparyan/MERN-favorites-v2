@@ -3,7 +3,7 @@ import { useLocation } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import { useSelector, useDispatch } from 'react-redux';
 import { getProductDetails, deleteProduct } from '../../redux/actions/productActions';
-import { addToCard } from '../../redux/actions/cardActions';
+import { addToCart } from '../../redux/actions/cartActions';
 import { LINK } from '../../constants';
 import {
   Container,
@@ -13,9 +13,9 @@ import {
   Name,
   Price,
   Description,
-  CardContainer,
-  CardPrice,
-  CardStatus,
+  CartContainer,
+  CartPrice,
+  CartStatus,
   StyledSelect,
   StyledButton,
   SelectContainer,
@@ -38,9 +38,20 @@ const ProductDetails = ({ match, history }) => {
     }
   }, [dispatch, match, product]);
 
-  const addToCardHandler = () => {
-    dispatch(addToCard(product._id, qty));
-    history.push(LINK.TO.CARD);
+  const addToCartHandler = () => {
+    const { _id, name, price, countInStock, imageUrl } = product;
+    dispatch(
+      addToCart({
+        productId: _id,
+        qty,
+        name,
+        price,
+        countInStock,
+        imageUrl
+      })
+    );
+
+    history.push(LINK.TO.CART);
   };
 
   const deleteHandler = () => {
@@ -64,13 +75,13 @@ const ProductDetails = ({ match, history }) => {
             <Price>Price: ${product.price}</Price>
             <Description>Description: {product.description}</Description>
           </InfoContainer>
-          <CardContainer>
-            <CardPrice>
+          <CartContainer>
+            <CartPrice>
               Price:<span>${product.price}</span>
-            </CardPrice>
-            <CardStatus>
+            </CartPrice>
+            <CartStatus>
               Status:<span>{product.countInStock > 0 ? 'In Stock' : 'Out of Stock'}</span>
-            </CardStatus>
+            </CartStatus>
             <SelectContainer>
               Qty
               <StyledSelect value={qty} onChange={e => setQty(e.target.value)}>
@@ -82,10 +93,10 @@ const ProductDetails = ({ match, history }) => {
               </StyledSelect>
             </SelectContainer>
             <ButtonContainer>
-              <StyledButton onClick={addToCardHandler}>Add To Card</StyledButton>
+              <StyledButton onClick={addToCartHandler}>Add To Cart</StyledButton>
               <StyledButton onClick={deleteHandler}>Delete product</StyledButton>
             </ButtonContainer>
-          </CardContainer>
+          </CartContainer>
         </>
       )}
     </Container>

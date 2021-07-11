@@ -7,7 +7,7 @@ export const Container = styled.div`
   padding: 24px 24px 60px;
 `;
 
-export const CardsContainer = styled.div`
+export const CartsContainer = styled.div`
   background: transparent;
   padding: 12px;
 `;
@@ -19,7 +19,7 @@ export const PageTitle = styled.div`
   color: ${props => props.theme.cadetblue};
 `;
 
-export const EmptyCard = styled.p``;
+export const EmptyCart = styled.p``;
 
 export const Checkout = styled.div`
   display: flex;

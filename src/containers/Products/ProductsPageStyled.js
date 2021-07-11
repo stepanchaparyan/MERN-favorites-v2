@@ -55,7 +55,7 @@ export const StyledLink = styled(Link)`
   }
 `;
 
-export const CardCount = styled.p`
+export const CartCount = styled.p`
   width: 25px;
   height: 25px;
   display: flex;
