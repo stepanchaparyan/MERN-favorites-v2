@@ -14,7 +14,7 @@ const reducer = combineReducers({
   // bookCreated: createdBookReducer,
   // booksList: booksListReducer,
   // bookDetails: bookDetailReducer,
-  carts: cartsReducer,
+  shopingCart: cartsReducer,
   products: productsReducer,
   productDetails: productDetailsReducer
 });

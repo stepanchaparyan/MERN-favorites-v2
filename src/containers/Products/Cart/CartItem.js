@@ -8,16 +8,13 @@ import {
   Name,
   Price,
   CartContainer,
-  CartPrice,
-  CartStatus,
-  SelectContainer,
-  StyledSelect,
+  CartData,
   ButtonContainer,
   StyledButton
 } from './CartItemStyled';
 
-const CartItem = ({ item, qtyChangeHandler, removeHandler }) => {
-  const { imageUrl, name, price, countInStock, qty, product } = item;
+const CartItem = ({ item, removeHandler }) => {
+  const { imageUrl, name, price, countInStock, qty } = item;
   return (
     <Container>
       <ImageContainer>
@@ -28,24 +25,17 @@ const CartItem = ({ item, qtyChangeHandler, removeHandler }) => {
         <Price>Price: ${price}</Price>
       </InfoContainer>
       <CartContainer>
-        <CartPrice>
+        <CartData>
           Price:<span>${price}</span>
-        </CartPrice>
-        <CartStatus>
+        </CartData>
+        <CartData>
           Status:<span>{countInStock > 0 ? 'In Stock' : 'Out of Stock'}</span>
-        </CartStatus>
-        <SelectContainer>
-          Qty
-          <StyledSelect value={qty} onChange={e => qtyChangeHandler(product, e.target.value)}>
-            {[...Array(countInStock).keys()].map(x => (
-              <option key={x + 1} value={x + 1}>
-                {x + 1}
-              </option>
-            ))}
-          </StyledSelect>
-        </SelectContainer>
+        </CartData>
+        <CartData>
+          Qty:<span>{qty}</span>
+        </CartData>
         <ButtonContainer>
-          <StyledButton onClick={() => removeHandler(product)}>Remove from Cart</StyledButton>
+          <StyledButton onClick={removeHandler}>Remove from Cart</StyledButton>
         </ButtonContainer>
       </CartContainer>
     </Container>
@@ -54,13 +44,11 @@ const CartItem = ({ item, qtyChangeHandler, removeHandler }) => {
 
 CartItem.propTypes = {
   item: PropTypes.object,
-  qtyChangeHandler: PropTypes.func,
   removeHandler: PropTypes.func
 };
 
 CartItem.defaultProps = {
   item: {},
-  qtyChangeHandler: () => {},
   removeHandler: () => {}
 };
 

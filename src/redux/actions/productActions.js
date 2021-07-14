@@ -78,6 +78,7 @@ export const deleteProduct = id => {
       });
 
       const { data } = await axios.delete(`${PRODUCTS}/delete/${id}`, HEADER_CONFIG);
+
       dispatch({
         type: actionTypes.DELETE_PRODUCT_SUCCESS,
         payload: data

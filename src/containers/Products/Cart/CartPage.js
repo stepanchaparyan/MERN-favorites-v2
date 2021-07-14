@@ -2,7 +2,7 @@ import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { useLocation, Link } from 'react-router-dom';
 import CartItem from './CartItem';
-import { addToCart, removeFromCart } from '../../../redux/actions/cartActions';
+import { getMyCartItems, removeFromCart } from '../../../redux/actions/cartActions';
 import { LINK } from '../../../constants';
 import {
   Container,
@@ -19,16 +19,13 @@ const CartPage = () => {
   const dispatch = useDispatch();
   const { pathname } = useLocation();
 
-  const carts = useSelector(state => state.carts);
-  const { cartItems } = carts;
+  const shopingCart = useSelector(state => state.shopingCart);
+  const { cartItems } = shopingCart;
 
   useEffect(() => {
+    dispatch(getMyCartItems());
     localStorage.setItem('from', pathname);
-  }, []);
-
-  const qtyChangeHandler = (id, qty) => {
-    dispatch(addToCart(id, qty));
-  };
+  }, [dispatch]);
 
   const removeFromCartHandler = id => {
     dispatch(removeFromCart(id));
@@ -52,12 +49,11 @@ const CartPage = () => {
               Your Cart Is Empty <Link to={LINK.TO.HOME}>Go Back</Link>
             </EmptyCart>
           ) : (
-            cartItems.map(item => (
+            cartItems?.map(item => (
               <CartItem
-                key={item.product}
+                key={item._id}
                 item={item}
-                qtyChangeHandler={qtyChangeHandler}
-                removeHandler={removeFromCartHandler}
+                removeHandler={() => removeFromCartHandler(item._id)}
               />
             ))
           )}

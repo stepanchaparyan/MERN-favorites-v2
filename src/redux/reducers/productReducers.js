@@ -34,6 +34,23 @@ export const productsReducer = (state = { products: [], loading: false }, { type
         loading: false,
         error: payload
       };
+
+    case actionTypes.DELETE_PRODUCT_REQUEST:
+      return {
+        loading: true,
+        ...state
+      };
+    case actionTypes.DELETE_PRODUCT_SUCCESS:
+      return {
+        state,
+        products: state.products.filter(product => product._id !== payload._id),
+        loading: false
+      };
+    case actionTypes.DELETE_PRODUCT_FAIL:
+      return {
+        loading: false,
+        error: payload
+      };
     default:
       return state;
   }

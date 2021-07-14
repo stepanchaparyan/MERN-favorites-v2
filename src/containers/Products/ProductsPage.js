@@ -5,6 +5,7 @@ import { Formik, ErrorMessage } from 'formik';
 import { useIntl } from 'react-intl';
 import Product from './Product';
 import { getProducts, addProduct } from '../../redux/actions/productActions';
+import { getMyCartItems } from '../../redux/actions/cartActions';
 import {
   Container,
   Context,
@@ -35,8 +36,8 @@ const ProductPage = () => {
   const { formatMessage } = useIntl();
   const [isOpen, setIsOpen] = useState(false);
 
-  const carts = useSelector(state => state.carts);
-  const { cartItems } = carts;
+  const shopingCart = useSelector(state => state.shopingCart);
+  const { cartItems } = shopingCart;
 
   const productsList = useSelector(state => state.products);
   const { products, loading, error } = productsList;
@@ -47,6 +48,7 @@ const ProductPage = () => {
 
   useEffect(() => {
     dispatch(getProducts());
+    dispatch(getMyCartItems());
     localStorage.setItem('from', pathname);
   }, [dispatch]);
 

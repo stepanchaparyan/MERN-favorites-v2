@@ -4,23 +4,24 @@ import { HEADER_CONFIG, URL } from '../../constants';
 
 const { CARTS } = URL;
 
-// export const addToCart = (id, qty) => async (dispatch, getState) => {
-//   const { data } = await axios.get(`${PRODUCTS}/${id}`);
+export const getMyCartItems = () => async dispatch => {
+  try {
+    dispatch({ type: actionTypes.GET_CARTS_REQUEST });
 
-//   dispatch({
-//     type: actionTypes.ADD_TO_CART,
-//     payload: {
-//       product: data._id,
-//       name: data.name,
-//       imageUrl: data.imageUrl,
-//       price: data.price,
-//       countInStock: data.countInStock,
-//       qty
-//     }
-//   });
+    const { data } = await axios.get(`${CARTS}/my`);
 
-//   localStorage.setItem('cart', JSON.stringify(getState().cart.cartItems));
-// };
+    dispatch({
+      type: actionTypes.GET_CARTS_SUCCESS,
+      payload: data
+    });
+  } catch (error) {
+    dispatch({
+      type: actionTypes.GET_CARTS_FAIL,
+      paiyload:
+        error.response && error.response.data.message ? error.response.data.message : error.message
+    });
+  }
+};
 
 // add cart
 export const addToCart = cartData => {
@@ -46,11 +47,27 @@ export const addToCart = cartData => {
   };
 };
 
-export const removeFromCart = id => (dispatch, getState) => {
-  dispatch({
-    type: actionTypes.REMOVE_FROM_CART,
-    payload: id
-  });
+//  remove from cart
+export const removeFromCart = id => {
+  return async dispatch => {
+    try {
+      dispatch({
+        type: actionTypes.REMOVE_FROM_CART_REQUEST,
+        loading: true
+      });
 
-  localStorage.setItem('cart', JSON.stringify(getState().cart.cartItems));
+      const { data } = await axios.delete(`${CARTS}/delete/${id}`, HEADER_CONFIG);
+
+      dispatch({
+        type: actionTypes.REMOVE_FROM_CART_SUCCESS,
+        payload: data
+      });
+    } catch (error) {
+      dispatch({
+        type: actionTypes.REMOVE_FROM_CART_FAIL,
+        loading: false,
+        error: error.response && error.response.data.message
+      });
+    }
+  };
 };

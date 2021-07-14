@@ -51,36 +51,13 @@ export const CartContainer = styled.div`
   `};
 `;
 
-export const CartPrice = styled.p`
+export const CartData = styled.p`
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   padding: 12px 20px;
   margin: 0;
   font-size: 14px;
   border-bottom: 1px solid #00000033;
-`;
-
-export const CartStatus = styled.p`
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  padding: 12px 20px;
-  margin: 0;
-  font-size: 14px;
-  border-bottom: 1px solid #00000033;
-`;
-
-export const SelectContainer = styled.p`
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  padding: 12px 20px;
-  margin: 0;
-  font-size: 0.8rem;
-  border-bottom: 1px solid ${props => props.theme.black};
-`;
-
-export const StyledSelect = styled.select`
-  padding: 0 4px;
-  width: 44px;
 `;
 
 export const ButtonContainer = styled.div`
