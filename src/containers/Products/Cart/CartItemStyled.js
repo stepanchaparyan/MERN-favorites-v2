@@ -41,7 +41,7 @@ export const Price = styled.p`
   border-bottom: 1px solid lightgray;
 `;
 
-export const CardContainer = styled.div`
+export const CartContainer = styled.div`
   width: 250px;
   margin: 12px 0;
   border: 1px solid gray;
@@ -51,36 +51,13 @@ export const CardContainer = styled.div`
   `};
 `;
 
-export const CardPrice = styled.p`
+export const CartData = styled.p`
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   padding: 12px 20px;
   margin: 0;
   font-size: 14px;
   border-bottom: 1px solid #00000033;
-`;
-
-export const CardStatus = styled.p`
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  padding: 12px 20px;
-  margin: 0;
-  font-size: 14px;
-  border-bottom: 1px solid #00000033;
-`;
-
-export const SelectContainer = styled.p`
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  padding: 12px 20px;
-  margin: 0;
-  font-size: 0.8rem;
-  border-bottom: 1px solid ${props => props.theme.black};
-`;
-
-export const StyledSelect = styled.select`
-  padding: 0 4px;
-  width: 44px;
 `;
 
 export const ButtonContainer = styled.div`

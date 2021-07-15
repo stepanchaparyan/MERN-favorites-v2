@@ -13,5 +13,6 @@ export const URL = {
   PROFILE_UPDATE: `${serverUrl}/${API}/profile/update`,
   UPLOAD: `${serverUrl}/${API}/upload`,
   PRODUCTS: `${serverUrl}/${API}/products`,
+  CARTS: `${serverUrl}/${API}/carts`,
   CHAT: `${chatServerUrl}`
 };
