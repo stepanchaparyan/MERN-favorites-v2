@@ -3,25 +3,25 @@ import * as actionTypes from '../constants/productConstants';
 export const productsReducer = (state = { products: [], loading: false }, { type, payload }) => {
   switch (type) {
     case actionTypes.GET_PRODUCTS_REQUEST:
+    case actionTypes.ADD_PRODUCT_REQUEST:
+    case actionTypes.DELETE_PRODUCT_REQUEST:
       return {
         loading: true,
         ...state
       };
-    case actionTypes.GET_PRODUCTS_SUCCESS:
-      return {
-        products: payload,
-        loading: false
-      };
+
     case actionTypes.GET_PRODUCTS_FAIL:
+    case actionTypes.ADD_PRODUCT_FAIL:
+    case actionTypes.DELETE_PRODUCT_FAIL:
       return {
         loading: false,
         error: payload
       };
 
-    case actionTypes.ADD_PRODUCT_REQUEST:
+    case actionTypes.GET_PRODUCTS_SUCCESS:
       return {
-        loading: true,
-        ...state
+        products: payload,
+        loading: false
       };
     case actionTypes.ADD_PRODUCT_SUCCESS:
       return {
@@ -29,27 +29,11 @@ export const productsReducer = (state = { products: [], loading: false }, { type
         products: [...state.products, payload],
         loading: false
       };
-    case actionTypes.ADD_PRODUCT_FAIL:
-      return {
-        loading: false,
-        error: payload
-      };
-
-    case actionTypes.DELETE_PRODUCT_REQUEST:
-      return {
-        loading: true,
-        ...state
-      };
     case actionTypes.DELETE_PRODUCT_SUCCESS:
       return {
         state,
         products: state.products.filter(product => product._id !== payload._id),
         loading: false
-      };
-    case actionTypes.DELETE_PRODUCT_FAIL:
-      return {
-        loading: false,
-        error: payload
       };
     default:
       return state;
