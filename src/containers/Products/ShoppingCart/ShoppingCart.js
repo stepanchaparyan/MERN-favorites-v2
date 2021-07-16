@@ -13,10 +13,10 @@ import {
   Info,
   ButtonContainer,
   ButtonStyled
-} from './CartPageStyled';
+} from './ShoppingCartStyled';
 import Loading from '../../../components/Loading/Loading';
 
-const CartPage = () => {
+const ShoppingCart = () => {
   const dispatch = useDispatch();
   const { pathname } = useLocation();
 
@@ -81,4 +81,4 @@ const CartPage = () => {
   );
 };
 
-export default CartPage;
+export default ShoppingCart;
