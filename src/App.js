@@ -14,10 +14,6 @@ import theme from '../src/styles/theme';
 import messages_hy from './translations/hy.json';
 import messages_en from './translations/en.json';
 
-if (localStorage.token) {
-  setAuthToken(localStorage.token);
-}
-
 const messages = {
   hy: messages_hy,
   en: messages_en
