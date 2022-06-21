@@ -40,6 +40,12 @@ const App = () => {
 
     const listen = history.listen(() => {
       ReactGA.pageview(window.location.pathname + window.location.search);
+      ReactGA.event({
+        category: 'Social',
+        action: 'Rated an App',
+        value: 3,
+        page: window.location.pathname + window.location.search,
+      });
     });
 
     // Remove event listener on cleanup
