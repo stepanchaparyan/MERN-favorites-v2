@@ -50,7 +50,7 @@ const ProductDetails = ({ match, history }) => {
   }, [dispatch, match, product]);
 
   const addToCartHandler = () => {
-    // ReactGA.initialize('320083024');
+    // ReactGA.initialize('G-GKLQXGSFZM');
 
     ReactGA.ga('send', 'pageview', '/mypage');
     ReactGA.event({

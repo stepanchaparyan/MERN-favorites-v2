@@ -1,2 +1,2 @@
-export const gaKey = '320083024';
+export const gaKey = 'G-GKLQXGSFZM';
 export const gtmKey = 'GTM-WNX5Z8C';
