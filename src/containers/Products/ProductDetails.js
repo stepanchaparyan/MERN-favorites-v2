@@ -22,6 +22,8 @@ import {
   ButtonContainer,
 } from './ProductDetailsStyled';
 import Loading from '../../components/Loading/Loading';
+import ReactGA from 'react-ga';
+import useGAEventTracker from '../../utils/useGAEventTracker';
 
 const ProductDetails = ({ match, history }) => {
   const [qty, setQty] = useState(1);
@@ -59,6 +61,8 @@ const ProductDetails = ({ match, history }) => {
     history.push(LINK.TO.PRODUCTS);
   };
 
+  const GAEventsTracker = useGAEventTracker('Category TEST');
+
   return (
     <Container loading={loading}>
       {loading ? (
@@ -94,6 +98,7 @@ const ProductDetails = ({ match, history }) => {
             </SelectContainer>
             <ButtonContainer>
               <StyledButton onClick={addToCartHandler}>Add To Cart</StyledButton>
+              <button onClick={() => GAEventsTracker('action_test', 'label_test')}>TEST</button>
               <StyledButton onClick={deleteHandler}>Delete product</StyledButton>
             </ButtonContainer>
           </CartContainer>
