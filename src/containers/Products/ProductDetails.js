@@ -22,7 +22,6 @@ import {
   ButtonContainer,
 } from './ProductDetailsStyled';
 import Loading from '../../components/Loading/Loading';
-import ReactGA from 'react-ga';
 import useGAEventTracker from '../../utils/useGAEventTracker';
 
 const ProductDetails = ({ match, history }) => {
@@ -99,6 +98,11 @@ const ProductDetails = ({ match, history }) => {
             <ButtonContainer>
               <StyledButton onClick={addToCartHandler}>Add To Cart</StyledButton>
               <button onClick={() => GAEventsTracker('action_test', 'label_test')}>TEST</button>
+              <a
+                href='www.examplewebsite.co.uk/pdf/company_brochure.pdf'
+                onClick="ga('send', 'event', 'PDF','Download', 'Company Brochure – PDF Download');">
+                Download Our Brochure
+              </a>
               <StyledButton onClick={deleteHandler}>Delete product</StyledButton>
             </ButtonContainer>
           </CartContainer>
