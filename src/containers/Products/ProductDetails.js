@@ -25,6 +25,11 @@ import Loading from '../../components/Loading/Loading';
 import useGAEventTracker from '../../utils/useGAEventTracker';
 import ReactGA from 'react-ga4';
 import { gaKey, gtmKey } from './constants/ga_gtm';
+import TagManager from 'react-gtm-module';
+
+const tagManagerArgs = {
+  gtmId: gtmKey,
+};
 
 const ProductDetails = ({ match, history }) => {
   const [qty, setQty] = useState(1);
@@ -35,15 +40,6 @@ const ProductDetails = ({ match, history }) => {
   const { loading, error, product } = productDetails;
 
   useEffect(() => {
-    ReactGA.ga('set', 'currencyCode', 'USD');
-    ReactGA.plugin.execute('ec', 'setAction', 'purchase', {
-      id: 11,
-      affiliation: 'storeName',
-      revenue: 12,
-      shipping: 45,
-      tax: 58,
-    });
-
     if (product && match.params.id !== product._id) {
       dispatch(getProductDetails(match.params.id));
       localStorage.setItem('from', pathname);
@@ -51,8 +47,7 @@ const ProductDetails = ({ match, history }) => {
   }, [dispatch, match, product]);
 
   const addToCartHandler = () => {
-    // ReactGA.initialize('G-GKLQXGSFZM');
-
+    TagManager.initialize(tagManagerArgs);
     ReactGA.initialize(gaKey);
     ReactGA.event({
       category: 'Editing',
