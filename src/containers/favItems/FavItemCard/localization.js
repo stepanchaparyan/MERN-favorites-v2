@@ -3,26 +3,26 @@ import { defineMessages } from 'react-intl';
 export default defineMessages({
   author: {
     id: 'favItem.author',
-    defaultMessage: 'Author'
+    defaultMessage: 'Author',
   },
   title: {
     id: 'favItem.title',
-    defaultMessage: 'Title'
+    defaultMessage: 'Title',
   },
   category: {
     id: 'favItem.category',
-    defaultMessage: 'Category'
+    defaultMessage: 'Category',
   },
   description: {
     id: 'favItem.description',
-    defaultMessage: 'Description'
+    defaultMessage: 'Description',
   },
   editCard: {
     id: 'favItem.editCard',
-    defaultMessage: 'Edit Card'
+    defaultMessage: 'Edit Card',
   },
   removeCard: {
     id: 'favItem.removeCard',
-    defaultMessage: 'Remove Card'
-  }
+    defaultMessage: 'Remove Card',
+  },
 });

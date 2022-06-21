@@ -1,12 +1,6 @@
 import { renderToJSON } from '../../../utils/tests';
 import theme from '../../../styles/theme';
-import {
-  ButtonConfirm,
-  ButtonClose,
-  ButtonCancel,
-  ModalTitleContainer,
-  ModalTextContainer
-} from '../ModalStyled';
+import { ButtonConfirm, ButtonClose, ButtonCancel, ModalTitleContainer, ModalTextContainer } from '../ModalStyled';
 
 describe('ModalStyled component test with Enzyme', () => {
   const bgColor = 'red';

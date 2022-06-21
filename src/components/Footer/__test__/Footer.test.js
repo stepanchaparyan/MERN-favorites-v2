@@ -3,7 +3,7 @@ import Footer from '../Footer.js';
 
 jest.mock('react-intl', () => ({
   useIntl: jest.fn(() => ({ formatMessage: m => m.defaultMessage })),
-  defineMessages: i => i
+  defineMessages: i => i,
 }));
 
 describe('Footer component test with Enzyme', () => {

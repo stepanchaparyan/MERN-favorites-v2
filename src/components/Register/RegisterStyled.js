@@ -88,13 +88,13 @@ export const ErrorButton = styled.button`
 export const modalStyles = {
   content: {
     border: 'none',
-    position: 'unset'
+    position: 'unset',
   },
   overlay: {
     position: 'fixed',
     inset: '0%',
-    zIndex: '1'
-  }
+    zIndex: '1',
+  },
 };
 
 export const ModalContainer = styled.div`

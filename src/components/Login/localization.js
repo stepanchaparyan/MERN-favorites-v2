@@ -3,22 +3,22 @@ import { defineMessages } from 'react-intl';
 export default defineMessages({
   login: {
     id: 'login.login',
-    defaultMessage: 'LogIn'
+    defaultMessage: 'LogIn',
   },
   email: {
     id: 'login.email',
-    defaultMessage: 'Email'
+    defaultMessage: 'Email',
   },
   password: {
     id: 'login.password',
-    defaultMessage: 'Password'
+    defaultMessage: 'Password',
   },
   signup: {
     id: 'login.signup',
-    defaultMessage: 'Sign Up'
+    defaultMessage: 'Sign Up',
   },
   dontHaveAnAccout: {
     id: 'login.dontHaveAnAccout',
-    defaultMessage: 'Dont have an accout?'
-  }
+    defaultMessage: 'Dont have an accout?',
+  },
 });

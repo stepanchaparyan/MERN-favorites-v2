@@ -6,7 +6,7 @@ describe('FilterAndSearchStyled component test with Enzyme', () => {
   test('renders correct style of SelectContainer component', () => {
     const tree = renderToJSON(SelectContainer, { theme });
     expect(tree).toHaveStyleRule('color', theme.cadetblue, {
-      modifier: '& div'
+      modifier: '& div',
     });
   });
 

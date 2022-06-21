@@ -8,7 +8,7 @@ export const FORM = {
       PASSWORD: 'password',
       FILE: 'file',
       TEL: 'tel',
-      SELECT: 'select'
+      SELECT: 'select',
     },
     NAME: {
       AUTHOR: 'author',
@@ -23,8 +23,8 @@ export const FORM = {
       PHONE_NUMBER: 'phoneNumber',
       PRICE: 'price',
       COUNT_IN_STOCK: 'countInStock',
-      IMAGE_URL: 'imageUrl'
-    }
+      IMAGE_URL: 'imageUrl',
+    },
   },
   SELECT: {
     VALUES: {
@@ -33,27 +33,27 @@ export const FORM = {
       BOOKS: 'Books',
       OTHER: 'Other',
       MALE: 'male',
-      FEMALE: 'female'
+      FEMALE: 'female',
     },
     OPTIONS: {
       FILM: 'Film',
       MUSIC: 'Music',
       BOOKS: 'Books',
       OTHER: 'Other',
-      ALL: 'All'
+      ALL: 'All',
     },
     LABELS: {
       FILM: 'Film',
       MUSIC: 'Music',
       BOOKS: 'Books',
       OTHER: 'Other',
-      ALL_CARDS: 'All cards'
+      ALL_CARDS: 'All cards',
     },
     NAME: {
       GENDER: 'gender',
-      BIRTHDAY: 'birthDay'
-    }
+      BIRTHDAY: 'birthDay',
+    },
   },
   TEL_PLACEHOLDER: '93123456',
-  TEL_PATTERN: '[0-9]{8}'
+  TEL_PATTERN: '[0-9]{8}',
 };

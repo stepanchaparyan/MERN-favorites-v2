@@ -13,7 +13,7 @@ import {
   SEARCH_FAVITEM,
   CLEAR_SEARCH,
   SEARCH_FILTER_FAVITEM,
-  CLEAR_SEARCH_FILTER
+  CLEAR_SEARCH_FILTER,
 } from '../types';
 
 export default (state, { type, payload }) => {
@@ -23,83 +23,81 @@ export default (state, { type, payload }) => {
         ...state,
         favItems: payload,
         loading: false,
-        error: null
+        error: null,
       };
     case ADD_FAVITEM:
       return {
         ...state,
         favItems: [...state.favItems, payload],
-        loading: false
+        loading: false,
       };
     case REMOVE_FAVITEM:
       return {
         ...state,
-        favItems: state.favItems.filter(favItem => favItem._id !== payload)
+        favItems: state.favItems.filter(favItem => favItem._id !== payload),
       };
     case EDIT_FAVITEM:
       return {
         ...state,
-        editFavItem: payload
+        editFavItem: payload,
       };
     case CLEAR_EDIT:
       return {
         ...state,
-        editFavItem: null
+        editFavItem: null,
       };
     case TOGGLE_FORM:
       return {
         ...state,
         toggleForm: payload,
-        error: null
+        error: null,
       };
     case UPDATE_FAVITEM:
       return {
         ...state,
-        favItems: state.favItems.map(favItem => (favItem._id === payload._id ? payload : favItem))
+        favItems: state.favItems.map(favItem => (favItem._id === payload._id ? payload : favItem)),
       };
     case FAVITEM_ERROR:
       return {
         ...state,
-        error: payload
+        error: payload,
       };
     case CLEAR_ERRORS:
       return {
         ...state,
-        error: null
+        error: null,
       };
     case FILTER_FAVITEM:
       return {
         ...state,
-        filterFavItems: state.favItems.filter(favItem => favItem.category === payload)
+        filterFavItems: state.favItems.filter(favItem => favItem.category === payload),
       };
     case CLEAR_FILTER:
       return {
         ...state,
-        filterFavItems: null
+        filterFavItems: null,
       };
     case SEARCH_FAVITEM:
       const regex = new RegExp(`${payload}`, 'gi');
       return {
         ...state,
-        searchFavItem: state.favItems.filter(favItem => favItem.title.match(regex))
+        searchFavItem: state.favItems.filter(favItem => favItem.title.match(regex)),
       };
     case CLEAR_SEARCH:
       return {
         ...state,
-        searchFavItem: null
+        searchFavItem: null,
       };
     case SEARCH_FILTER_FAVITEM:
       const regexp = new RegExp(`${payload[0]}`, 'gi');
       return {
         ...state,
-        searchFilterFavItems: state.favItems
-          .filter(favItem => favItem.title.match(regexp))
-          .filter(favItem => favItem.category === payload[1])
+        searchFilterFavItems: state.favItems.filter(favItem => favItem.title.match(regexp)).filter(favItem => favItem.category === payload[1]),
       };
     case CLEAR_SEARCH_FILTER:
       return {
         ...state,
-        searchFilterFavItems: null
+        searchFilterFavItems: null,
       };
     default:
       return state;

@@ -7,7 +7,7 @@ import { Button } from '../FavItemCardStyled';
 
 jest.mock('react-intl', () => ({
   useIntl: jest.fn(() => ({ formatMessage: m => m.defaultMessage })),
-  defineMessages: i => i
+  defineMessages: i => i,
 }));
 
 jest.mock('react', () => {
@@ -18,8 +18,8 @@ jest.mock('react', () => {
       edit_FavItem: () => {},
       toggle_Form: () => {},
       removeFavItem: () => {},
-      clearEdit: () => {}
-    })
+      clearEdit: () => {},
+    }),
   };
 });
 
@@ -28,7 +28,7 @@ const props = {
   author: 'testAuthor',
   title: 'testTitle',
   category: 'testCategory',
-  description: 'testDescription'
+  description: 'testDescription',
 };
 
 describe('FavItemCard component test with Enzyme', () => {

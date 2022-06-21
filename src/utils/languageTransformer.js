@@ -26,7 +26,7 @@ const dict = {
   sl: 'sl',
   sv: 'se',
   tr: 'tr',
-  uk: 'ua'
+  uk: 'ua',
 };
 
 export const languageTransformer = listList => {

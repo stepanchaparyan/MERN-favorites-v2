@@ -15,7 +15,7 @@ import {
   USER_LOADED,
   AUTH_ERROR,
   LOGOUT,
-  CLEAR_ERRORS
+  CLEAR_ERRORS,
 } from '../types';
 
 const { AUTH, REGISTER } = URL;
@@ -26,7 +26,7 @@ const AuthState = props => {
     isAuthencated: null,
     loading: false,
     user: null,
-    error: null
+    error: null,
   };
   const [state, dispatch] = useReducer(authReducer, intialState);
 
@@ -42,11 +42,11 @@ const AuthState = props => {
       const res = await axios.get(AUTH);
       dispatch({
         type: USER_LOADED,
-        payload: res.data
+        payload: res.data,
       });
     } catch (err) {
       dispatch({
-        type: AUTH_ERROR
+        type: AUTH_ERROR,
       });
     }
   };
@@ -56,19 +56,19 @@ const AuthState = props => {
     try {
       dispatch({
         type: REGISTER_REQUEST,
-        loading: true
+        loading: true,
       });
 
       const res = await axios.post(REGISTER, formData, HEADER_CONFIG.CONTENT_TYPE_APPLICATION_JSON);
       dispatch({
         type: REGISTER_SUCCESS,
-        payload: res.data
+        payload: res.data,
       });
       loadUser();
     } catch (err) {
       dispatch({
         type: REGISTER_FAIL,
-        payload: err.response.data.msg
+        payload: err.response.data.msg,
       });
     }
   };
@@ -78,26 +78,26 @@ const AuthState = props => {
     try {
       dispatch({
         type: LOGIN_REQUEST,
-        loading: true
+        loading: true,
       });
 
       const res = await axios.post(AUTH, formData, HEADER_CONFIG.CONTENT_TYPE_APPLICATION_JSON);
       dispatch({
         type: LOGIN_SUCCESS,
-        payload: res.data
+        payload: res.data,
       });
       loadUser();
     } catch (err) {
       dispatch({
         type: LOGIN_FAIL,
-        payload: err.response.data.msg
+        payload: err.response.data.msg,
       });
     }
   };
   const setError = err => {
     dispatch({
       type: REGISTER_FAIL,
-      payload: [{ msg: err }]
+      payload: [{ msg: err }],
     });
   };
 
@@ -119,16 +119,15 @@ const AuthState = props => {
         loadUser,
         logout,
         clearErrors,
-        setError
-      }}
-    >
+        setError,
+      }}>
       {props.children}
     </AuthContext.Provider>
   );
 };
 
 AuthState.propTypes = {
-  children: PropTypes.object
+  children: PropTypes.object,
 };
 
 export default AuthState;

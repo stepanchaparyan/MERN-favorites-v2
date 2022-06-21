@@ -17,7 +17,7 @@ import {
   REMOVE_FILE,
   FILE_ERROR,
   SET_UPLOAD_PERSENTAGE,
-  SET_MESSAGE
+  SET_MESSAGE,
 } from '../types';
 
 const { PROFILE, PROFILE_ADD, PROFILE_UPDATE, UPLOAD } = URL;
@@ -32,7 +32,7 @@ const ProfileState = props => {
     toggleForm: false,
     uploadedFile: null,
     uploadPercentage: 0,
-    message: null
+    message: null,
   };
   const [state, dispatch] = useReducer(ProfileReducer, intialState);
 
@@ -41,18 +41,18 @@ const ProfileState = props => {
     try {
       dispatch({
         type: GET_PROFILE_REQUEST,
-        loading: true
+        loading: true,
       });
 
       const res = await axios.get(PROFILE);
       dispatch({
         type: GET_PROFILE_SUCCESS,
-        payload: res.data
+        payload: res.data,
       });
     } catch (err) {
       dispatch({
         type: PROFILE_ERROR,
-        payload: err.response.data.errors
+        payload: err.response.data.errors,
       });
     }
   };
@@ -62,23 +62,19 @@ const ProfileState = props => {
     try {
       dispatch({
         type: ADD_PROFILE_REQUEST,
-        loading: true
+        loading: true,
       });
 
-      const res = await axios.post(
-        PROFILE_ADD,
-        profile,
-        HEADER_CONFIG.CONTENT_TYPE_APPLICATION_JSON
-      );
+      const res = await axios.post(PROFILE_ADD, profile, HEADER_CONFIG.CONTENT_TYPE_APPLICATION_JSON);
       dispatch({
         type: ADD_PROFILE_SUCCESS,
-        payload: res.data
+        payload: res.data,
       });
       getProfile();
     } catch (err) {
       dispatch({
         type: PROFILE_ERROR,
-        payload: err.response.data.errors
+        payload: err.response.data.errors,
       });
     }
   };
@@ -86,20 +82,16 @@ const ProfileState = props => {
   // Update profile
   const updateProfile = async profile => {
     try {
-      const res = await axios.put(
-        PROFILE_UPDATE,
-        profile,
-        HEADER_CONFIG.CONTENT_TYPE_APPLICATION_JSON
-      );
+      const res = await axios.put(PROFILE_UPDATE, profile, HEADER_CONFIG.CONTENT_TYPE_APPLICATION_JSON);
       dispatch({
         type: UPDATE_PROFILE,
-        payload: res.data
+        payload: res.data,
       });
       getProfile();
     } catch (err) {
       dispatch({
         type: PROFILE_ERROR,
-        payload: err.response.data.errors
+        payload: err.response.data.errors,
       });
     }
   };
@@ -107,28 +99,28 @@ const ProfileState = props => {
   const edit_Profile = profile => {
     dispatch({
       type: EDIT_PROFILE,
-      payload: profile
+      payload: profile,
     });
   };
 
   const toggle_Form = () => {
     dispatch({
       type: TOGGLE_FORM,
-      payload: !state.toggleForm
+      payload: !state.toggleForm,
     });
   };
 
   const set_uploadPercentage = progress => {
     dispatch({
       type: SET_UPLOAD_PERSENTAGE,
-      payload: progress
+      payload: progress,
     });
   };
 
   const set_message = message => {
     dispatch({
       type: SET_MESSAGE,
-      payload: message
+      payload: message,
     });
   };
 
@@ -141,20 +133,20 @@ const ProfileState = props => {
         if (progress === 100) {
           setTimeout(() => set_uploadPercentage(0), 3000);
         }
-      }
+      },
     };
     try {
       const res = await axios.post(UPLOAD, formData, config);
       dispatch({
         type: UPDATE_FILE,
-        payload: res.data
+        payload: res.data,
       });
       set_message(TEXT.FILE_UPLOADED);
       setTimeout(() => set_message(null), 10000);
     } catch (err) {
       dispatch({
         type: FILE_ERROR,
-        payload: err.response.data.errors
+        payload: err.response.data.errors,
       });
       if (err.response.status === 500) {
         set_message(ERRORS.TEXT_500);
@@ -166,7 +158,7 @@ const ProfileState = props => {
 
   const remove_file = () => {
     dispatch({
-      type: REMOVE_FILE
+      type: REMOVE_FILE,
     });
   };
 
@@ -189,16 +181,15 @@ const ProfileState = props => {
         update_File,
         remove_file,
         set_uploadPercentage,
-        set_message
-      }}
-    >
+        set_message,
+      }}>
       {props.children}
     </ProfileContext.Provider>
   );
 };
 
 ProfileState.propTypes = {
-  children: PropTypes.object
+  children: PropTypes.object,
 };
 
 export default ProfileState;

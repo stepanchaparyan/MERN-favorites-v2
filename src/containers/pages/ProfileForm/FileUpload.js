@@ -2,16 +2,7 @@ import React, { useState, useContext, useEffect } from 'react';
 import { useIntl } from 'react-intl';
 import Progress from '../../../components/Progress/Progress';
 import ProfileContext from '../../../context/profileContext/profileContext';
-import {
-  Container,
-  Input,
-  InputHidden,
-  ProfileImage,
-  LabelEdit,
-  LabelUpload,
-  IconEdit,
-  Filename
-} from './FileUploadStyled';
+import { Container, Input, InputHidden, ProfileImage, LabelEdit, LabelUpload, IconEdit, Filename } from './FileUploadStyled';
 import EditIcon from '../../../assets/icon-edit.png';
 import UploadIcon from '../../../assets/icon-upload.png';
 import Modal from 'react-modal';
@@ -27,14 +18,7 @@ const { OK } = MODAL;
 
 const FileUpload = () => {
   const context = useContext(ProfileContext);
-  const {
-    updateProfile,
-    editProfile,
-    update_File,
-    uploadedFile,
-    remove_file,
-    uploadPercentage
-  } = context;
+  const { updateProfile, editProfile, update_File, uploadedFile, remove_file, uploadPercentage } = context;
   const { formatMessage } = useIntl();
 
   Modal.setAppElement('#root');
@@ -50,10 +34,7 @@ const FileUpload = () => {
   }, []);
 
   const onChange = e => {
-    if (
-      e.target.files[0].type === FILE_TYPE.IMAGE_JPEG ||
-      e.target.files[0] === FILE_TYPE.IMAGE_PNG
-    ) {
+    if (e.target.files[0].type === FILE_TYPE.IMAGE_JPEG || e.target.files[0] === FILE_TYPE.IMAGE_PNG) {
       setFile(e.target.files[0]);
       setFilename(e.target.files[0].name);
     } else {
@@ -72,7 +53,7 @@ const FileUpload = () => {
   const setImage = () => {
     setProfile({
       ...newProfile,
-      image: filename
+      image: filename,
     });
     setIsOpen(true);
     setModalType(MODAL_TYPE.CONFIRM);
@@ -89,7 +70,7 @@ const FileUpload = () => {
     setIsOpen(false);
     setProfile({
       ...newProfile,
-      image: editProfile.image
+      image: editProfile.image,
     });
     remove_file();
   };
@@ -116,8 +97,7 @@ const FileUpload = () => {
             title={formatMessage(localization.wrongExtension)}
             text={formatMessage(localization.wrongExtensionText)}
             titleBgColor={indianred}
-            cancelButtonColor={cadetblue}
-          ></CustomModal>
+            cancelButtonColor={cadetblue}></CustomModal>
         )}
         <Filename>{filename}</Filename>
 
@@ -132,21 +112,14 @@ const FileUpload = () => {
           </>
         )}
       </form>
-      {uploadedFile && (
-        <Input
-          type={INPUT.TYPE.BUTTON}
-          value={formatMessage(localization.updateImage)}
-          onClick={setImage}
-        />
-      )}
+      {uploadedFile && <Input type={INPUT.TYPE.BUTTON} value={formatMessage(localization.updateImage)} onClick={setImage} />}
       {modalType === MODAL_TYPE.CONFIRM && (
         <CustomModal
           closeModal={closeModal}
           onConfirm={onConfirm}
           modalIsOpen={modalIsOpen}
           title={formatMessage(localization.confirm)}
-          text={formatMessage(localization.confirmText)}
-        ></CustomModal>
+          text={formatMessage(localization.confirmText)}></CustomModal>
       )}
     </Container>
   );

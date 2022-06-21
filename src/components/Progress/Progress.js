@@ -11,7 +11,7 @@ const Progress = ({ percentage }) => {
 };
 
 Progress.propTypes = {
-  percentage: PropTypes.number.isRequired
+  percentage: PropTypes.number.isRequired,
 };
 
 export default Progress;

@@ -10,7 +10,7 @@ const ModalFooter = ({
   primaryButtonMessage,
   secondaryButtonCallBack,
   secondaryButtonMessage,
-  isSecondaryButtonDisabled
+  isSecondaryButtonDisabled,
 }) => {
   const { formatMessage } = useIntl();
 
@@ -38,7 +38,7 @@ ModalFooter.propTypes = {
   primaryButtonMessage: PropTypes.object,
   secondaryButtonCallBack: PropTypes.func,
   secondaryButtonMessage: PropTypes.object,
-  isSecondaryButtonDisabled: PropTypes.bool
+  isSecondaryButtonDisabled: PropTypes.bool,
 };
 
 ModalFooter.defaultProps = {
@@ -47,7 +47,7 @@ ModalFooter.defaultProps = {
   primaryButtonMessage: null,
   secondaryButtonCallBack: NOOP,
   secondaryButtonMessage: null,
-  isSecondaryButtonDisabled: false
+  isSecondaryButtonDisabled: false,
 };
 
 export default ModalFooter;

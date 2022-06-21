@@ -4,16 +4,7 @@ import { useLocation, Link } from 'react-router-dom';
 import CartItem from './CartItem';
 import { getMyCartItems, removeFromCart } from '../../../redux/actions/cartActions';
 import { LINK } from '../../../constants';
-import {
-  Container,
-  CartsContainer,
-  PageTitle,
-  EmptyCart,
-  Checkout,
-  Info,
-  ButtonContainer,
-  ButtonStyled
-} from './ShoppingCartStyled';
+import { Container, CartsContainer, PageTitle, EmptyCart, Checkout, Info, ButtonContainer, ButtonStyled } from './ShoppingCartStyled';
 import Loading from '../../../components/Loading/Loading';
 
 const ShoppingCart = () => {
@@ -43,7 +34,7 @@ const ShoppingCart = () => {
   return (
     <Container>
       {loading ? (
-        <Loading type="ThreeDots" color="cadetblue" height={80} width={80}></Loading>
+        <Loading type='ThreeDots' color='cadetblue' height={80} width={80}></Loading>
       ) : error ? (
         <h2>{error}</h2>
       ) : (
@@ -56,13 +47,7 @@ const ShoppingCart = () => {
                   Your Cart Is Empty <Link to={LINK.TO.HOME}>Go Back</Link>
                 </EmptyCart>
               ) : (
-                cartItems?.map(item => (
-                  <CartItem
-                    key={item._id}
-                    item={item}
-                    removeHandler={() => removeFromCartHandler(item._id)}
-                  />
-                ))
+                cartItems?.map(item => <CartItem key={item._id} item={item} removeHandler={() => removeFromCartHandler(item._id)} />)
               )}
             </CartsContainer>
             <Checkout>

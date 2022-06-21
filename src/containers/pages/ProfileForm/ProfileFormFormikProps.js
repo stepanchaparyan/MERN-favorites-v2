@@ -11,13 +11,13 @@ const validationSchema = Yup.object({
     .required('Required'),
   birthDay: Yup.date()
     .required('Required')
-    .nullable()
+    .nullable(),
 });
 
 const formikProps = newProfile => ({
   initialValues: { ...newProfile },
   validateOnChange: true,
-  validationSchema
+  validationSchema,
 });
 
 export default formikProps;

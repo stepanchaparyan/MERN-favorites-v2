@@ -19,7 +19,7 @@ import {
   StyledSelect,
   StyledButton,
   SelectContainer,
-  ButtonContainer
+  ButtonContainer,
 } from './ProductDetailsStyled';
 import Loading from '../../components/Loading/Loading';
 
@@ -47,8 +47,8 @@ const ProductDetails = ({ match, history }) => {
         name,
         price,
         countInStock,
-        imageUrl
-      })
+        imageUrl,
+      }),
     );
 
     history.push(LINK.TO.CART);
@@ -62,7 +62,7 @@ const ProductDetails = ({ match, history }) => {
   return (
     <Container loading={loading}>
       {loading ? (
-        <Loading type="ThreeDots" color="cadetblue" height={80} width={80}></Loading>
+        <Loading type='ThreeDots' color='cadetblue' height={80} width={80}></Loading>
       ) : error ? (
         <h2>{error}</h2>
       ) : (
@@ -105,7 +105,7 @@ const ProductDetails = ({ match, history }) => {
 
 ProductDetails.propTypes = {
   match: PropTypes.object.isRequired,
-  history: PropTypes.object.isRequired
+  history: PropTypes.object.isRequired,
 };
 
 export default ProductDetails;

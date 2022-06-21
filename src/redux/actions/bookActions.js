@@ -14,7 +14,7 @@ import {
   BOOK_DETAIL_REQUEST,
   BOOK_UPDATE_SUCCESS,
   BOOK_UPDATE_REQUEST,
-  BOOK_UPDATE_FAIL
+  BOOK_UPDATE_FAIL,
 } from '../constants/bookConstants.js';
 import { HEADER_CONFIG, URL } from '../../constants';
 
@@ -27,19 +27,19 @@ export const createBook = bookData => {
     try {
       dispatch({
         type: CREATE_BOOK_REQUEST,
-        loading: true
+        loading: true,
       });
 
       const { data } = await axios.post(BOOKS, bookData, HEADER_CONFIG);
 
       dispatch({
         type: CREATE_BOOK_SUCCESS,
-        payload: data
+        payload: data,
       });
     } catch (error) {
       dispatch({
         type: CREATE_BOOK_FAIL,
-        error: error.response && error.response.data.message
+        error: error.response && error.response.data.message,
       });
     }
   };
@@ -52,18 +52,18 @@ export const fetchBooks = () => {
     try {
       dispatch({
         type: FETCH_BOOK_REQUEST,
-        loading: true
+        loading: true,
       });
 
       const { data } = await axios.get(BOOKS, HEADER_CONFIG);
       dispatch({
         type: FETCH_BOOK_SUCCESS,
-        payload: data
+        payload: data,
       });
     } catch (error) {
       dispatch({
         type: FETCH_BOOK_FAIL,
-        error: error.response && error.response.data.message
+        error: error.response && error.response.data.message,
       });
     }
   };
@@ -76,23 +76,23 @@ export const deleteBook = id => {
     try {
       dispatch({
         type: DELETE_BOOK_REQUEST,
-        loading: true
+        loading: true,
       });
 
       const { data } = await axios.delete(`${BOOKS}/${id}`, HEADER_CONFIG);
       dispatch({
         type: DELETE_BOOK_SUCCESS,
-        payload: data
+        payload: data,
       });
 
       dispatch({
-        type: FETCH_BOOK_SUCCESS
+        type: FETCH_BOOK_SUCCESS,
       });
     } catch (error) {
       dispatch({
         type: DELETE_BOOK_FAIL,
         loading: false,
-        error: error.response && error.response.data.message
+        error: error.response && error.response.data.message,
       });
     }
   };
@@ -104,19 +104,19 @@ export const fetchBook = (id, bookData) => {
     try {
       dispatch({
         type: BOOK_DETAIL_REQUEST,
-        loading: true
+        loading: true,
       });
 
       const { data } = await axios.get(`${BOOKS}/${id}`, bookData, HEADER_CONFIG);
 
       dispatch({
         type: BOOK_DETAIL_SUCCESS,
-        payload: data
+        payload: data,
       });
     } catch (error) {
       dispatch({
         type: BOOK_DETAIL_FAIL,
-        error: error.response && error.response.data.message
+        error: error.response && error.response.data.message,
       });
     }
   };
@@ -129,19 +129,19 @@ export const updateBook = (id, bookData) => {
     try {
       dispatch({
         type: BOOK_UPDATE_REQUEST,
-        loading: true
+        loading: true,
       });
 
       const { data } = await axios.put(`${BOOKS}/${id}`, bookData, HEADER_CONFIG);
       dispatch({
         type: BOOK_UPDATE_SUCCESS,
-        payload: data
+        payload: data,
       });
     } catch (error) {
       dispatch({
         type: BOOK_UPDATE_FAIL,
         loading: false,
-        error: error.response && error.response.data.message
+        error: error.response && error.response.data.message,
       });
     }
   };

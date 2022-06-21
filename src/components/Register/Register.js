@@ -21,7 +21,7 @@ import {
   ModalTitleContainer,
   ModalTitle,
   ModalTextContainer,
-  ButtonConfirm
+  ButtonConfirm,
 } from './RegisterStyled';
 import localization from './localization';
 import { FORM, LINK } from '../../constants';
@@ -47,7 +47,7 @@ const Register = props => {
       register({
         name,
         email,
-        password
+        password,
       });
       setModalIsOpen(true);
     }
@@ -70,35 +70,19 @@ const Register = props => {
             <ModalTitle>{formatMessage(localization.modalTitle)}</ModalTitle>
           </ModalTitleContainer>
           <ModalTextContainer>{formatMessage(localization.modalText)}</ModalTextContainer>
-          <ButtonConfirm onClick={onConfirm}>
-            {formatMessage(localization.modalButtonConfirmText)}
-          </ButtonConfirm>
+          <ButtonConfirm onClick={onConfirm}>{formatMessage(localization.modalButtonConfirmText)}</ButtonConfirm>
         </ModalContainer>
       </Modal>
       {loading ? (
-        <Loading type="ThreeDots" color="cadetblue" height={20} width={60}></Loading>
+        <Loading type='ThreeDots' color='cadetblue' height={20} width={60}></Loading>
       ) : (
         !modalIsOpen && (
           <>
-            <Formik
-              initialValues={initialValues}
-              validationSchema={validationSchema}
-              onSubmit={onSubmit}
-            >
+            <Formik initialValues={initialValues} validationSchema={validationSchema} onSubmit={onSubmit}>
               <FormStyled>
-                <FieldStyled
-                  type={INPUT.TYPE.TEXT}
-                  name={INPUT.NAME.NAME}
-                  id={INPUT.NAME.NAME}
-                  placeholder={formatMessage(localization.name)}
-                />
+                <FieldStyled type={INPUT.TYPE.TEXT} name={INPUT.NAME.NAME} id={INPUT.NAME.NAME} placeholder={formatMessage(localization.name)} />
                 <ErrorMessage name={INPUT.NAME.NAME} component={ErrorMessages} />
-                <FieldStyled
-                  type={INPUT.TYPE.EMAIL}
-                  name={INPUT.NAME.EMAIL}
-                  id={INPUT.NAME.EMAIL}
-                  placeholder={formatMessage(localization.email)}
-                />
+                <FieldStyled type={INPUT.TYPE.EMAIL} name={INPUT.NAME.EMAIL} id={INPUT.NAME.EMAIL} placeholder={formatMessage(localization.email)} />
                 <ErrorMessage name={INPUT.NAME.EMAIL} component={ErrorMessages} />
                 <FieldStyled
                   type={INPUT.TYPE.PASSWORD}
@@ -121,9 +105,7 @@ const Register = props => {
                     </ErrorButton>
                   </Errors>
                 )}
-                <RegisterButton type={INPUT.TYPE.SUBMIT}>
-                  {formatMessage(localization.signup)}
-                </RegisterButton>
+                <RegisterButton type={INPUT.TYPE.SUBMIT}>{formatMessage(localization.signup)}</RegisterButton>
               </FormStyled>
             </Formik>
             <QuestionText>
@@ -138,7 +120,7 @@ const Register = props => {
 };
 
 Register.propTypes = {
-  history: PropTypes.object
+  history: PropTypes.object,
 };
 
 export default Register;

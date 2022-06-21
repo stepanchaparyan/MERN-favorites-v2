@@ -15,13 +15,13 @@ export const customStyles = {
     minWidth: '350px',
     minHeight: '200px',
     backgroundColor: '#f8f8f8',
-    position: 'absolute'
+    position: 'absolute',
   },
   overlay: {
     position: 'absolute',
     top: 55,
-    backgroundColor: 'rgba(255, 255, 255, 0.75)'
-  }
+    backgroundColor: 'rgba(255, 255, 255, 0.75)',
+  },
 };
 
 export const ModalContainer = styled.div`

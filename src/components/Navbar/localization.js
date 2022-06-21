@@ -3,26 +3,26 @@ import { defineMessages } from 'react-intl';
 export default defineMessages({
   logout: {
     id: 'navbar.logout',
-    defaultMessage: 'Logout'
+    defaultMessage: 'Logout',
   },
   logIn: {
     id: 'navbar.logIn',
-    defaultMessage: 'LogIn'
+    defaultMessage: 'LogIn',
   },
   signUp: {
     id: 'navbar.signUp',
-    defaultMessage: 'SignUp'
+    defaultMessage: 'SignUp',
   },
   books: {
     id: 'navbar.books',
-    defaultMessage: 'BOOKS'
+    defaultMessage: 'BOOKS',
   },
   products: {
     id: 'navbar.products',
-    defaultMessage: 'PRODUCTS'
+    defaultMessage: 'PRODUCTS',
   },
   cards: {
     id: 'navbar.cards',
-    defaultMessage: 'CARDS'
-  }
+    defaultMessage: 'CARDS',
+  },
 });

@@ -19,7 +19,7 @@ import {
   SEARCH_FAVITEM,
   CLEAR_SEARCH,
   SEARCH_FILTER_FAVITEM,
-  CLEAR_SEARCH_FILTER
+  CLEAR_SEARCH_FILTER,
 } from '../types';
 
 const { FAVITEM, FAVITEM_ADD, FAVITEM_UPDATE } = URL;
@@ -33,7 +33,7 @@ const FavItemState = props => {
     toggleForm: false,
     filterFavItems: null,
     searchFavItem: null,
-    searchFilterFavItems: null
+    searchFilterFavItems: null,
   };
   const [state, dispatch] = useReducer(favItemReducer, intialState);
 
@@ -43,12 +43,12 @@ const FavItemState = props => {
       const res = await axios.get(FAVITEM);
       dispatch({
         type: GET_FAVITEMS,
-        payload: res.data
+        payload: res.data,
       });
     } catch (err) {
       dispatch({
         type: FAVITEM_ERROR,
-        payload: err.response.data.errors
+        payload: err.response.data.errors,
       });
     }
   };
@@ -56,26 +56,22 @@ const FavItemState = props => {
   // Add FavItem
   const addFavItem = async favItem => {
     try {
-      const res = await axios.post(
-        FAVITEM_ADD,
-        favItem,
-        HEADER_CONFIG.CONTENT_TYPE_APPLICATION_JSON
-      );
+      const res = await axios.post(FAVITEM_ADD, favItem, HEADER_CONFIG.CONTENT_TYPE_APPLICATION_JSON);
       dispatch({
         type: ADD_FAVITEM,
-        payload: res.data
+        payload: res.data,
       });
       dispatch({
         type: TOGGLE_FORM,
-        payload: !state.toggleForm
+        payload: !state.toggleForm,
       });
       dispatch({
-        type: CLEAR_ERRORS
+        type: CLEAR_ERRORS,
       });
     } catch (err) {
       dispatch({
         type: FAVITEM_ERROR,
-        payload: err.response.data.errors
+        payload: err.response.data.errors,
       });
     }
   };
@@ -86,12 +82,12 @@ const FavItemState = props => {
       await axios.delete(`${FAVITEM}/${id}`);
       dispatch({
         type: REMOVE_FAVITEM,
-        payload: id
+        payload: id,
       });
     } catch (err) {
       dispatch({
         type: FAVITEM_ERROR,
-        payload: err.response.data.errors
+        payload: err.response.data.errors,
       });
     }
   };
@@ -99,27 +95,23 @@ const FavItemState = props => {
   // update favItem
   const update_FavItem = async favItem => {
     try {
-      const res = await axios.put(
-        `${FAVITEM_UPDATE}/${favItem._id}`,
-        favItem,
-        HEADER_CONFIG.CONTENT_TYPE_APPLICATION_JSON
-      );
+      const res = await axios.put(`${FAVITEM_UPDATE}/${favItem._id}`, favItem, HEADER_CONFIG.CONTENT_TYPE_APPLICATION_JSON);
       dispatch({
         type: UPDATE_FAVITEM,
-        payload: res.data
+        payload: res.data,
       });
       dispatch({
         type: TOGGLE_FORM,
-        payload: !state.toggleForm
+        payload: !state.toggleForm,
       });
       dispatch({
-        type: CLEAR_ERRORS
+        type: CLEAR_ERRORS,
       });
       getFavItems();
     } catch (err) {
       dispatch({
         type: FAVITEM_ERROR,
-        payload: err.response.data.errors
+        payload: err.response.data.errors,
       });
     }
   };
@@ -128,59 +120,59 @@ const FavItemState = props => {
   const edit_FavItem = favItem => {
     dispatch({
       type: EDIT_FAVITEM,
-      payload: favItem
+      payload: favItem,
     });
   };
   const clearEdit = () => {
     dispatch({
-      type: CLEAR_EDIT
+      type: CLEAR_EDIT,
     });
   };
   const clearErrors = () => {
     dispatch({
-      type: CLEAR_ERRORS
+      type: CLEAR_ERRORS,
     });
   };
   // toggleForm
   const toggle_Form = () => {
     dispatch({
       type: TOGGLE_FORM,
-      payload: !state.toggleForm
+      payload: !state.toggleForm,
     });
   };
   // Filter favItem
   const filter_FavItem = selectedCategory => {
     dispatch({
       type: FILTER_FAVITEM,
-      payload: selectedCategory
+      payload: selectedCategory,
     });
   };
   const clearFilter = () => {
     dispatch({
-      type: CLEAR_FILTER
+      type: CLEAR_FILTER,
     });
   };
   // Search favItem
   const search_FavItem = favItem => {
     dispatch({
       type: SEARCH_FAVITEM,
-      payload: favItem
+      payload: favItem,
     });
   };
   const clearSearch = () => {
     dispatch({
-      type: CLEAR_SEARCH
+      type: CLEAR_SEARCH,
     });
   };
   const search_filter_FavItems = data => {
     dispatch({
       type: SEARCH_FILTER_FAVITEM,
-      payload: data
+      payload: data,
     });
   };
   const clearSearchFilter = () => {
     dispatch({
-      type: CLEAR_SEARCH_FILTER
+      type: CLEAR_SEARCH_FILTER,
     });
   };
 
@@ -208,16 +200,15 @@ const FavItemState = props => {
         search_FavItem,
         clearSearch,
         search_filter_FavItems,
-        clearSearchFilter
-      }}
-    >
+        clearSearchFilter,
+      }}>
       {props.children}
     </FavItemContext.Provider>
   );
 };
 
 FavItemState.propTypes = {
-  children: PropTypes.object
+  children: PropTypes.object,
 };
 
 export default FavItemState;

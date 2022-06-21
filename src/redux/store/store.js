@@ -16,7 +16,7 @@ const reducer = combineReducers({
   // bookDetails: bookDetailReducer,
   shopingCart: cartsReducer,
   products: productsReducer,
-  productDetails: productDetailsReducer
+  productDetails: productDetailsReducer,
 });
 
 const store = createStore(reducer, composeWithDevTools(applyMiddleware(...middleware)));

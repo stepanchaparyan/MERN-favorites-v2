@@ -6,7 +6,7 @@ import { Title } from '../FavItemStatStyled';
 
 jest.mock('react-intl', () => ({
   useIntl: jest.fn(() => ({ formatMessage: m => m.defaultMessage })),
-  defineMessages: i => i
+  defineMessages: i => i,
 }));
 
 jest.mock('react', () => {
@@ -18,10 +18,10 @@ jest.mock('react', () => {
         {
           _id: '123',
           name: 'test',
-          category: 'Other'
-        }
-      ]
-    })
+          category: 'Other',
+        },
+      ],
+    }),
   };
 });
 

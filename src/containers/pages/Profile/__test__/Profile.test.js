@@ -9,7 +9,7 @@ import FileUpload from '../../ProfileForm/FileUpload';
 
 jest.mock('react-intl', () => ({
   useIntl: jest.fn(() => ({ formatMessage: m => m.defaultMessage })),
-  defineMessages: i => i
+  defineMessages: i => i,
 }));
 
 jest.mock('react', () => {
@@ -21,8 +21,8 @@ jest.mock('react', () => {
       profile: [{ name: 'testName', image: 'test.png' }],
       getProfile: jest.fn(),
       edit_Profile: jest.fn(),
-      toggle_Form: jest.fn()
-    }))
+      toggle_Form: jest.fn(),
+    })),
   };
 });
 
@@ -43,8 +43,8 @@ describe('Profile component test with Enzyme', () => {
       jest.fn(() => ({
         profile: null,
         loading: true,
-        getProfile: jest.fn()
-      }))
+        getProfile: jest.fn(),
+      })),
     );
     const component = shallow(<Profile />);
     expect(component.exists(LoadingMessage)).toBe(true);
@@ -55,8 +55,8 @@ describe('Profile component test with Enzyme', () => {
       jest.fn(() => ({
         profile: [{ name: 'testName', image: 'test.png' }],
         getProfile: jest.fn(),
-        message: 'message'
-      }))
+        message: 'message',
+      })),
     );
     const component = shallow(<Profile />);
     expect(component.exists(Message)).toBe(true);
@@ -67,8 +67,8 @@ describe('Profile component test with Enzyme', () => {
       jest.fn(() => ({
         profile: [{ name: 'testName', image: 'test.png' }],
         getProfile: jest.fn(),
-        toggleForm: true
-      }))
+        toggleForm: true,
+      })),
     );
     const component = shallow(<Profile />);
     expect(component.exists(FileUpload)).toBe(true);

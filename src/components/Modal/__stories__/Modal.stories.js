@@ -12,7 +12,7 @@ const props = {
   title: faker.lorem.words(),
   text: faker.lorem.sentence(),
   buttonConfirmText: faker.lorem.word(),
-  buttonCancelText: faker.lorem.word()
+  buttonCancelText: faker.lorem.word(),
 };
 
 storiesOf('Modal', module).add('default', () => <Modal {...props} />);

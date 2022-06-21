@@ -9,7 +9,7 @@ import {
   ModalTitleContainer,
   ModalTitle,
   ModalTextContainer,
-  ModalButtonsContainer
+  ModalButtonsContainer,
 } from './ModalStyled';
 import Modal from 'react-modal';
 import { MODAL } from '../../constants';
@@ -28,16 +28,10 @@ const CustomModal = ({
   cancelButtonColor,
   children,
   isBigSize,
-  shouldShowFooter
+  shouldShowFooter,
 }) => {
   return (
-    <Modal
-      isOpen={modalIsOpen}
-      onRequestClose={closeModal}
-      style={customStyles}
-      contentLabel={CONTENT_LABEL}
-      ariaHideApp={false}
-    >
+    <Modal isOpen={modalIsOpen} onRequestClose={closeModal} style={customStyles} contentLabel={CONTENT_LABEL} ariaHideApp={false}>
       <ModalContainer isBigSize={isBigSize}>
         <ModalTitleContainer bgColor={titleBgColor}>
           <ModalTitle>{title}</ModalTitle>
@@ -56,9 +50,7 @@ const CustomModal = ({
                 {buttonCancelText}
               </ButtonCancel>
             )}
-            {buttonConfirmText && (
-              <ButtonConfirm onClick={onConfirm}>{buttonConfirmText}</ButtonConfirm>
-            )}
+            {buttonConfirmText && <ButtonConfirm onClick={onConfirm}>{buttonConfirmText}</ButtonConfirm>}
           </ModalButtonsContainer>
         )}
       </ModalContainer>
@@ -78,7 +70,7 @@ CustomModal.propTypes = {
   cancelButtonColor: PropTypes.string,
   children: PropTypes.node,
   isBigSize: PropTypes.bool,
-  shouldShowFooter: PropTypes.bool
+  shouldShowFooter: PropTypes.bool,
 };
 
 CustomModal.defaultProps = {
@@ -89,7 +81,7 @@ CustomModal.defaultProps = {
   buttonConfirmText: DEFAULT_PROPS.CONFIRM,
   buttonCancelText: DEFAULT_PROPS.CANCEL,
   isBigSize: false,
-  shouldShowFooter: true
+  shouldShowFooter: true,
 };
 
 export default CustomModal;

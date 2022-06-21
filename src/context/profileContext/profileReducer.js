@@ -11,7 +11,7 @@ import {
   FILE_ERROR,
   SET_UPLOAD_PERSENTAGE,
   SET_MESSAGE,
-  REMOVE_FILE
+  REMOVE_FILE,
 } from '../types';
 
 export default (state, { type, payload }) => {
@@ -20,71 +20,71 @@ export default (state, { type, payload }) => {
     case ADD_PROFILE_REQUEST:
       return {
         ...state,
-        loading: true
+        loading: true,
       };
     case GET_PROFILE_SUCCESS:
       return {
         ...state,
         profile: payload,
         loading: false,
-        error: null
+        error: null,
       };
     case ADD_PROFILE_SUCCESS:
       return {
         ...state,
         profile: [payload],
-        loading: false
+        loading: false,
       };
     case EDIT_PROFILE:
       return {
         ...state,
         editProfile: payload,
-        loading: false
+        loading: false,
       };
     case TOGGLE_FORM:
       return {
         ...state,
         toggleForm: payload,
-        error: null
+        error: null,
       };
     case UPDATE_PROFILE:
       return {
         ...state,
         profile: state.profile.map(profile => (profile._id === payload._id ? payload : profile)),
-        loading: false
+        loading: false,
       };
     case PROFILE_ERROR:
       return {
         ...state,
-        error: payload
+        error: payload,
       };
 
     case UPDATE_FILE:
       return {
         ...state,
-        uploadedFile: payload
+        uploadedFile: payload,
       };
     case FILE_ERROR:
       return {
         ...state,
-        error: payload
+        error: payload,
       };
     case REMOVE_FILE:
       return {
         ...state,
-        uploadedFile: null
+        uploadedFile: null,
       };
 
     case SET_UPLOAD_PERSENTAGE:
       return {
         ...state,
-        uploadPercentage: payload
+        uploadPercentage: payload,
       };
 
     case SET_MESSAGE:
       return {
         ...state,
-        message: payload
+        message: payload,
       };
     default:
       return state;

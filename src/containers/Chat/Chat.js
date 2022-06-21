@@ -19,7 +19,7 @@ import {
   MyMessage,
   OtherMessageContainer,
   OtherMessagerName,
-  OtherMessage
+  OtherMessage,
 } from './ChatStyled.js';
 const { CHAT } = URL;
 const { JOIN, MESSAGE_RECEIVED, USER_JOINED, LEAVE_CHAT, SEND_MESSAGE } = CHAT_EVENTS;
@@ -63,7 +63,7 @@ const Chat = () => {
 
   const handleMessageTextChange = event => {
     const {
-      target: { value }
+      target: { value },
     } = event;
     setNewMessage(value);
   };
@@ -72,7 +72,7 @@ const Chat = () => {
     const message = {
       text: newMessage,
       userId: user.id,
-      userName: user.name
+      userName: user.name,
     };
     setMessages(prevValue => [...prevValue, message]);
     setNewMessage('');
@@ -93,7 +93,7 @@ const Chat = () => {
   const handleUserJoined = user => {
     const messageEvent = {
       user,
-      isUserJoined: true
+      isUserJoined: true,
     };
     setMessages(prevValue => [...prevValue, messageEvent]);
   };
@@ -101,7 +101,7 @@ const Chat = () => {
   const handleUserLeft = user => {
     const messageEvent = {
       user,
-      isUserLeft: true
+      isUserLeft: true,
     };
     setMessages(prevValue => [...prevValue, messageEvent]);
   };
@@ -139,9 +139,7 @@ const Chat = () => {
                 } else {
                   return (
                     <OtherMessageContainer>
-                      {messages[i].userName !== messages[i - 1].userName && (
-                        <OtherMessagerName>{message.userName}</OtherMessagerName>
-                      )}
+                      {messages[i].userName !== messages[i - 1].userName && <OtherMessagerName>{message.userName}</OtherMessagerName>}
                       <OtherMessage>{message.text}</OtherMessage>
                     </OtherMessageContainer>
                   );
@@ -153,13 +151,7 @@ const Chat = () => {
           </Messages>
         </MessageContainer>
         <TextAreaContainer>
-          <TextareaStyled
-            name="text"
-            row="5"
-            onChange={event => handleMessageTextChange(event)}
-            placeholder="Type your message"
-            value={newMessage}
-          />
+          <TextareaStyled name='text' row='5' onChange={event => handleMessageTextChange(event)} placeholder='Type your message' value={newMessage} />
           <ButtonContainer>
             <SendButton onClick={sendMessage} disabled={!newMessage}>
               Send

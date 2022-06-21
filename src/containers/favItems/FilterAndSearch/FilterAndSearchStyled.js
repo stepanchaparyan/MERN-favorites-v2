@@ -34,16 +34,16 @@ export const customStyles = {
     color: state.isSelected ? 'black' : 'cadetblue',
     backgroundColor: state.isSelected ? 'lightGray' : 'white',
     padding: 8,
-    fontSize: 16
+    fontSize: 16,
   }),
   control: () => ({
     width: 200,
-    display: 'flex'
+    display: 'flex',
   }),
   singleValue: (provided, state) => {
     const opacity = state.isDisabled ? 0.5 : 1;
     const transition = 'opacity 300ms';
 
     return { ...provided, opacity, transition };
-  }
+  },
 };

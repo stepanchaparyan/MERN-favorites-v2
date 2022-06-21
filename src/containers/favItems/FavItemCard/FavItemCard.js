@@ -3,15 +3,7 @@ import PropTypes from 'prop-types';
 import { useIntl } from 'react-intl';
 import { colorPicker } from '../../../utils/colorPicker';
 import FavItemContext from '../../../context/favItemContext/favItemContext';
-import {
-  Container,
-  Info,
-  InfoName,
-  InfoData,
-  Button,
-  Label,
-  ReactTooltipStyled
-} from './FavItemCardStyled';
+import { Container, Info, InfoName, InfoData, Button, Label, ReactTooltipStyled } from './FavItemCardStyled';
 import localization from './localization';
 import theme from '../../../styles/theme';
 import { REACT_TOOLTIP_STYLED } from '../../../constants';
@@ -20,9 +12,7 @@ const FavItemCard = ({ favItem }) => {
   const { cadetblue } = theme;
   const { PLACE, EFFECT } = REACT_TOOLTIP_STYLED;
 
-  const { removeFavItem, edit_FavItem, clearEdit, toggle_Form, toggleForm } = useContext(
-    FavItemContext
-  );
+  const { removeFavItem, edit_FavItem, clearEdit, toggle_Form, toggleForm } = useContext(FavItemContext);
   const { _id, author, title, category, description } = favItem;
   const { formatMessage } = useIntl();
 
@@ -57,11 +47,7 @@ const FavItemCard = ({ favItem }) => {
       </Info>
       <Info>
         <InfoName>{formatMessage(localization.description)}:</InfoName>
-        <InfoData
-          data-tip={description}
-          data-arrow-color={cadetblue}
-          data-background-color={cadetblue}
-        >
+        <InfoData data-tip={description} data-arrow-color={cadetblue} data-background-color={cadetblue}>
           {description}
         </InfoData>
       </Info>
@@ -73,7 +59,7 @@ const FavItemCard = ({ favItem }) => {
 };
 
 FavItemCard.propTypes = {
-  favItem: PropTypes.object.isRequired
+  favItem: PropTypes.object.isRequired,
 };
 
 export default FavItemCard;

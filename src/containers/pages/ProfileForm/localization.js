@@ -3,74 +3,74 @@ import { defineMessages } from 'react-intl';
 export default defineMessages({
   wrongExtension: {
     id: 'profileForm.wrongExtension',
-    defaultMessage: 'Wrong extension'
+    defaultMessage: 'Wrong extension',
   },
   wrongExtensionText: {
     id: 'profileForm.wrongExtensionText',
-    defaultMessage: '"Wrong extension of uploading file, please choose .jpg or .png format"'
+    defaultMessage: '"Wrong extension of uploading file, please choose .jpg or .png format"',
   },
   upload: {
     id: 'profileForm.upload',
-    defaultMessage: 'Upload'
+    defaultMessage: 'Upload',
   },
   updateImage: {
     id: 'profileForm.updateImage',
-    defaultMessage: 'Update Image'
+    defaultMessage: 'Update Image',
   },
   confirm: {
     id: 'profileForm.confirm',
-    defaultMessage: 'Confirm'
+    defaultMessage: 'Confirm',
   },
   confirmText: {
     id: 'profileForm.confirmText',
-    defaultMessage: 'Please, confirm if you want to change your image'
+    defaultMessage: 'Please, confirm if you want to change your image',
   },
   name: {
     id: 'profileForm.name',
-    defaultMessage: 'Name'
+    defaultMessage: 'Name',
   },
   surname: {
     id: 'profileForm.surname',
-    defaultMessage: 'Surname'
+    defaultMessage: 'Surname',
   },
   email: {
     id: 'profileForm.email',
-    defaultMessage: 'Email'
+    defaultMessage: 'Email',
   },
   gender: {
     id: 'profileForm.gender',
-    defaultMessage: 'Gender'
+    defaultMessage: 'Gender',
   },
   birthday: {
     id: 'profileForm.birthday',
-    defaultMessage: 'BirthDay'
+    defaultMessage: 'BirthDay',
   },
   phone: {
     id: 'profileForm.phone',
-    defaultMessage: 'Phone'
+    defaultMessage: 'Phone',
   },
   selectGender: {
     id: 'profileForm.selectGender',
-    defaultMessage: 'Gender'
+    defaultMessage: 'Gender',
   },
   male: {
     id: 'profileForm.male',
-    defaultMessage: 'Male'
+    defaultMessage: 'Male',
   },
   female: {
     id: 'profileForm.female',
-    defaultMessage: 'Female'
+    defaultMessage: 'Female',
   },
   other: {
     id: 'profileForm.other',
-    defaultMessage: 'Other'
+    defaultMessage: 'Other',
   },
   update: {
     id: 'profileForm.update',
-    defaultMessage: 'Update'
+    defaultMessage: 'Update',
   },
   cancel: {
     id: 'profileForm.cancel',
-    defaultMessage: 'Cancel'
-  }
+    defaultMessage: 'Cancel',
+  },
 });

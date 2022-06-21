@@ -9,7 +9,7 @@ export function renderToJSON(Component, props = {}, Router) {
       .create(
         <Router>
           <Component {...props} />
-        </Router>
+        </Router>,
       )
       .toJSON();
   }

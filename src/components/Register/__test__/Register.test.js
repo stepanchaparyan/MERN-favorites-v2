@@ -7,7 +7,7 @@ import { FieldStyled, FormStyled, ErrorButton } from '../RegisterStyled';
 
 jest.mock('react-intl', () => ({
   useIntl: jest.fn(() => ({ formatMessage: m => m.defaultMessage })),
-  defineMessages: i => i
+  defineMessages: i => i,
 }));
 
 jest.mock('react', () => {
@@ -19,8 +19,8 @@ jest.mock('react', () => {
       isAuthencated: false,
       error: 'a',
       clearErrors: jest.fn(),
-      register: jest.fn()
-    }))
+      register: jest.fn(),
+    })),
   };
 });
 
@@ -41,8 +41,8 @@ describe('Register component test with Enzyme', () => {
     useContext.mockImplementationOnce(
       jest.fn(() => ({
         isAuthencated: true,
-        clearErrors: jest.fn()
-      }))
+        clearErrors: jest.fn(),
+      })),
     );
 
     const historyMock = { push: jest.fn() };
@@ -67,8 +67,8 @@ describe('Register component test with Enzyme', () => {
     useContext.mockImplementationOnce(
       jest.fn(() => ({
         error: ['a', 'b'],
-        clearErrors: jest.fn()
-      }))
+        clearErrors: jest.fn(),
+      })),
     );
 
     const component = shallow(<Register />);

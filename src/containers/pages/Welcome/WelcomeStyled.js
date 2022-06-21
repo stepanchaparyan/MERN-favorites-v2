@@ -121,8 +121,7 @@ export const Pie = styled.div`
   height: 100px;
   border-radius: 50%;
   background: lightGray;
-  background-image: ${props =>
-    `linear-gradient(to right, transparent 50%, ${props.theme.cadetblue} 0)`};
+  background-image: ${props => `linear-gradient(to right, transparent 50%, ${props.theme.cadetblue} 0)`};
   &:before {
     content: '';
     display: block;
@@ -132,10 +131,7 @@ export const Pie = styled.div`
     background: ${props => props.theme.cadetblue};
     transform-origin: left;
     background-color: ${props => props.inherit};
-    transform: ${props =>
-      props.inherit === 'inherit'
-        ? `rotate(${props.per * 3.6}deg)`
-        : `rotate(${(props.per - 50) * 3.6}deg)`};
+    transform: ${props => (props.inherit === 'inherit' ? `rotate(${props.per * 3.6}deg)` : `rotate(${(props.per - 50) * 3.6}deg)`)};
   }
 `;
 

@@ -20,7 +20,7 @@ const Chatboard = () => {
 
   const handleNameChange = event => {
     const {
-      target: { value }
+      target: { value },
     } = event;
     setUserName(value);
   };
@@ -44,9 +44,7 @@ const Chatboard = () => {
       ) : (
         <WelcomeText>{formatMessage(localization.enterYourName)}</WelcomeText>
       )}
-      {!isJoinSectionShown && (
-        <ButtonStyled onClick={openJoinModal}>{formatMessage(localization.joinChat)}</ButtonStyled>
-      )}
+      {!isJoinSectionShown && <ButtonStyled onClick={openJoinModal}>{formatMessage(localization.joinChat)}</ButtonStyled>}
       {isJoinSectionShown && (
         <Join
           userName={userName}

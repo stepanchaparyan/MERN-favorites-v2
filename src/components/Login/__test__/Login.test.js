@@ -7,7 +7,7 @@ import { FieldStyled, FormStyled, ErrorButton } from '../LoginStyled';
 
 jest.mock('react-intl', () => ({
   useIntl: jest.fn(() => ({ formatMessage: m => m.defaultMessage })),
-  defineMessages: i => i
+  defineMessages: i => i,
 }));
 
 jest.mock('react', () => {
@@ -20,8 +20,8 @@ jest.mock('react', () => {
       user: { name: 'testName' },
       error: ['a', 'b'],
       login: jest.fn(),
-      clearErrors: jest.fn()
-    }))
+      clearErrors: jest.fn(),
+    })),
   };
 });
 
@@ -42,8 +42,8 @@ describe('Login component test with Enzyme', () => {
     useContext.mockImplementationOnce(
       jest.fn(() => ({
         isAuthencated: true,
-        clearErrors: jest.fn()
-      }))
+        clearErrors: jest.fn(),
+      })),
     );
 
     const historyMock = { push: jest.fn() };
@@ -73,8 +73,8 @@ describe('Login component test with Enzyme', () => {
         user: { name: 'testName' },
         error: 'a',
         login: jest.fn(),
-        clearErrors: jest.fn()
-      }))
+        clearErrors: jest.fn(),
+      })),
     );
     const component = shallow(<Login />);
     const errorButtons = component.find(ErrorButton);

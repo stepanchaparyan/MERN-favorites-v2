@@ -1,4 +1,5 @@
 # MERN-favorites
+
 Simple web page about your favourite items
 
 ### MERN - Mongo Express React Node
@@ -16,6 +17,7 @@ StoryBook
 ```
 
 # Install guide
+
 ```sh
 $ cd  client
 $ npm install
@@ -23,21 +25,27 @@ $ npm start
 ```
 
 # Test User with filled data
+
 ```sh
 $ test05@gmail.com
 $ AAAAAA
 ```
 
 # Project is running on the following servers
+
 [![Netlify Status](https://api.netlify.com/api/v1/badges/ef54a94d-46a0-4b4d-9d67-73fade3287d6/deploy-status)](https://app.netlify.com/sites/favorites-page/deploys)
+
 ##### View page on [Netlify](https://favorites-page.netlify.app)
+
 ##### View page on [Firebase](https://favorites-page.web.app)
+
 ##### View page [FavoritesCards](https://favoritecards.club) in AWS
 
 # Project structure
+
 ```sh
 .
-├── client 
+├── client
 │   ├── .storybook
 |   |   ├── addons.js
 |   |   └── config.js

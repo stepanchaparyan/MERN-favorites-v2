@@ -17,7 +17,7 @@ Loading.propTypes = {
   color: PropTypes.string,
   height: PropTypes.number,
   width: PropTypes.number,
-  isNavbar: PropTypes.bool
+  isNavbar: PropTypes.bool,
 };
 
 Loading.defaultProps = {
@@ -25,7 +25,7 @@ Loading.defaultProps = {
   color: 'black',
   height: 20,
   width: 80,
-  isNavbar: false
+  isNavbar: false,
 };
 
 export default Loading;

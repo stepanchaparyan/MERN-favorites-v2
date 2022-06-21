@@ -8,17 +8,7 @@ import localization from './localization';
 
 const FavItemsList = () => {
   const context = useContext(FavItemContext);
-  const {
-    loading,
-    toggle_Form,
-    toggleForm,
-    clearEdit,
-    favItems,
-    getFavItems,
-    filterFavItems,
-    searchFavItem,
-    searchFilterFavItems
-  } = context;
+  const { loading, toggle_Form, toggleForm, clearEdit, favItems, getFavItems, filterFavItems, searchFavItem, searchFilterFavItems } = context;
   const { formatMessage } = useIntl();
 
   useEffect(() => {
@@ -51,14 +41,8 @@ const FavItemsList = () => {
         </CardContainer>
       ) : (
         <>
-          <CardContainer>
-            {searchFavItem &&
-              searchFavItem.map(favItem => <FavItemCard favItem={favItem} key={favItem._id} />)}
-          </CardContainer>
-          <CardContainer>
-            {filterFavItems &&
-              filterFavItems.map(favItem => <FavItemCard favItem={favItem} key={favItem._id} />)}
-          </CardContainer>
+          <CardContainer>{searchFavItem && searchFavItem.map(favItem => <FavItemCard favItem={favItem} key={favItem._id} />)}</CardContainer>
+          <CardContainer>{filterFavItems && filterFavItems.map(favItem => <FavItemCard favItem={favItem} key={favItem._id} />)}</CardContainer>
         </>
       )}
 

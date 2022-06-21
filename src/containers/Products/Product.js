@@ -21,7 +21,7 @@ Product.propTypes = {
   description: PropTypes.string.isRequired,
   price: PropTypes.number.isRequired,
   name: PropTypes.string.isRequired,
-  productId: PropTypes.string.isRequired
+  productId: PropTypes.string.isRequired,
 };
 
 export default Product;

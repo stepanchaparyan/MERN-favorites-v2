@@ -7,7 +7,7 @@ const defaultValues = {
   author: DEFAULT_VALUES.AUTHOR,
   title: DEFAULT_VALUES.TITLE,
   category: DEFAULT_VALUES.CATEGORY,
-  description: DEFAULT_VALUES.DESCRIPTION
+  description: DEFAULT_VALUES.DESCRIPTION,
 };
 
 const validationSchema = Yup.object({
@@ -16,13 +16,13 @@ const validationSchema = Yup.object({
     .min(2, 'Title must have min 2 symbols')
     .required('Required'),
   category: Yup.string().required('Required'),
-  description: Yup.string().required('Required')
+  description: Yup.string().required('Required'),
 });
 
 const formikProps = editFavItem => ({
   initialValues: editFavItem ? editFavItem : defaultValues,
   validateOnChange: true,
-  validationSchema
+  validationSchema,
 });
 
 export default formikProps;
