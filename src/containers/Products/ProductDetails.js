@@ -24,7 +24,7 @@ import {
 import Loading from '../../components/Loading/Loading';
 import useGAEventTracker from '../../utils/useGAEventTracker';
 import ReactGA from 'react-ga4';
-import { gaKey, gtmKey } from './constants/ga_gtm';
+import { gaKey, gtmKey } from '../../constants/ga_gtm';
 import TagManager from 'react-gtm-module';
 
 const tagManagerArgs = {
