@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Router, useHistory } from 'react-router-dom';
+import { Router } from 'react-router-dom';
 import { IntlProvider } from 'react-intl';
 import { ThemeProvider } from 'styled-components';
 import { Helmet, HelmetProvider } from 'react-helmet-async';
