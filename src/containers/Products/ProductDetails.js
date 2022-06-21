@@ -41,9 +41,14 @@ const ProductDetails = ({ match, history }) => {
   }, [dispatch, match, product]);
 
   const addToCartHandler = () => {
-    ReactGA.initialize('320083024');
+    // ReactGA.initialize('320083024');
 
     ReactGA.ga('send', 'pageview', '/mypage');
+    ReactGA.event({
+      category: 'Editing',
+      action: 'Deleted Component',
+      label: 'Game Widget',
+    });
 
     const { _id, name, price, countInStock, imageUrl } = product;
     dispatch(
