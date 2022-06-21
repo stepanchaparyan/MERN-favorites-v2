@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { useLocation } from 'react-router-dom';
+import { useLocation, Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import { useSelector, useDispatch } from 'react-redux';
 import { getProductDetails, deleteProduct } from '../../redux/actions/productActions';
@@ -98,6 +98,10 @@ const ProductDetails = ({ match, history }) => {
             <ButtonContainer>
               <StyledButton onClick={addToCartHandler}>Add To Cart</StyledButton>
               <button onClick={() => GAEventsTracker('action_test', 'label_test')}>TEST</button>
+              <Link to={'/cart'} onClick={() => GAEventsTracker('test_cart', `/cart/777`)}>
+                buttonText
+              </Link>
+
               <a
                 href='www.examplewebsite.co.uk/pdf/company_brochure.pdf'
                 onClick="ga('send', 'event', 'PDF','Download', 'Company Brochure – PDF Download');">
