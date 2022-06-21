@@ -11,15 +11,8 @@ const Join = ({ closeModal, userName, handleNameChange, isSubmitDone, joinChat }
   return (
     <Container closeModal={closeModal}>
       <InputContainer>
-        <InputStyled
-          type="text"
-          placeholder="Your name"
-          value={userName}
-          onChange={handleNameChange}
-        />
-        {isSubmitDone && !userName.length && (
-          <RequiredText>{formatMessage(localization.nameIsRequired)}</RequiredText>
-        )}
+        <InputStyled type='text' placeholder='Your name' value={userName} onChange={handleNameChange} />
+        {isSubmitDone && !userName.length && <RequiredText>{formatMessage(localization.nameIsRequired)}</RequiredText>}
       </InputContainer>
       <ButtonStyled onClick={joinChat}>{formatMessage(localization.join)}</ButtonStyled>
     </Container>
@@ -31,12 +24,12 @@ Join.propTypes = {
   userName: PropTypes.string.isRequired,
   handleNameChange: PropTypes.func.isRequired,
   isSubmitDone: PropTypes.bool,
-  joinChat: PropTypes.func.isRequired
+  joinChat: PropTypes.func.isRequired,
 };
 
 Join.defaultProps = {
   closeModal: NOOP,
-  isSubmitDone: false
+  isSubmitDone: false,
 };
 
 export default Join;

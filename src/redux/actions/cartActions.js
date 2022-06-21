@@ -12,13 +12,12 @@ export const getMyCartItems = () => async dispatch => {
 
     dispatch({
       type: actionTypes.GET_CARTS_SUCCESS,
-      payload: data
+      payload: data,
     });
   } catch (error) {
     dispatch({
       type: actionTypes.GET_CARTS_FAIL,
-      paiyload:
-        error.response && error.response.data.message ? error.response.data.message : error.message
+      paiyload: error.response && error.response.data.message ? error.response.data.message : error.message,
     });
   }
 };
@@ -29,19 +28,19 @@ export const addToCart = cartData => {
     try {
       dispatch({
         type: actionTypes.ADD_TO_CART_REQUEST,
-        loading: true
+        loading: true,
       });
 
       const { data } = await axios.post(`${CARTS}/add`, cartData, HEADER_CONFIG);
 
       dispatch({
         type: actionTypes.ADD_TO_CART_SUCCESS,
-        payload: data
+        payload: data,
       });
     } catch (error) {
       dispatch({
         type: actionTypes.ADD_TO_CART_FAIL,
-        error: error.response && error.response.data.message
+        error: error.response && error.response.data.message,
       });
     }
   };
@@ -53,20 +52,20 @@ export const removeFromCart = id => {
     try {
       dispatch({
         type: actionTypes.REMOVE_FROM_CART_REQUEST,
-        loading: true
+        loading: true,
       });
 
       const { data } = await axios.delete(`${CARTS}/delete/${id}`, HEADER_CONFIG);
 
       dispatch({
         type: actionTypes.REMOVE_FROM_CART_SUCCESS,
-        payload: data
+        payload: data,
       });
     } catch (error) {
       dispatch({
         type: actionTypes.REMOVE_FROM_CART_FAIL,
         loading: false,
-        error: error.response && error.response.data.message
+        error: error.response && error.response.data.message,
       });
     }
   };

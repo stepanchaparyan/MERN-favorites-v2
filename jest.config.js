@@ -36,8 +36,8 @@ module.exports = {
       statements: 98,
       branches: 98,
       functions: 98,
-      lines: 98
-    }
+      lines: 98,
+    },
   },
 
   // An array of regexp pattern strings that are matched against all source file paths, matched files will skip transformation
@@ -49,8 +49,7 @@ module.exports = {
   moduleNameMapper: {
     '.+\\.(css|styl|less|sass|scss)$': 'identity-obj-proxy',
 
-    '.+\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$':
-      '<rootDir>/fileMock.js'
+    '.+\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$': '<rootDir>/fileMock.js',
   },
 
   setupFilesAfterEnv: ['@testing-library/jest-dom/extend-expect'],
@@ -58,6 +57,6 @@ module.exports = {
   unmockedModulePathPatterns: ['node_modules/react/', 'node_modules/enzyme/'],
   transformIgnorePatterns: ['/node_modules/(?!@babel).+\\.js$'],
   transform: {
-    '^.+\\.js?$': 'babel-jest'
-  }
+    '^.+\\.js?$': 'babel-jest',
+  },
 };

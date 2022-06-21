@@ -12,7 +12,7 @@ import {
   ErrorMessages,
   StyledSelectField,
   Option,
-  DefaultOption
+  DefaultOption,
 } from './FavItemFormStyled';
 import { FORM } from '../../../constants';
 import localization from './localization';
@@ -42,44 +42,25 @@ const FavItemForm = () => {
     toggle_Form(!toggleForm);
   };
 
-  const { validationSchema, initialValues } = useMemo(() => favItemFormFormikProps(editFavItem), [
-    editFavItem
-  ]);
+  const { validationSchema, initialValues } = useMemo(() => favItemFormFormikProps(editFavItem), [editFavItem]);
 
   return (
     <Container ref={container}>
-      <Title>
-        {editFavItem !== null
-          ? formatMessage(localization.editFavItem)
-          : formatMessage(localization.addNewFavItem)}
-      </Title>
+      <Title>{editFavItem !== null ? formatMessage(localization.editFavItem) : formatMessage(localization.addNewFavItem)}</Title>
       <Formik initialValues={initialValues} validationSchema={validationSchema} onSubmit={onSubmit}>
         {({ handleChange }) => (
           <FormStyled>
-            <FieldStyled
-              type={INPUT.TYPE.TEXT}
-              name={INPUT.NAME.AUTHOR}
-              id={INPUT.NAME.AUTHOR}
-              placeholder={formatMessage(localization.author)}
-            />
+            <FieldStyled type={INPUT.TYPE.TEXT} name={INPUT.NAME.AUTHOR} id={INPUT.NAME.AUTHOR} placeholder={formatMessage(localization.author)} />
             <ErrorMessage name={INPUT.NAME.AUTHOR} component={ErrorMessages} />
-            <FieldStyled
-              type={INPUT.TYPE.TEXT}
-              name={INPUT.NAME.TITLE}
-              id={INPUT.NAME.TITLE}
-              placeholder={formatMessage(localization.title)}
-            />
+            <FieldStyled type={INPUT.TYPE.TEXT} name={INPUT.NAME.TITLE} id={INPUT.NAME.TITLE} placeholder={formatMessage(localization.title)} />
             <ErrorMessage name={INPUT.NAME.TITLE} component={ErrorMessages} />
             <StyledSelectField
               as={INPUT.TYPE.SELECT}
               name={INPUT.NAME.CATEGORY}
               id={INPUT.NAME.CATEGORY}
               placeholder={formatMessage(localization.selectCategory)}
-              onChange={handleChange}
-            >
-              <DefaultOption value={SELECT.VALUES.OTHER}>
-                {formatMessage(localization.selectCategory)}
-              </DefaultOption>
+              onChange={handleChange}>
+              <DefaultOption value={SELECT.VALUES.OTHER}>{formatMessage(localization.selectCategory)}</DefaultOption>
               <Option value={SELECT.VALUES.FILM}>{formatMessage(localization.films)}</Option>
               <Option value={SELECT.VALUES.MUSIC}>{formatMessage(localization.music)}</Option>
               <Option value={SELECT.VALUES.BOOKS}>{formatMessage(localization.books)}</Option>
@@ -94,13 +75,9 @@ const FavItemForm = () => {
             />
             <ErrorMessage name={INPUT.NAME.DESCRIPTION} component={ErrorMessages} />
             <ButtonSubmit type={INPUT.TYPE.SUBMIT}>
-              {editFavItem !== null
-                ? formatMessage(localization.update)
-                : formatMessage(localization.add)}
+              {editFavItem !== null ? formatMessage(localization.update) : formatMessage(localization.add)}
             </ButtonSubmit>
-            {editFavItem && (
-              <CancelButton onClick={cancelEdit}>{formatMessage(localization.cancel)}</CancelButton>
-            )}
+            {editFavItem && <CancelButton onClick={cancelEdit}>{formatMessage(localization.cancel)}</CancelButton>}
           </FormStyled>
         )}
       </Formik>

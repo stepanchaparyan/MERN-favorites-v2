@@ -5,7 +5,7 @@ const initialValues = {
   description: '',
   price: '',
   countInStock: '',
-  imageUrl: ''
+  imageUrl: '',
 };
 
 const validationSchema = Yup.object({
@@ -19,13 +19,13 @@ const validationSchema = Yup.object({
   countInStock: Yup.string()
     .matches(/^\d+$/, 'Only numerical values only')
     .required('Required'),
-  imageUrl: Yup.string()
+  imageUrl: Yup.string(),
 });
 
 const formikProps = () => ({
   initialValues,
   validateOnChange: true,
-  validationSchema
+  validationSchema,
 });
 
 export default formikProps;

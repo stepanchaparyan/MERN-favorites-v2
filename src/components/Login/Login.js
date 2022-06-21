@@ -4,17 +4,7 @@ import { Link } from 'react-router-dom';
 import { Formik, ErrorMessage } from 'formik';
 import PropTypes from 'prop-types';
 import AuthContext from '../../context/authContext/authContext';
-import {
-  Container,
-  Title,
-  LoginButton,
-  QuestionText,
-  FormStyled,
-  FieldStyled,
-  ErrorMessages,
-  Errors,
-  ErrorButton
-} from './LoginStyled';
+import { Container, Title, LoginButton, QuestionText, FormStyled, FieldStyled, ErrorMessages, Errors, ErrorButton } from './LoginStyled';
 import localization from './localization';
 import { FORM, LINK } from '../../constants';
 import loginFormFormikProps from './LoginFormFormikProps';
@@ -38,7 +28,7 @@ const Login = props => {
     clearErrors();
     login({
       email,
-      password
+      password,
     });
   };
 
@@ -47,22 +37,13 @@ const Login = props => {
   return (
     <Container>
       {loading ? (
-        <Loading type="ThreeDots" color="cadetblue" height={580} width={80}></Loading>
+        <Loading type='ThreeDots' color='cadetblue' height={580} width={80}></Loading>
       ) : (
         <>
           <Title>{formatMessage(localization.login)}</Title>
-          <Formik
-            initialValues={initialValues}
-            validationSchema={validationSchema}
-            onSubmit={onSubmit}
-          >
+          <Formik initialValues={initialValues} validationSchema={validationSchema} onSubmit={onSubmit}>
             <FormStyled>
-              <FieldStyled
-                type={INPUT.TYPE.EMAIL}
-                name={INPUT.NAME.EMAIL}
-                id={INPUT.NAME.EMAIL}
-                placeholder={formatMessage(localization.email)}
-              />
+              <FieldStyled type={INPUT.TYPE.EMAIL} name={INPUT.NAME.EMAIL} id={INPUT.NAME.EMAIL} placeholder={formatMessage(localization.email)} />
               <ErrorMessage name={INPUT.NAME.EMAIL} component={ErrorMessages} />
               <FieldStyled
                 type={INPUT.TYPE.PASSWORD}
@@ -71,9 +52,7 @@ const Login = props => {
                 placeholder={formatMessage(localization.password)}
               />
               <ErrorMessage name={INPUT.NAME.PASSWORD} component={ErrorMessages} />
-              <LoginButton type={INPUT.TYPE.SUBMIT}>
-                {formatMessage(localization.login)}
-              </LoginButton>
+              <LoginButton type={INPUT.TYPE.SUBMIT}>{formatMessage(localization.login)}</LoginButton>
               {error && (
                 <Errors>
                   <ErrorButton type={INPUT.TYPE.BUTTON} onClick={() => clearErrors()}>
@@ -94,7 +73,7 @@ const Login = props => {
 };
 
 Login.propTypes = {
-  history: PropTypes.object
+  history: PropTypes.object,
 };
 
 export default Login;

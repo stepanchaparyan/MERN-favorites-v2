@@ -7,6 +7,6 @@ export const LINK = {
     WELCOME: '/',
     PRODUCTS: '/products',
     CART: '/cart',
-    CHAT: '/chatBoard'
-  }
+    CHAT: '/chatBoard',
+  },
 };

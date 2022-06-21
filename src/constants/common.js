@@ -1,5 +1,5 @@
 export const COMMON = {
   TEXT: {
-    FILE_UPLOADED: 'File Uploaded'
-  }
+    FILE_UPLOADED: 'File Uploaded',
+  },
 };

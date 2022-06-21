@@ -17,7 +17,7 @@ import {
   FormStyled,
   FieldStyled,
   ErrorMessages,
-  AddProduct
+  AddProduct,
 } from './ProductsPageStyled';
 import CustomModal from '../../components/Modal/Modal';
 import ModalFooter from '../../components/Modal/ModalFooter';
@@ -63,15 +63,12 @@ const ProductPage = () => {
     }
   };
 
-  const { validationSchema, initialValues } = useMemo(() => productsFormikProps(), [
-    validationSchema,
-    initialValues
-  ]);
+  const { validationSchema, initialValues } = useMemo(() => productsFormikProps(), [validationSchema, initialValues]);
 
   return (
     <Container loading={loading}>
       {loading ? (
-        <Loading type="ThreeDots" color="cadetblue" height={80} width={80}></Loading>
+        <Loading type='ThreeDots' color='cadetblue' height={80} width={80}></Loading>
       ) : error ? (
         <h2>{error}</h2>
       ) : (
@@ -101,8 +98,7 @@ const ProductPage = () => {
             title={formatMessage(localization.addProduct)}
             titleBgColor={cadetblue}
             isBigSize
-            shouldShowFooter={false}
-          >
+            shouldShowFooter={false}>
             <FormContainer>
               <Formik initialValues={initialValues} validationSchema={validationSchema}>
                 {({ values, isValid }) => {

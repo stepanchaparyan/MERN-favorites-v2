@@ -7,18 +7,11 @@ import { LINK } from '../constants';
 const PrivateRoute = ({ component: Component, ...rest }) => {
   const authContext = useContext(AuthContext);
   const { isAuthencated, loading } = authContext;
-  return (
-    <Route
-      {...rest}
-      render={props =>
-        !isAuthencated && !loading ? <Redirect to={LINK.TO.LOGIN} /> : <Component {...props} />
-      }
-    />
-  );
+  return <Route {...rest} render={props => (!isAuthencated && !loading ? <Redirect to={LINK.TO.LOGIN} /> : <Component {...props} />)} />;
 };
 
 PrivateRoute.propTypes = {
-  component: PropTypes.func
+  component: PropTypes.func,
 };
 
 export default PrivateRoute;

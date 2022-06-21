@@ -14,5 +14,5 @@ export const URL = {
   UPLOAD: `${serverUrl}/${API}/upload`,
   PRODUCTS: `${serverUrl}/${API}/products`,
   CARTS: `${serverUrl}/${API}/carts`,
-  CHAT: `${chatServerUrl}`
+  CHAT: `${chatServerUrl}`,
 };

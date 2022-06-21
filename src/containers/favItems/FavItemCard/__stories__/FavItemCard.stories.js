@@ -9,7 +9,7 @@ const favItem = {
   author: faker.name.findName(),
   title: faker.name.title(),
   category: 'Film',
-  description: faker.lorem.slug()
+  description: faker.lorem.slug(),
 };
 
 storiesOf('FavItemCard', module).add('default', () => (

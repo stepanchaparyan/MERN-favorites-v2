@@ -3,34 +3,34 @@ import { defineMessages } from 'react-intl';
 export default defineMessages({
   name: {
     id: 'products.name',
-    defaultMessage: 'Name'
+    defaultMessage: 'Name',
   },
   description: {
     id: 'products.description',
-    defaultMessage: 'Description'
+    defaultMessage: 'Description',
   },
   price: {
     id: 'products.price',
-    defaultMessage: 'Price'
+    defaultMessage: 'Price',
   },
   countInStock: {
     id: 'products.otcountInStockher',
-    defaultMessage: 'CountInStock'
+    defaultMessage: 'CountInStock',
   },
   imageUrl: {
     id: 'products.imageUrl',
-    defaultMessage: 'ImageUrl'
+    defaultMessage: 'ImageUrl',
   },
   save: {
     id: 'products.save',
-    defaultMessage: 'Save'
+    defaultMessage: 'Save',
   },
   cancel: {
     id: 'products.cancel',
-    defaultMessage: 'Cancel'
+    defaultMessage: 'Cancel',
   },
   addProduct: {
     id: 'products.addProduct',
-    defaultMessage: 'Add New Product'
-  }
+    defaultMessage: 'Add New Product',
+  },
 });

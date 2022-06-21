@@ -22,7 +22,7 @@ import {
   ProfileImage,
   Button,
   ReactTooltipStyled,
-  Forms
+  Forms,
 } from './ProfileStyled';
 import Img from '../../../assets/elephant.png';
 import localization from './localization';
@@ -33,9 +33,7 @@ const { PLACE, EFFECT } = REACT_TOOLTIP_STYLED;
 
 const Profile = () => {
   const { cadetblue } = theme;
-  let { loading, getProfile, profile, edit_Profile, toggle_Form, toggleForm, message } = useContext(
-    ProfileContext
-  );
+  let { loading, getProfile, profile, edit_Profile, toggle_Form, toggleForm, message } = useContext(ProfileContext);
   const { formatMessage } = useIntl();
   const { pathname } = useLocation();
 
@@ -85,11 +83,7 @@ const Profile = () => {
                 </ProfileData>
                 <ProfileData>
                   <Text>{formatMessage(localization.email)}:</Text>
-                  <Data
-                    data-tip={profile.email}
-                    data-arrow-color={cadetblue}
-                    data-background-color={cadetblue}
-                  >
+                  <Data data-tip={profile.email} data-arrow-color={cadetblue} data-background-color={cadetblue}>
                     {profile.email}
                   </Data>
                 </ProfileData>

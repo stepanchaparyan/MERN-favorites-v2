@@ -11,13 +11,12 @@ export const getProducts = () => async dispatch => {
     const { data } = await axios.get(PRODUCTS);
     dispatch({
       type: actionTypes.GET_PRODUCTS_SUCCESS,
-      payload: data
+      payload: data,
     });
   } catch (error) {
     dispatch({
       type: actionTypes.GET_PRODUCTS_FAIL,
-      paiyload:
-        error.response && error.response.data.message ? error.response.data.message : error.message
+      paiyload: error.response && error.response.data.message ? error.response.data.message : error.message,
     });
   }
 };
@@ -29,13 +28,12 @@ export const getProductDetails = id => async dispatch => {
     const { data } = await axios.get(`${PRODUCTS}/${id}`);
     dispatch({
       type: actionTypes.GET_PRODUCT_DETAILS_SUCCESS,
-      payload: data
+      payload: data,
     });
   } catch (error) {
     dispatch({
       type: actionTypes.GET_PRODUCT_DETAILS_FAIL,
-      payload:
-        error.response && error.response.data.message ? error.response.data.message : error.message
+      payload: error.response && error.response.data.message ? error.response.data.message : error.message,
     });
   }
 };
@@ -50,19 +48,19 @@ export const addProduct = productData => {
     try {
       dispatch({
         type: actionTypes.ADD_PRODUCT_REQUEST,
-        loading: true
+        loading: true,
       });
 
       const { data } = await axios.post(`${PRODUCTS}/add`, productData, HEADER_CONFIG);
 
       dispatch({
         type: actionTypes.ADD_PRODUCT_SUCCESS,
-        payload: data
+        payload: data,
       });
     } catch (error) {
       dispatch({
         type: actionTypes.ADD_PRODUCT_FAIL,
-        error: error.response && error.response.data.message
+        error: error.response && error.response.data.message,
       });
     }
   };
@@ -74,20 +72,20 @@ export const deleteProduct = id => {
     try {
       dispatch({
         type: actionTypes.DELETE_PRODUCT_REQUEST,
-        loading: true
+        loading: true,
       });
 
       const { data } = await axios.delete(`${PRODUCTS}/delete/${id}`, HEADER_CONFIG);
 
       dispatch({
         type: actionTypes.DELETE_PRODUCT_SUCCESS,
-        payload: data
+        payload: data,
       });
     } catch (error) {
       dispatch({
         type: actionTypes.DELETE_PRODUCT_FAIL,
         loading: false,
-        error: error.response && error.response.data.message
+        error: error.response && error.response.data.message,
       });
     }
   };

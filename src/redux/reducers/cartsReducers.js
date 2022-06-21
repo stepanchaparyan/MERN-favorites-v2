@@ -7,31 +7,31 @@ export const cartsReducer = (state = { cartItems: [], loading: false }, { type, 
     case actionTypes.REMOVE_FROM_CART_REQUEST:
       return {
         loading: true,
-        ...state
+        ...state,
       };
     case actionTypes.GET_CARTS_FAIL:
     case actionTypes.ADD_TO_CART_FAIL:
     case actionTypes.REMOVE_FROM_CART_FAIL:
       return {
         loading: false,
-        error: payload
+        error: payload,
       };
 
     case actionTypes.GET_CARTS_SUCCESS:
       return {
         cartItems: payload,
-        loading: false
+        loading: false,
       };
     case actionTypes.ADD_TO_CART_SUCCESS:
       return {
         ...state,
         cartItems: [...state.cartItems, payload],
-        loading: false
+        loading: false,
       };
     case actionTypes.REMOVE_FROM_CART_SUCCESS:
       return {
         cartItems: state.cartItems.filter(item => item._id !== payload._id),
-        loading: false
+        loading: false,
       };
     default:
       return state;

@@ -15,7 +15,7 @@ import {
   DatePickerStyled,
   UpdateButton,
   CancelButton,
-  ErrorMessages
+  ErrorMessages,
 } from './ProfileFormStyled';
 import localization from './localization';
 import { FORM } from '../../../constants';
@@ -43,20 +43,12 @@ const ProfileForm = () => {
     toggle_Form(!toggleForm);
   };
 
-  const { validationSchema, validateOnChange, initialValues } = useMemo(
-    () => profileFormFormikProps(newProfile),
-    [newProfile]
-  );
+  const { validationSchema, validateOnChange, initialValues } = useMemo(() => profileFormFormikProps(newProfile), [newProfile]);
 
   return (
     <Container>
       <Module>
-        <Formik
-          initialValues={initialValues}
-          validationSchema={validationSchema}
-          validateOnChange={validateOnChange}
-          onSubmit={onSubmit}
-        >
+        <Formik initialValues={initialValues} validationSchema={validationSchema} validateOnChange={validateOnChange} onSubmit={onSubmit}>
           {({ handleChange, setFieldValue, values }) => (
             <FormStyled>
               <ProfileData>
@@ -66,30 +58,17 @@ const ProfileForm = () => {
               <ErrorMessage name={INPUT.NAME.NAME} component={ErrorMessages} />
               <ProfileData>
                 <Text>{formatMessage(localization.surname)}:</Text>
-                <FieldStyled
-                  type={INPUT.TYPE.TEXT}
-                  name={INPUT.NAME.SURNAME}
-                  id={INPUT.NAME.SURNAME}
-                />
+                <FieldStyled type={INPUT.TYPE.TEXT} name={INPUT.NAME.SURNAME} id={INPUT.NAME.SURNAME} />
               </ProfileData>
               <ErrorMessage name={INPUT.NAME.SURNAME} component={ErrorMessages} />
               <ProfileData>
                 <Text>{formatMessage(localization.email)}:</Text>
-                <FieldStyled
-                  type={INPUT.TYPE.EMAIL}
-                  name={INPUT.NAME.EMAIL}
-                  id={INPUT.NAME.EMAIL}
-                />
+                <FieldStyled type={INPUT.TYPE.EMAIL} name={INPUT.NAME.EMAIL} id={INPUT.NAME.EMAIL} />
               </ProfileData>
               <ErrorMessage name={INPUT.NAME.EMAIL} component={ErrorMessages} />
               <ProfileData>
                 <Text>{formatMessage(localization.selectGender)}:</Text>
-                <StyledSelectField
-                  as={INPUT.TYPE.SELECT}
-                  name={SELECT.NAME.GENDER}
-                  id={SELECT.NAME.GENDER}
-                  onChange={handleChange}
-                >
+                <StyledSelectField as={INPUT.TYPE.SELECT} name={SELECT.NAME.GENDER} id={SELECT.NAME.GENDER} onChange={handleChange}>
                   <DefaultOption>{values.gender}</DefaultOption>
                   <Option value={SELECT.VALUES.MALE}>{formatMessage(localization.male)}</Option>
                   <Option value={SELECT.VALUES.FEMALE}>{formatMessage(localization.female)}</Option>
@@ -104,17 +83,12 @@ const ProfileForm = () => {
                   peekNextMonth
                   showMonthDropdown
                   showYearDropdown
-                  dropdownMode="select"
+                  dropdownMode='select'
                 />
               </ProfileData>
               <ProfileData>
                 <Text>{formatMessage(localization.phone)}:</Text>
-                <FieldStyled
-                  type={INPUT.TYPE.TEL}
-                  name={INPUT.NAME.PHONE_NUMBER}
-                  id={INPUT.NAME.PHONE_NUMBER}
-                  placeholder={TEL_PLACEHOLDER}
-                />
+                <FieldStyled type={INPUT.TYPE.TEL} name={INPUT.NAME.PHONE_NUMBER} id={INPUT.NAME.PHONE_NUMBER} placeholder={TEL_PLACEHOLDER} />
               </ProfileData>
               <ErrorMessage name={INPUT.NAME.PHONE_NUMBER} component={ErrorMessages} />
               <UpdateButton> {formatMessage(localization.update)}</UpdateButton>

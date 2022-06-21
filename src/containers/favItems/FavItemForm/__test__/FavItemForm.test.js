@@ -10,7 +10,7 @@ const { DEFAULT_VALUES } = FAVITEM;
 
 jest.mock('react-intl', () => ({
   useIntl: jest.fn(() => ({ formatMessage: m => m.defaultMessage })),
-  defineMessages: i => i
+  defineMessages: i => i,
 }));
 
 jest.mock('react', () => {
@@ -21,8 +21,8 @@ jest.mock('react', () => {
       onSubmit: jest.fn(),
       update_FavItem: jest.fn(),
       error: 'a',
-      clearErrors: jest.fn()
-    }))
+      clearErrors: jest.fn(),
+    })),
   };
 });
 
@@ -50,8 +50,8 @@ describe('FavItemForm component test with Enzyme', () => {
   test('should pass the correct initial values when editFavitem is true', () => {
     useContext.mockImplementationOnce(
       jest.fn(() => ({
-        editFavItem: { author: 'Joe' }
-      }))
+        editFavItem: { author: 'Joe' },
+      })),
     );
 
     const component = shallow(<FavItemForm />);
@@ -67,8 +67,8 @@ describe('FavItemForm component test with Enzyme', () => {
         clearEdit: jest.fn(),
         toggle_Form: jest.fn(),
         update_FavItem: jest.fn(),
-        clearErrors: jest.fn()
-      }))
+        clearErrors: jest.fn(),
+      })),
     );
 
     const component = shallow(<FavItemForm />);
@@ -99,8 +99,8 @@ describe('FavItemForm component test with Enzyme', () => {
         toggle_Form: jest.fn(),
         update_FavItem: jest.fn(),
         clearErrors: jest.fn(),
-        error: ['a', 'b']
-      }))
+        error: ['a', 'b'],
+      })),
     );
 
     const component = shallow(<FavItemForm />);

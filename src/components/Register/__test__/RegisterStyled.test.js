@@ -20,7 +20,7 @@ describe('RegisterStyled component test with Enzyme', () => {
               <FieldStyled />
             </FormStyled>
           )}
-        </Formik>
+        </Formik>,
       )
       .toJSON();
     expect(tree.children[0]).toHaveStyleRule('border-bottom', `1px solid ${theme.cadetblue}`);

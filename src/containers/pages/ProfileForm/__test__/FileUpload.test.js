@@ -8,7 +8,7 @@ import { InputHidden, Input } from '../FileUploadStyled';
 
 jest.mock('react-intl', () => ({
   useIntl: jest.fn(() => ({ formatMessage: m => m.defaultMessage })),
-  defineMessages: i => i
+  defineMessages: i => i,
 }));
 
 jest.spyOn(Modal, 'setAppElement').mockImplementation(() => {});
@@ -26,12 +26,12 @@ jest.mock('react', () => {
         gender: 'testGender',
         birthDay: 'testBirtday',
         phoneNumber: '123456789',
-        image: 'image.png'
+        image: 'image.png',
       },
       toggle_Form: jest.fn(),
       updateProfile: jest.fn(),
-      update_File: jest.fn()
-    }))
+      update_File: jest.fn(),
+    })),
   };
 });
 

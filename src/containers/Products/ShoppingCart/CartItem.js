@@ -10,7 +10,7 @@ import {
   CartContainer,
   CartData,
   ButtonContainer,
-  StyledButton
+  StyledButton,
 } from './CartItemStyled';
 
 const CartItem = ({ item, removeHandler }) => {
@@ -44,12 +44,12 @@ const CartItem = ({ item, removeHandler }) => {
 
 CartItem.propTypes = {
   item: PropTypes.object,
-  removeHandler: PropTypes.func
+  removeHandler: PropTypes.func,
 };
 
 CartItem.defaultProps = {
   item: {},
-  removeHandler: () => {}
+  removeHandler: () => {},
 };
 
 export default CartItem;

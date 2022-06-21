@@ -7,7 +7,7 @@ import { Flag, Hamburger, Logout } from '../NavbarStyled';
 
 jest.mock('react-intl', () => ({
   useIntl: jest.fn(() => ({ formatMessage: m => m.defaultMessage })),
-  defineMessages: i => i
+  defineMessages: i => i,
 }));
 
 jest.mock('react', () => {
@@ -18,8 +18,8 @@ jest.mock('react', () => {
       isAuthencated: true,
       user: { name: 'testName' },
       logout: jest.fn(),
-      clearErrors: jest.fn()
-    }))
+      clearErrors: jest.fn(),
+    })),
   };
 });
 
@@ -55,8 +55,8 @@ describe('Navbar component test with Enzyme', () => {
     useContext.mockImplementationOnce(
       jest.fn(() => ({
         isAuthencated: false,
-        clearErrors: jest.fn()
-      }))
+        clearErrors: jest.fn(),
+      })),
     );
 
     const component = shallow(<Navbar changeLocale={mocked} />);

@@ -3,12 +3,12 @@ export const FAVITEM = {
     AUTHOR: 'Unknown',
     TITLE: '',
     CATEGORY: 'Other',
-    DESCRIPTION: 'Description'
+    DESCRIPTION: 'Description',
   },
   TYPE: {
     FILM: 'Film',
     MUSIC: 'Music',
     BOOKS: 'Books',
-    OTHER: 'Other'
-  }
+    OTHER: 'Other',
+  },
 };

@@ -3,58 +3,58 @@ import { defineMessages } from 'react-intl';
 export default defineMessages({
   selectCategory: {
     id: 'favItem.selectCategory',
-    defaultMessage: 'Select Category'
+    defaultMessage: 'Select Category',
   },
   films: {
     id: 'favItem.films',
-    defaultMessage: 'Films'
+    defaultMessage: 'Films',
   },
   music: {
     id: 'favItem.music',
-    defaultMessage: 'Music'
+    defaultMessage: 'Music',
   },
   books: {
     id: 'favItem.books',
-    defaultMessage: 'Books'
+    defaultMessage: 'Books',
   },
   other: {
     id: 'favItem.other',
-    defaultMessage: 'Other'
+    defaultMessage: 'Other',
   },
   removeCard: {
     id: 'favItem.removeCard',
-    defaultMessage: 'Remove Card'
+    defaultMessage: 'Remove Card',
   },
   editFavItem: {
     id: 'favItem.editFavitem',
-    defaultMessage: 'Edit favorite item'
+    defaultMessage: 'Edit favorite item',
   },
   addNewFavItem: {
     id: 'favItem.addNewFavItem',
-    defaultMessage: 'Add new favorite item'
+    defaultMessage: 'Add new favorite item',
   },
   author: {
     id: 'favItem.author',
-    defaultMessage: 'Author'
+    defaultMessage: 'Author',
   },
   title: {
     id: 'favItem.title',
-    defaultMessage: 'Title'
+    defaultMessage: 'Title',
   },
   description: {
     id: 'favItem.description',
-    defaultMessage: 'Description'
+    defaultMessage: 'Description',
   },
   update: {
     id: 'favItem.update',
-    defaultMessage: 'Update'
+    defaultMessage: 'Update',
   },
   add: {
     id: 'favItem.add',
-    defaultMessage: 'Add'
+    defaultMessage: 'Add',
   },
   cancel: {
     id: 'favItem.cancel',
-    defaultMessage: 'Cancel'
-  }
+    defaultMessage: 'Cancel',
+  },
 });

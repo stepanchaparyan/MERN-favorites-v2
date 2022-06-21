@@ -3,30 +3,30 @@ import { defineMessages } from 'react-intl';
 export default defineMessages({
   welcomeText: {
     id: 'welcomePage.welcomeText',
-    defaultMessage: 'Welcome to our page'
+    defaultMessage: 'Welcome to our page',
   },
   longText: {
     id: 'welcomePage.longText',
-    defaultMessage: 'Here you can add and save cards about your favorite'
+    defaultMessage: 'Here you can add and save cards about your favorite',
   },
   music: {
     id: 'welcomePage.music',
-    defaultMessage: 'Music'
+    defaultMessage: 'Music',
   },
   films: {
     id: 'welcomePage.films',
-    defaultMessage: 'Films'
+    defaultMessage: 'Films',
   },
   books: {
     id: 'welcomePage.books',
-    defaultMessage: 'Books'
+    defaultMessage: 'Books',
   },
   other: {
     id: 'welcomePage.other',
-    defaultMessage: 'Other'
+    defaultMessage: 'Other',
   },
   createYourCard: {
     id: 'welcomePage.createYourCard',
-    defaultMessage: 'Create Your Card'
-  }
+    defaultMessage: 'Create Your Card',
+  },
 });

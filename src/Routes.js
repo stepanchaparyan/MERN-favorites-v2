@@ -25,18 +25,18 @@ const Routes = () => {
 
   return (
     <Switch>
-      <Route exact path="/" component={Welcome} />
-      <Route exact path="/register" component={Register} />
-      <Route exact path="/login" component={Login} />
-      <PrivateRoute exact path="/home" component={Home} />
-      <PrivateRoute exact path="/profilePage" component={Profile} />
-      <PrivateRoute exact path="/books" component={Books} />
-      <PrivateRoute exact path="/products" component={ProductsPage} />
-      <PrivateRoute exact path="/product/:id" component={ProductDetails} />
-      <PrivateRoute exact path="/cart" component={ShoppingCart} />
-      <Route exact path="/chatboard" component={Chatboard} />
-      <Route exact path="/chat/:userId/:userName" component={Chat} />
-      <Route exact path="*" component={PageNotFound} />
+      <Route exact path='/' component={Welcome} />
+      <Route exact path='/register' component={Register} />
+      <Route exact path='/login' component={Login} />
+      <PrivateRoute exact path='/home' component={Home} />
+      <PrivateRoute exact path='/profilePage' component={Profile} />
+      <PrivateRoute exact path='/books' component={Books} />
+      <PrivateRoute exact path='/products' component={ProductsPage} />
+      <PrivateRoute exact path='/product/:id' component={ProductDetails} />
+      <PrivateRoute exact path='/cart' component={ShoppingCart} />
+      <Route exact path='/chatboard' component={Chatboard} />
+      <Route exact path='/chat/:userId/:userName' component={Chat} />
+      <Route exact path='*' component={PageNotFound} />
     </Switch>
   );
 };

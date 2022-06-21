@@ -25,7 +25,7 @@ const BookDetail = ({ history }) => {
     const data = {
       category,
       title,
-      author
+      author,
     };
     e.preventDefault();
     dispatch(updateBook(id, data));
@@ -33,51 +33,47 @@ const BookDetail = ({ history }) => {
   };
 
   return (
-    <div className="row container-height">
-      <div className="col-lg-6 col-md-6 m-auto">
+    <div className='row container-height'>
+      <div className='col-lg-6 col-md-6 m-auto'>
         {' '}
-        <div className="container">
+        <div className='container'>
           {book ? (
             <>
-              <h1 className="text-center">Update</h1>
+              <h1 className='text-center'>Update</h1>
               <form onSubmit={formSubmitHandler}>
                 <fieldset>
-                  <div className="form-group">
-                    <select
-                      value={category}
-                      onChange={e => setCategory(e.target.value)}
-                      className="custom-select"
-                    >
-                      <option defaultValue="programming">programming</option>
-                      <option value="religion">Religion</option>
-                      <option value="life">life</option>
-                      <option value="culture">culture</option>
+                  <div className='form-group'>
+                    <select value={category} onChange={e => setCategory(e.target.value)} className='custom-select'>
+                      <option defaultValue='programming'>programming</option>
+                      <option value='religion'>Religion</option>
+                      <option value='life'>life</option>
+                      <option value='culture'>culture</option>
                     </select>
                   </div>
-                  <div className="form-group">
-                    <label htmlFor="exampleInputEmail1">Author </label>
+                  <div className='form-group'>
+                    <label htmlFor='exampleInputEmail1'>Author </label>
                     <input
                       value={author}
                       onChange={e => setAuthor(e.target.value)}
-                      type="text"
-                      className="form-control"
-                      id="exampleInputEmail1"
-                      aria-describedby="emailHelp"
-                      placeholder="Author name"
+                      type='text'
+                      className='form-control'
+                      id='exampleInputEmail1'
+                      aria-describedby='emailHelp'
+                      placeholder='Author name'
                     />
                   </div>
-                  <div className="form-group">
-                    <label htmlFor="exampleInputPassword1">title</label>
+                  <div className='form-group'>
+                    <label htmlFor='exampleInputPassword1'>title</label>
                     <input
                       value={title}
                       onChange={e => setTitle(e.target.value)}
-                      type="text"
-                      className="form-control"
-                      id="exampleInputPassword1"
-                      placeholder="Book title"
+                      type='text'
+                      className='form-control'
+                      id='exampleInputPassword1'
+                      placeholder='Book title'
                     />
                   </div>
-                  <button type="submit" className="btn btn-dark m-auto">
+                  <button type='submit' className='btn btn-dark m-auto'>
                     Create Book
                   </button>
                 </fieldset>
@@ -93,7 +89,7 @@ const BookDetail = ({ history }) => {
 };
 
 BookDetail.propTypes = {
-  history: PropTypes.object
+  history: PropTypes.object,
 };
 
 export default withRouter(BookDetail);

@@ -7,7 +7,7 @@ import { FieldStyled } from '../ProfileFormStyled';
 
 jest.mock('react-intl', () => ({
   useIntl: jest.fn(() => ({ formatMessage: m => m.defaultMessage })),
-  defineMessages: i => i
+  defineMessages: i => i,
 }));
 
 jest.mock('react', () => {
@@ -22,11 +22,11 @@ jest.mock('react', () => {
         email: 'test@email.com',
         gender: 'testGender',
         birthDay: 'testBirtday',
-        phoneNumber: '123456789'
+        phoneNumber: '123456789',
       },
       toggle_Form: jest.fn(),
-      updateProfile: jest.fn()
-    }))
+      updateProfile: jest.fn(),
+    })),
   };
 });
 

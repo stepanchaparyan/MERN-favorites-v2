@@ -3,31 +3,21 @@ import { renderSnapshot } from '../../../../utils/tests';
 import { shallow } from 'enzyme';
 import 'jest-styled-components';
 import Welcome from '../Welcome.js';
-import {
-  Module,
-  WelcomeText,
-  LongText,
-  LinkStyled,
-  Logo,
-  Music,
-  Films,
-  Books,
-  Other
-} from '../WelcomeStyled';
+import { Module, WelcomeText, LongText, LinkStyled, Logo, Music, Films, Books, Other } from '../WelcomeStyled';
 import Img from '../../../../assets/elephant.png';
 import localization from '../localization';
 import { LINK } from '../../../../constants';
 
 jest.mock('react-intl', () => ({
   useIntl: jest.fn(() => ({ formatMessage: m => m.defaultMessage })),
-  defineMessages: i => i
+  defineMessages: i => i,
 }));
 
 jest.mock('react', () => {
   const ActualReact = jest.requireActual('react');
   return {
     ...ActualReact,
-    useContext: () => ({ isAuthencated: true })
+    useContext: () => ({ isAuthencated: true }),
   };
 });
 

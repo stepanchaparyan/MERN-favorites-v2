@@ -10,7 +10,7 @@ const props = {
   buttonConfirmText: 'text',
   buttonCancelText: 'text',
   titleBgColor: 'blue',
-  cancelButtonColor: 'red'
+  cancelButtonColor: 'red',
 };
 
 describe('Modal component test with Enzyme', () => {

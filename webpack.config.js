@@ -18,17 +18,12 @@ const optimization = () => {
     splitChunks: {
       chunks: 'all',
       minSize: 10000,
-      maxSize: 800000
-    }
+      maxSize: 800000,
+    },
   };
 
   if (isProd) {
-    config.minimizer = [
-      new OptimizeCssAssetWebpackPlugin(),
-      new TerserWebpackPlugin(),
-      new UglifyJsPlugin(),
-      new CssnanoPlugin()
-    ];
+    config.minimizer = [new OptimizeCssAssetWebpackPlugin(), new TerserWebpackPlugin(), new UglifyJsPlugin(), new CssnanoPlugin()];
   }
   return config;
 };
@@ -42,10 +37,10 @@ const cssLoaders = extra => {
       loader: MiniCssExtractPlugin.loader,
       options: {
         hmr: isDev,
-        reloadAll: true
-      }
+        reloadAll: true,
+      },
     },
-    'css-loader'
+    'css-loader',
   ];
 
   if (extra) {
@@ -57,7 +52,7 @@ const cssLoaders = extra => {
 const babelOptions = preset => {
   const opts = {
     presets: ['@babel/preset-env'],
-    plugins: ['@babel/plugin-proposal-class-properties']
+    plugins: ['@babel/plugin-proposal-class-properties'],
   };
 
   if (preset) {
@@ -71,8 +66,8 @@ const jsLoaders = () => {
   const loaders = [
     {
       loader: 'babel-loader',
-      options: babelOptions()
-    }
+      options: babelOptions(),
+    },
   ];
 
   if (isDev) {
@@ -88,14 +83,14 @@ const plugins = () => {
     new HTMLWebpackPlugin({
       template: './index.html',
       minify: {
-        collapseWhitespace: isProd
-      }
+        collapseWhitespace: isProd,
+      },
     }),
     new CopyWebpackPlugin([
       {
         from: path.resolve(__dirname, 'src/favicon.ico'),
-        to: path.resolve(__dirname, 'build')
-      }
+        to: path.resolve(__dirname, 'build'),
+      },
       // {
       //   from: path.resolve(__dirname, 'src/assets'),
       //   to: path.resolve(__dirname, 'build/assets')
@@ -103,12 +98,12 @@ const plugins = () => {
     ]),
     new MiniCssExtractPlugin({
       filename: filename('css'),
-      linkType: 'text/css'
+      linkType: 'text/css',
     }),
     new LinkTypePlugin({
-      '*.css': 'text/css'
+      '*.css': 'text/css',
     }),
-    new DashboardPlugin()
+    new DashboardPlugin(),
   ];
 
   return base;
@@ -118,83 +113,83 @@ module.exports = {
   context: path.resolve(__dirname, 'src'),
   mode: process.env.NODE_ENV,
   entry: {
-    main: ['@babel/polyfill', './index.js']
+    main: ['@babel/polyfill', './index.js'],
   },
   output: {
     filename: filename('js'),
-    path: path.resolve(__dirname, 'build')
+    path: path.resolve(__dirname, 'build'),
   },
   resolve: {
-    extensions: ['.mjs', '.js', '.jsx', '.json', '.png', 'jpg', 'jpeg', 'svg', 'webp', 'jp2', 'pdf']
+    extensions: ['.mjs', '.js', '.jsx', '.json', '.png', 'jpg', 'jpeg', 'svg', 'webp', 'jp2', 'pdf'],
   },
   optimization: optimization(),
   devServer: {
     port: 3000,
     hot: isDev,
     writeToDisk: true,
-    historyApiFallback: true
+    historyApiFallback: true,
   },
   devtool: isDev ? 'source-map' : '',
   plugins: plugins(),
   performance: {
     hints: isProd ? 'warning' : false,
     maxEntrypointSize: 512000,
-    maxAssetSize: 512000
+    maxAssetSize: 512000,
   },
   module: {
     rules: [
       {
         test: /\.css$/,
-        use: cssLoaders()
+        use: cssLoaders(),
       },
       {
         test: /\.less$/,
-        use: cssLoaders('less-loader')
+        use: cssLoaders('less-loader'),
       },
       {
         test: /\.s[ac]ss$/,
-        use: cssLoaders('sass-loader')
+        use: cssLoaders('sass-loader'),
       },
       {
         test: /\.(png|jpe?g|svg|gif|webp|pdf|jp2)$/,
         loader: 'file-loader',
         options: {
-          outputPath: 'assets'
-        }
+          outputPath: 'assets',
+        },
       },
       {
         test: /\.(ttf|woff|woff2|eot)$/,
-        use: ['file-loader']
+        use: ['file-loader'],
       },
       {
         test: /\.xml$/,
-        use: ['xml-loader']
+        use: ['xml-loader'],
       },
       {
         test: /\.csv$/,
-        use: ['csv-loader']
+        use: ['csv-loader'],
       },
       {
         test: /\.js$/,
         exclude: /node_modules/,
-        use: jsLoaders()
+        use: jsLoaders(),
       },
       {
         test: /\.ts$/,
         exclude: /node_modules/,
         loader: {
           loader: 'babel-loader',
-          options: babelOptions('@babel/preset-typescript')
-        }
+          options: babelOptions('@babel/preset-typescript'),
+        },
       },
       {
         test: /\.jsx$/,
         exclude: /node_modules/,
         loader: {
           loader: 'babel-loader',
-          options: babelOptions('@babel/preset-react')
-        }
-      }
-    ]
-  }
+          options: babelOptions('@babel/preset-react'),
+        },
+      },
+    ],
+  },
 };

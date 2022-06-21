@@ -1,21 +1,7 @@
 import React, { useContext } from 'react';
 import { useIntl } from 'react-intl';
 import AuthContext from '../../../context/authContext/authContext';
-import {
-  Container,
-  Module,
-  WelcomeText,
-  LongText,
-  LinkStyled,
-  Logo,
-  Music,
-  Films,
-  Books,
-  Other,
-  PieContainer,
-  Pie,
-  Pie2
-} from './WelcomeStyled';
+import { Container, Module, WelcomeText, LongText, LinkStyled, Logo, Music, Films, Books, Other, PieContainer, Pie, Pie2 } from './WelcomeStyled';
 import Img from '../../../assets/elephant.png';
 import localization from './localization';
 import { LINK } from '../../../constants';
@@ -35,24 +21,22 @@ const Welcome = () => {
           <Books>{formatMessage(localization.books)}</Books>
           <Other>{formatMessage(localization.other)}</Other>
         </LongText>
-        {isAuthencated && (
-          <LinkStyled to={LINK.TO.HOME}>{formatMessage(localization.createYourCard)}</LinkStyled>
-        )}
+        {isAuthencated && <LinkStyled to={LINK.TO.HOME}>{formatMessage(localization.createYourCard)}</LinkStyled>}
         <Logo src={Img}></Logo>
         <PieContainer>
-          <Pie per={10} inherit="inherit">
+          <Pie per={10} inherit='inherit'>
             <Pie2></Pie2>
           </Pie>
-          <Pie per={25} inherit="inherit">
+          <Pie per={25} inherit='inherit'>
             <Pie2></Pie2>
           </Pie>
-          <Pie per={50} inherit="inherit">
+          <Pie per={50} inherit='inherit'>
             <Pie2></Pie2>
           </Pie>
-          <Pie per={75} inherit="none">
+          <Pie per={75} inherit='none'>
             <Pie2></Pie2>
           </Pie>
-          <Pie per={95} inherit="none">
+          <Pie per={95} inherit='none'>
             <Pie2></Pie2>
           </Pie>
         </PieContainer>

@@ -3,7 +3,7 @@ import PageNotFound from '../PageNotFound.js';
 
 jest.mock('react-intl', () => ({
   useIntl: jest.fn(() => ({ formatMessage: m => m.defaultMessage })),
-  defineMessages: i => i
+  defineMessages: i => i,
 }));
 
 describe('PageNotFound component test with Enzyme', () => {

@@ -1,3 +1,3 @@
 export const EVENTS = {
-  CLICK: 'click'
+  CLICK: 'click',
 };

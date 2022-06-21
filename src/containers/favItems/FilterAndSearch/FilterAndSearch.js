@@ -3,26 +3,15 @@ import Select from 'react-select';
 import { useIntl } from 'react-intl';
 import FavItemContext from '../../../context/favItemContext/favItemContext';
 import { FORM } from '../../../constants';
-import {
-  SelectContainer,
-  customStyles,
-  InputContainer,
-  Input
-} from '../FilterAndSearch/FilterAndSearchStyled';
+import { SelectContainer, customStyles, InputContainer, Input } from '../FilterAndSearch/FilterAndSearchStyled';
 import localization from './localization';
 
 const { SELECT, INPUT } = FORM;
 
 const FilterAndSearch = () => {
-  const {
-    filter_FavItem,
-    clearFilter,
-    search_FavItem,
-    clearSearch,
-    filterFavItems,
-    search_filter_FavItems,
-    clearSearchFilter
-  } = useContext(FavItemContext);
+  const { filter_FavItem, clearFilter, search_FavItem, clearSearch, filterFavItems, search_filter_FavItems, clearSearchFilter } = useContext(
+    FavItemContext,
+  );
 
   const searchInput = useRef('');
   const { formatMessage } = useIntl();
@@ -32,7 +21,7 @@ const FilterAndSearch = () => {
     { value: SELECT.OPTIONS.MUSIC, label: SELECT.LABELS.MUSIC },
     { value: SELECT.OPTIONS.BOOKS, label: SELECT.LABELS.BOOKS },
     { value: SELECT.OPTIONS.OTHER, label: SELECT.LABELS.OTHER },
-    { value: SELECT.OPTIONS.ALL, label: SELECT.LABELS.ALL_CARDS }
+    { value: SELECT.OPTIONS.ALL, label: SELECT.LABELS.ALL_CARDS },
   ];
 
   const [selectedOption, setSelectedOption] = useState(null);
@@ -78,12 +67,7 @@ const FilterAndSearch = () => {
   return (
     <>
       <InputContainer>
-        <Input
-          ref={searchInput}
-          onChange={searchByInput}
-          type={INPUT.TYPE.TEXT}
-          placeholder={formatMessage(localization.searchCardByName)}
-        />
+        <Input ref={searchInput} onChange={searchByInput} type={INPUT.TYPE.TEXT} placeholder={formatMessage(localization.searchCardByName)} />
       </InputContainer>
 
       <SelectContainer>

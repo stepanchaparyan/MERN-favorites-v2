@@ -12,7 +12,7 @@ const theme = {
   veryLightGray: '#f8f8f8',
   darkgray: 'darkgray',
   veryDarkGray: '#171717',
-  midGray: '#333'
+  midGray: '#333',
 };
 
 export default theme;

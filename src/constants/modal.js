@@ -3,9 +3,9 @@ export const MODAL = {
     TITLE: 'Modal',
     TEXT: 'Please confirm',
     BUTTON_CONFIRM_TEXT: 'Confirm',
-    BUTTON_CANCEL_TEXT: 'Cancel'
+    BUTTON_CANCEL_TEXT: 'Cancel',
   },
   CONTENT_LABEL: 'Modal',
   X: 'x',
-  OK: 'OK'
+  OK: 'OK',
 };

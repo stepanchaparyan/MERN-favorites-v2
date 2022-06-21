@@ -3,7 +3,7 @@ import FavItemsList from '../FavItemsList.js';
 
 jest.mock('react-intl', () => ({
   useIntl: jest.fn(() => ({ formatMessage: m => m.defaultMessage })),
-  defineMessages: i => i
+  defineMessages: i => i,
 }));
 
 jest.mock('react', () => {
@@ -14,10 +14,10 @@ jest.mock('react', () => {
       favItems: [
         {
           _id: '123',
-          name: 'test'
-        }
-      ]
-    })
+          name: 'test',
+        },
+      ],
+    }),
   };
 });
 

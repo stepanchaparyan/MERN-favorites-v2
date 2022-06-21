@@ -4,7 +4,7 @@ const initialValues = {
   name: '',
   email: '',
   password: '',
-  password2: ''
+  password2: '',
 };
 
 const validationSchema = Yup.object({
@@ -17,13 +17,13 @@ const validationSchema = Yup.object({
     .required('Required'),
   password2: Yup.string()
     .oneOf([Yup.ref('password'), null], 'Passwords must match')
-    .required('Required')
+    .required('Required'),
 });
 
 const formikProps = () => ({
   initialValues,
   validateOnChange: true,
-  validationSchema
+  validationSchema,
 });
 
 export default formikProps;
