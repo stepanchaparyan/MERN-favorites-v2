@@ -23,6 +23,7 @@ import {
 } from './ProductDetailsStyled';
 import Loading from '../../components/Loading/Loading';
 import useGAEventTracker from '../../utils/useGAEventTracker';
+import ReactGA from 'react-ga';
 
 const ProductDetails = ({ match, history }) => {
   const [qty, setQty] = useState(1);
@@ -40,6 +41,10 @@ const ProductDetails = ({ match, history }) => {
   }, [dispatch, match, product]);
 
   const addToCartHandler = () => {
+    ReactGA.initialize('320083024');
+
+    ReactGA.ga('send', 'pageview', '/mypage');
+
     const { _id, name, price, countInStock, imageUrl } = product;
     dispatch(
       addToCart({
@@ -101,7 +106,6 @@ const ProductDetails = ({ match, history }) => {
               <Link to={'/cart'} onClick={() => GAEventsTracker('test_cart', `/cart/777`)}>
                 buttonText
               </Link>
-
               <a
                 href='www.examplewebsite.co.uk/pdf/company_brochure.pdf'
                 onClick="ga('send', 'event', 'PDF','Download', 'Company Brochure – PDF Download');">
