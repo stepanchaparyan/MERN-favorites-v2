@@ -1,6 +1,6 @@
 // eslint-disable-next-line no-unused-vars
 import React from 'react';
-import ReactGA from 'react-ga';
+import ReactGA from 'react-ga4';
 
 const useGAEventTracker = (category = 'Category') => {
   return (action = 'action', label = 'label') => {

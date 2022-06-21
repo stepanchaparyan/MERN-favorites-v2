@@ -23,7 +23,7 @@ import {
 } from './ProductDetailsStyled';
 import Loading from '../../components/Loading/Loading';
 import useGAEventTracker from '../../utils/useGAEventTracker';
-import ReactGA from 'react-ga';
+import ReactGA from 'react-ga4';
 
 const ProductDetails = ({ match, history }) => {
   const [qty, setQty] = useState(1);
