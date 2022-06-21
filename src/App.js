@@ -43,8 +43,7 @@ const App = () => {
       ReactGA.event({
         category: 'Social',
         action: 'Rated an App',
-        value: 3,
-        page: window.location.pathname + window.location.search,
+        value: window.location.pathname + window.location.search,
       });
     });
 
