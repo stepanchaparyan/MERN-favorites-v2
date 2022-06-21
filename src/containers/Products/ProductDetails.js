@@ -34,6 +34,15 @@ const ProductDetails = ({ match, history }) => {
   const { loading, error, product } = productDetails;
 
   useEffect(() => {
+    ReactGA.ga('set', 'currencyCode', 'USD');
+    ReactGA.plugin.execute('ec', 'setAction', 'purchase', {
+      id: 11,
+      affiliation: 'storeName',
+      revenue: 12,
+      shipping: 45,
+      tax: 58,
+    });
+
     if (product && match.params.id !== product._id) {
       dispatch(getProductDetails(match.params.id));
       localStorage.setItem('from', pathname);
