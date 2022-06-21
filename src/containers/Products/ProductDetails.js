@@ -103,6 +103,20 @@ const ProductDetails = ({ match, history }) => {
                 onClick="ga('send', 'event', 'PDF','Download', 'Company Brochure – PDF Download');">
                 Download Our Brochure
               </a>
+              <button
+                onClick="gtag('event', 'add_to_cart', {
+                            currency: 'USD',
+                            value: 7.77,
+                            items: [{
+                              item_id: 'SKU_12345',
+                              item_name: 'Stan and Friends Tee',
+                            }]
+                            });"></button>
+              <button
+                onClick="gtag('event', 'screen_view', {
+                          'app_name': 'myAppName',
+                          'screen_name': 'Home'
+                });"></button>
               <StyledButton onClick={deleteHandler}>Delete product</StyledButton>
             </ButtonContainer>
           </CartContainer>
