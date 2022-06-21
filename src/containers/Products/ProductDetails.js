@@ -24,6 +24,7 @@ import {
 import Loading from '../../components/Loading/Loading';
 import useGAEventTracker from '../../utils/useGAEventTracker';
 import ReactGA from 'react-ga4';
+import { gaKey, gtmKey } from './constants/ga_gtm';
 
 const ProductDetails = ({ match, history }) => {
   const [qty, setQty] = useState(1);
@@ -52,7 +53,7 @@ const ProductDetails = ({ match, history }) => {
   const addToCartHandler = () => {
     // ReactGA.initialize('G-GKLQXGSFZM');
 
-    ReactGA.ga('send', 'pageview', '/mypage');
+    ReactGA.initialize(gaKey);
     ReactGA.event({
       category: 'Editing',
       action: 'Deleted Component',
