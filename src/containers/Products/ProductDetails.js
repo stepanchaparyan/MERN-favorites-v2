@@ -47,8 +47,8 @@ const ProductDetails = ({ match, history }) => {
   }, [dispatch, match, product]);
 
   const addToCartHandler = () => {
-    TagManager.initialize(tagManagerArgs);
-    ReactGA.initialize(gaKey);
+    // TagManager.initialize(tagManagerArgs);
+    // ReactGA.initialize(gaKey);
     ReactGA.event({
       category: 'Editing',
       action: 'Deleted Component',
