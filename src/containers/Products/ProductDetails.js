@@ -116,7 +116,9 @@ const ProductDetails = ({ match, history }) => {
                 onClick="gtag('event', 'screen_view', {
                           'app_name': 'myAppName',
                           'screen_name': 'Home'
-                });"></button>
+                });">
+                Event
+              </button>
               <StyledButton onClick={deleteHandler}>Delete product</StyledButton>
             </ButtonContainer>
           </CartContainer>
