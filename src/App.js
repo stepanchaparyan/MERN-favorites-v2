@@ -13,7 +13,7 @@ import setAuthToken from './utils/setAuthToken';
 import theme from '../src/styles/theme';
 import messages_hy from './translations/hy.json';
 import messages_en from './translations/en.json';
-import ReactGA from 'react-ga';
+import ReactGA from 'react-ga4';
 import TagManager from 'react-gtm-module';
 import { gaKey, gtmKey } from './constants/ga_gtm';
 import { createBrowserHistory } from 'history';
