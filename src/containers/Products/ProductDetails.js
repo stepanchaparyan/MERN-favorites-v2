@@ -27,10 +27,6 @@ import ReactGA from 'react-ga4';
 import { gaKey, gtmKey } from '../../constants/ga_gtm';
 // ReactGA.plugin.require('ec');
 
-const tagManagerArgs = {
-  gtmId: gtmKey,
-};
-
 const ProductDetails = ({ match, history }) => {
   const [qty, setQty] = useState(1);
   const dispatch = useDispatch();
@@ -48,35 +44,11 @@ const ProductDetails = ({ match, history }) => {
 
   const addToCartHandler = () => {
     const { _id, name, price, countInStock, imageUrl } = product;
-    // TagManager.initialize(tagManagerArgs);
-    // ReactGA.initialize(gaKey);
-
-    console.log(_id);
-    console.log(name);
-
-    ReactGA.event({
-      category: 'Cart data',
-      action: 'Sent ProductId',
-      label: `${_id}`,
-      value: `${_id}`,
-    });
-
-    ReactGA.event({
-      category: 'Cart data',
-      action: 'Send Qty',
-      value: qty,
-    });
-
-    ReactGA.event({
-      category: 'Cart data',
-      action: 'Send name',
-      label: name,
-      value: price,
-    });
 
     ReactGA.event({
       category: 'add_to_cart',
-      action: 'Send price',
+      action: `Adde ${name}`,
+      label: `${_id}`,
       value: price,
     });
 
@@ -94,17 +66,6 @@ const ProductDetails = ({ match, history }) => {
     //   countInStock,
     //   imageUrl,
     // });
-
-    const fieldsObject = {
-      shipping: Number(22222222),
-      tax: Number(3333333333333) + Number(4444444444444) + Number(55555555555555555),
-      productId: _id,
-      qty,
-      name,
-      price,
-    };
-
-    ReactGA.set({ fieldsObject: fieldsObject });
 
     dispatch(
       addToCart({
