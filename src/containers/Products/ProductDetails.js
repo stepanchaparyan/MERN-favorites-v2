@@ -25,7 +25,7 @@ import Loading from '../../components/Loading/Loading';
 import useGAEventTracker from '../../utils/useGAEventTracker';
 import ReactGA from 'react-ga4';
 import { gaKey, gtmKey } from '../../constants/ga_gtm';
-ReactGA.plugin.require('ec');
+// ReactGA.plugin.require('ec');
 
 const tagManagerArgs = {
   gtmId: gtmKey,
@@ -53,15 +53,8 @@ const ProductDetails = ({ match, history }) => {
       category: 'Editing',
       action: 'Deleted Component2',
       label: 'Game Widget',
-    });
-
-    ReactGA.ga('set', 'currencyCode', 'USD');
-    ReactGA.plugin.execute('ec', 'setAction', 'purchase', {
-      id: 123,
-      affiliation: 'storeName',
-      revenue: Number(1111111),
-      shipping: Number(22222222),
       tax: Number(3333333333333) + Number(4444444444444) + Number(55555555555555555),
+      value: 123456,
       productId: _id,
       qty,
       name,
@@ -69,6 +62,21 @@ const ProductDetails = ({ match, history }) => {
       countInStock,
       imageUrl,
     });
+
+    ReactGA.ga('set', 'currencyCode', 'USD');
+    // ReactGA.plugin.execute('ec', 'setAction', 'purchase', {
+    //   id: 123,
+    //   affiliation: 'storeName',
+    //   revenue: Number(1111111),
+    //   shipping: Number(22222222),
+    //   tax: Number(3333333333333) + Number(4444444444444) + Number(55555555555555555),
+    //   productId: _id,
+    //   qty,
+    //   name,
+    //   price,
+    //   countInStock,
+    //   imageUrl,
+    // });
 
     const { _id, name, price, countInStock, imageUrl } = product;
     dispatch(
