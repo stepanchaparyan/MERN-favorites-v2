@@ -52,28 +52,24 @@ const ProductDetails = ({ match, history }) => {
     ReactGA.event({
       category: 'Cart data',
       action: 'Sent ProductId',
-      label: 'productId',
       value: _id,
     });
 
     ReactGA.event({
       category: 'Cart data',
-      action: 'Send qrt',
-      label: 'Qty',
+      action: 'Send Qty',
       value: qty,
     });
 
     ReactGA.event({
       category: 'Cart data',
       action: 'Send name',
-      label: 'Name',
-      value: name,
+      label: name,
     });
 
     ReactGA.event({
       category: 'add_to_cart',
-      action: 'add_to_cart',
-      label: 'price',
+      action: 'Send price',
       value: price,
     });
 
