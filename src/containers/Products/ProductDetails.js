@@ -52,6 +52,10 @@ const ProductDetails = ({ match, history }) => {
       value: price,
     });
 
+    ReactGA.set({
+      daaataa: 'add_to_dadatatata',
+    });
+
     ReactGA.ga('set', 'currencyCode', 'USD');
     // ReactGA.plugin.execute('ec', 'setAction', 'purchase', {
     //   id: 123,
