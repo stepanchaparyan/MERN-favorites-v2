@@ -37,6 +37,7 @@ const App = () => {
   useEffect(() => {
     TagManager.initialize(tagManagerArgs);
     ReactGA.initialize(gaKey);
+    ReactGA.set({ userId: 123 });
 
     const listen = history.listen(() => {
       // ReactGA.pageview(window.location.pathname + window.location.search);

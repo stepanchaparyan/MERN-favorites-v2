@@ -47,7 +47,7 @@ const ProductDetails = ({ match, history }) => {
 
     ReactGA.event({
       category: 'add_to_cart',
-      action: `Add ${name}`,
+      action: 'Add product',
       label: `${_id}`,
       value: price,
     });
