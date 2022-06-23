@@ -58,19 +58,19 @@ const ProductDetails = ({ match, history }) => {
     ReactGA.event({
       category: 'Cart data',
       action: 'Send Qty',
-      value: qty,
+      value: 4444444444444444,
     });
 
     ReactGA.event({
       category: 'Cart data',
       action: 'Send name',
-      label: name,
+      label: 'name_aaaaaaaaaaa',
     });
 
     ReactGA.event({
       category: 'add_to_cart',
       action: 'Send price',
-      value: price,
+      value: 55555555555555,
     });
 
     ReactGA.ga('set', 'currencyCode', 'USD');
