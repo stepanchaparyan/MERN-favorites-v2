@@ -57,7 +57,8 @@ const ProductDetails = ({ match, history }) => {
     ReactGA.event({
       category: 'Cart data',
       action: 'Sent ProductId',
-      label: _id,
+      label: `${_id}`,
+      value: `${_id}`,
     });
 
     ReactGA.event({
@@ -70,6 +71,7 @@ const ProductDetails = ({ match, history }) => {
       category: 'Cart data',
       action: 'Send name',
       label: name,
+      value: price,
     });
 
     ReactGA.event({
