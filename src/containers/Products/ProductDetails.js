@@ -49,6 +49,8 @@ const ProductDetails = ({ match, history }) => {
   const addToCartHandler = () => {
     // TagManager.initialize(tagManagerArgs);
     // ReactGA.initialize(gaKey);
+
+    console.log(_id);
     ReactGA.event({
       category: 'Cart data',
       action: 'Sent ProductId',
