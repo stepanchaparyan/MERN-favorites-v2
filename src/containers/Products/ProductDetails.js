@@ -78,6 +78,17 @@ const ProductDetails = ({ match, history }) => {
     //   imageUrl,
     // });
 
+    const fieldsObject = {
+      shipping: Number(22222222),
+      tax: Number(3333333333333) + Number(4444444444444) + Number(55555555555555555),
+      productId: _id,
+      qty,
+      name,
+      price,
+    };
+
+    ReactGA.set(fieldsObject);
+
     const { _id, name, price, countInStock, imageUrl } = product;
     dispatch(
       addToCart({
