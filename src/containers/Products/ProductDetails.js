@@ -87,7 +87,7 @@ const ProductDetails = ({ match, history }) => {
       price,
     };
 
-    ReactGA.set(fieldsObject);
+    ReactGA.set({ fieldsObject: fieldsObject });
 
     const { _id, name, price, countInStock, imageUrl } = product;
     dispatch(
