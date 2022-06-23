@@ -50,17 +50,24 @@ const ProductDetails = ({ match, history }) => {
     // TagManager.initialize(tagManagerArgs);
     // ReactGA.initialize(gaKey);
     ReactGA.event({
-      category: 'Editing',
-      action: 'Deleted Component2',
-      label: 'Game Widget',
-      tax: Number(3333333333333) + Number(4444444444444) + Number(55555555555555555),
-      value: 123456,
-      productId: _id,
-      qty,
-      name,
-      price,
-      countInStock,
-      imageUrl,
+      category: 'Cart data',
+      action: 'Sent ProductId',
+      label: 'productId',
+      value: _id,
+    });
+
+    ReactGA.event({
+      category: 'Cart data',
+      action: 'Send qrt',
+      label: 'Qty',
+      value: qty,
+    });
+
+    ReactGA.event({
+      category: 'Cart data',
+      action: 'Send name',
+      label: 'QtNamey',
+      value: name,
     });
 
     ReactGA.ga('set', 'currencyCode', 'USD');
