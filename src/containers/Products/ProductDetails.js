@@ -47,10 +47,13 @@ const ProductDetails = ({ match, history }) => {
   }, [dispatch, match, product]);
 
   const addToCartHandler = () => {
+    const { _id, name, price, countInStock, imageUrl } = product;
     // TagManager.initialize(tagManagerArgs);
     // ReactGA.initialize(gaKey);
 
     console.log(_id);
+    console.log(name);
+
     ReactGA.event({
       category: 'Cart data',
       action: 'Sent ProductId',
@@ -60,19 +63,19 @@ const ProductDetails = ({ match, history }) => {
     ReactGA.event({
       category: 'Cart data',
       action: 'Send Qty',
-      value: 4444444444444444,
+      value: qty,
     });
 
     ReactGA.event({
       category: 'Cart data',
       action: 'Send name',
-      label: 'name_aaaaaaaaaaa',
+      label: name,
     });
 
     ReactGA.event({
       category: 'add_to_cart',
       action: 'Send price',
-      value: 55555555555555,
+      value: price,
     });
 
     ReactGA.ga('set', 'currencyCode', 'USD');
@@ -101,7 +104,6 @@ const ProductDetails = ({ match, history }) => {
 
     ReactGA.set({ fieldsObject: fieldsObject });
 
-    const { _id, name, price, countInStock, imageUrl } = product;
     dispatch(
       addToCart({
         productId: _id,
