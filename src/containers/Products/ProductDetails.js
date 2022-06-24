@@ -126,7 +126,9 @@ const ProductDetails = ({ match, history }) => {
               </StyledSelect>
             </SelectContainer>
             <ButtonContainer>
-              <StyledButton onClick={addToCartHandler}>Add To Cart</StyledButton>
+              <StyledButton data-product={123456789} onClick={addToCartHandler}>
+                Add To Cart
+              </StyledButton>
               <button onClick={() => GAEventsTracker('action_test', 'label_test')}>TEST</button>
               <Link to={'/cart'} onClick={() => GAEventsTracker('test_cart', `/cart/777`)}>
                 buttonText
